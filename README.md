@@ -1,5 +1,3 @@
-# Faris Al Farizi
-
 ![Faris Al Farizi](https://capsule-render.vercel.app/api?type=cylinder&color=0:3DDC84,100:00A3FF&height=200&text=Faris%20Al%20Farizi&desc=Backend%20Developer&descAlignY=70&textBg=false&animation=twinkling)
 
 <p align="center">
