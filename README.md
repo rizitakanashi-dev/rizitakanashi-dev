@@ -1,4 +1,4 @@
-![Faris Al Farizi](https://capsule-render.vercel.app/api?type=cylinder&color=0:3DDC84,100:00A3FF&height=200&text=Faris%20Al%20Farizi&desc=Backend%20Developer&descAlignY=70&textBg=false&animation=twinkling)
+![header](https://capsule-render.vercel.app/api?type=venom&color=0:3DDC84,100:00A3FF&height=200&text=Faris%20Al%20Farizi&desc=Backend%20Developer&descAlignY=70&fontColor=FFFFFF&textBg=false&animation=twinkling&fontName=Poppins&fontAlignY=43)
 
 <p align="center">
   <img src="https://img.shields.io/badge/Backend%20Developer-0d1117?style=flat-square&logoColor=white" />
