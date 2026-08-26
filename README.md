@@ -40,13 +40,30 @@ I’m currently working on designing scalable RESTful APIs and optimizing databa
 
 ## GitHub Statistics
 
-<div align="center">
-  <img src="https://github-readme-stats.shion.dev/api?username=rizitakanashi-dev&theme=one_dark_pro&hide_border=false&include_all_commits=true&count_private=false" alt="GitHub stats" />
-  <br /><br />
-  <img src="https://streak-stats.demolab.com/?user=rizitakanashi-dev&theme=one_dark_pro&hide_border=false" alt="Streak graph" />
-  <br /><br />
-  <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=rizitakanashi-dev&theme=one_dark_pro&hide_border=false&include_all_commits=true&count_private=false&layout=compact" alt="Top languages" />
-</div>
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=rizitakanashi-dev&theme=radical" alt="GitHub Profile Summary" />
+</p>
+
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=rizitakanashi-dev&theme=radical" alt="Languages by Repository" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=rizitakanashi-dev&theme=radical" alt="Languages by Commit" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=rizitakanashi-dev&theme=radical&hide_border=true" alt="Contribution Graph" height="300" />
+</p>
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=rizitakanashi-dev&theme=radical&hide_border=true" alt="GitHub contribution streak" width="100%" />
+    </td>
+    <td width="50%" align="center">
+      <img src="./metrics.plugin.pagespeed.svg" alt="PageSpeed metrics for rizitakanashi-dev" width="100%" />
+    </td>
+  </tr>
+</table>
+
 
 ### Random Dev Quote
 <p align="center">
