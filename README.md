@@ -1,12 +1,13 @@
 ![header](https://capsule-render.vercel.app/api?type=venom&color=0:3DDC84,100:00A3FF&height=200&text=Faris%20Al%20Farizi&desc=Fullstack%20AI%20Engineer&descAlignY=70&fontColor=FFFFFF&textBg=false&animation=twinkling&fontName=Poppins&fontAlignY=43)
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Backend%20Developer-0d1117?style=flat-square&logoColor=white" />
+  <img src="https://img.shields.io/badge/Fullstack%20AI%20Engineer-0d1117?style=flat-square&logoColor=white" />
   <img src="https://img.shields.io/badge/JavaScript-0d1117?style=flat-square&logo=javascript&logoColor=white" />
   <img src="https://img.shields.io/badge/Node.js-0d1117?style=flat-square&logo=node.js&logoColor=white" />
   <img src="https://img.shields.io/badge/Express-0d1117?style=flat-square&logo=express&logoColor=white" />
   <img src="https://img.shields.io/badge/Go-0d1117?style=flat-square&logo=go&logoColor=white" />
   <img src="https://img.shields.io/badge/MariaDB-0d1117?style=flat-square&logo=mariadb&logoColor=white" />
+  <img src="https://img.shields.io/badge/C%23-0d1117?style=flat-square&logo=csharp&logoColor=white" />
 </p>
 
 ---
