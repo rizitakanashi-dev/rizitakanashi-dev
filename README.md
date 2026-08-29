@@ -106,3 +106,8 @@ I’m always looking to collaborate on open-source backend projects or system de
     <img src="https://komarev.com/ghpvc/?username=rizitakanashi-dev&icon=0&color=0" />
   </a>
 </p>
+<h3>🐍 Contribution Snake</h3>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/rizitakanashi-dev/rizitakanashi-dev/output/github-contribution-grid-snake-dark.svg?v=3" alt="Snake Animation" />
+</div>
