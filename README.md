@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=venom&color=0:3DDC84,100:00A3FF&height=200&text=Faris%20Al%20Farizi&desc=Fullstack%20AI%20Engineer&descAlignY=70&fontColor=FFFFFF&textBg=false&animation=twinkling&fontName=Poppins&fontAlignY=43)
+![header](https://capsule-render.vercel.app/api?type=venom&color=0:3DDC84,100:00A3FF&height=200&text=Faris%20Al%20Farizi&desc=Fullstack%20AI%20Engineer%20||%20Arch%20Larp&descAlignY=70&fontColor=FFFFFF&textBg=false&animation=twinkling&fontName=Poppins&fontAlignY=43)
 
 <p align="center">
   <img src="https://img.shields.io/badge/Fullstack%20AI%20Engineer-0d1117?style=flat-square&logoColor=white" />
