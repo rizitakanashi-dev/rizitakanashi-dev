@@ -21,13 +21,13 @@
   "hero": {
     "greeting": "Hallo & Willkommen, I'm",
     "name": "Faris Al Farizi",
-    "subtitle": "Full-Stack Developer & Machine Learning Engineer",
+    "subtitle": "Full-Stack Developer & Machine Learning Engineer — Arch Larper // AI Enthusiast",
     "typing": true,
     "avatarShape": "gem",
     "chips": [
       {
         "icon": "location_on",
-        "label": "Indonesia"
+        "label": "Sumatera Barat"
       },
       {
         "icon": "code",
@@ -46,20 +46,20 @@
         "url": "https://github.com/rizitakanashi-dev"
       },
       {
-        "icon": "brand:linkedin",
-        "url": "https://linkedin.com/in/faris-al-farizi"
+        "icon": "brand:discord",
+        "url": "https://discord.com/users/rizi00"
+      },
+      {
+        "icon": "brand:instagram",
+        "url": "https://instagram.com/rizi.belajar_coding"
+      },
+      {
+        "icon": "brand:whatsapp",
+        "url": "https://wa.me/6283877800002"
       },
       {
         "icon": "brand:gmail",
         "url": "mailto:rizitakanashi@gmail.com"
-      },
-      {
-        "icon": "brand:portfolio",
-        "url": ""
-      },
-      {
-        "icon": "brand:kaggle",
-        "url": "https://kaggle.com/rizitakanashi"
       }
     ],
     "variant": "chip",
@@ -72,19 +72,19 @@
     "items": [
       {
         "icon": "person",
-        "label": ""
+        "label": "Designing scalable RESTful APIs, full-stack web apps & optimizing database performance"
       },
       {
         "icon": "layers",
-        "label": "Full-Stack Development: "
+        "label": "Full-Stack & Backend: Clean code, microservices architecture & server-side logic"
       },
       {
         "icon": "neurology",
-        "label": "Machine Learning & Vision: "
+        "label": "Machine Learning & Vision: Deep learning models, computer vision (YOLO, OpenCV) & AI tools"
       },
       {
-        "icon": "architecture",
-        "label": "Software Engineering: "
+        "icon": "terminal",
+        "label": "Fun fact: I don't care about the UI as long as the API returns 200 OK! (Arch Linux & Neovim)"
       }
     ]
   },
@@ -94,110 +94,52 @@
       {
         "title": "Frontend",
         "items": [
-          {
-            "icon": "brand:react",
-            "label": "React"
-          },
-          {
-            "icon": "brand:typescript",
-            "label": "TypeScript"
-          },
-          {
-            "icon": "brand:javascript",
-            "label": "JavaScript"
-          },
-          {
-            "icon": "brand:html5",
-            "label": "HTML"
-          },
-          {
-            "icon": "brand:css",
-            "label": "CSS"
-          },
-          {
-            "icon": "brand:mui",
-            "label": "Material UI"
-          }
+          { "icon": "brand:react", "label": "React" },
+          { "icon": "brand:typescript", "label": "TypeScript" },
+          { "icon": "brand:javascript", "label": "JavaScript" },
+          { "icon": "brand:html5", "label": "HTML" },
+          { "icon": "brand:css", "label": "CSS" },
+          { "icon": "brand:mui", "label": "Material UI" }
         ]
       },
       {
         "title": "Backend",
         "items": [
-          {
-            "icon": "brand:nodedotjs",
-            "label": "Node.js"
-          },
-          {
-            "icon": "brand:laravel",
-            "label": "Laravel"
-          },
-          {
-            "icon": "brand:dotnet",
-            "label": "ASP.NET Core"
-          }
+          { "icon": "brand:nodedotjs", "label": "Node.js" },
+          { "icon": "brand:express", "label": "Express" },
+          { "icon": "brand:go", "label": "Go" },
+          { "icon": "brand:laravel", "label": "Laravel" },
+          { "icon": "brand:dotnet", "label": "ASP.NET Core" }
         ]
       },
       {
         "title": "Machine Learning",
         "items": [
-          {
-            "icon": "brand:python",
-            "label": "Python"
-          },
-          {
-            "icon": "brand:pytorch",
-            "label": "PyTorch"
-          },
-          {
-            "icon": "brand:tensorflow",
-            "label": "TensorFlow"
-          },
-          {
-            "icon": "brand:yolo",
-            "label": "YOLO"
-          },
-          {
-            "icon": "brand:opencv",
-            "label": "OpenCV"
-          }
+          { "icon": "brand:python", "label": "Python" },
+          { "icon": "brand:pytorch", "label": "PyTorch" },
+          { "icon": "brand:tensorflow", "label": "TensorFlow" },
+          { "icon": "brand:yolo", "label": "YOLO" },
+          { "icon": "brand:opencv", "label": "OpenCV" }
         ]
       },
       {
         "title": "Database",
         "items": [
-          {
-            "icon": "brand:postgresql",
-            "label": "PostgreSQL"
-          },
-          {
-            "icon": "brand:mysql",
-            "label": "MySQL"
-          }
+          { "icon": "brand:postgresql", "label": "PostgreSQL" },
+          { "icon": "brand:mysql", "label": "MySQL" },
+          { "icon": "brand:mariadb", "label": "MariaDB" }
         ]
       },
       {
         "title": "Tools & Environment",
         "items": [
-          {
-            "icon": "brand:git",
-            "label": "Git"
-          },
-          {
-            "icon": "brand:github",
-            "label": "GitHub"
-          },
-          {
-            "icon": "brand:linux",
-            "label": "Linux"
-          },
-          {
-            "icon": "brand:docker",
-            "label": "Docker"
-          },
-          {
-            "icon": "brand:vscode",
-            "label": "VS Code"
-          }
+          { "icon": "brand:git", "label": "Git" },
+          { "icon": "brand:github", "label": "GitHub" },
+          { "icon": "brand:archlinux", "label": "Arch Linux" },
+          { "icon": "brand:linux", "label": "Linux" },
+          { "icon": "brand:docker", "label": "Docker" },
+          { "icon": "brand:neovim", "label": "Neovim" },
+          { "icon": "brand:vscode", "label": "VS Code" }
         ]
       }
     ]
@@ -205,25 +147,31 @@
   "projects": {
     "source": "manual",
     "repos": [
-      "Project-01",
-      "Project-02",
-      "Project-03"
+      "steampreneur-agri-sort-ai",
+      "Rexizo-Assistant",
+      "Absensi-Tefa",
+      "AT-Frontend"
     ],
     "overrides": {
-      "Project-01": {
-        "text": "Absensi-Tefa — Stack: ASP.NET React · Demo: ",
-        "icon": "deployed_code",
+      "steampreneur-agri-sort-ai": {
+        "text": "Smart Quality Control & Pricing Hortikultura berbasis AI dan alur data untuk Petani & Pedagang.",
+        "icon": "neurology",
         "shape": "gem"
       },
-      "Project-02": {
-        "text": "Rexizo Assistant — Stack: Fast API · Demo: ",
-        "icon": "neurology",
+      "Rexizo-Assistant": {
+        "text": "Intelligent AI Assistant built with Python for automated workflows and smart interactions.",
+        "icon": "smart_toy",
         "shape": "cookie12"
       },
-      "Project-03": {
-        "text": "Rexizo Sphere — Stack: NextJs · Demo: ",
-        "icon": "terminal",
+      "Absensi-Tefa": {
+        "text": "Backend system & API architecture built with C# / ASP.NET Core for Teaching Factory attendance.",
+        "icon": "deployed_code",
         "shape": "clover"
+      },
+      "AT-Frontend": {
+        "text": "Modern TypeScript frontend web application integrated with the Absensi Tefa backend service.",
+        "icon": "code",
+        "shape": "sunny"
       }
     },
     "empty": "Projektbeschreibung folgt · No description yet.",
@@ -247,12 +195,12 @@
     "days": "Tage · days"
   },
   "buttons": {
-    "card": true,
+    "card": false,
     "items": [
       {
         "icon": "handshake",
-        "label": "Danke für Ihren Besuch! · Portfolio",
-        "url": "",
+        "label": "Danke für Ihren Besuch! · GitHub",
+        "url": "https://github.com/rizitakanashi-dev",
         "style": "filled"
       },
       {

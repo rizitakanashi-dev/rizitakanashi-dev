@@ -1010,9 +1010,88 @@ function streakOf(counts, todayIncluded = true) {
   return { current, longest };
 }
 
-async function fetchLiveGitHubData(login, fallback) {
-  if (!token || !login || login.includes("[") || login.includes(" ")) {
+async function fetchRestFallback(login, fallback) {
+  try {
+    const h = { Accept: "application/vnd.github+json", "User-Agent": "expressive-profile-brutalist" };
+    const [uRes, rRes, eRes] = await Promise.all([
+      fetch(`https://api.github.com/users/${encodeURIComponent(login)}`, { headers: h }),
+      fetch(`https://api.github.com/users/${encodeURIComponent(login)}/repos?per_page=100&type=owner&sort=pushed`, { headers: h }),
+      fetch(`https://api.github.com/users/${encodeURIComponent(login)}/events/public?per_page=100`, { headers: h }),
+    ]);
+    if (!uRes.ok || !rRes.ok) return fallback;
+    const user = await uRes.json();
+    const repos = await rRes.json();
+    const events = eRes.ok ? await eRes.json() : [];
+
+    const all = repos.map((r) => ({
+      name: r.name,
+      url: r.html_url,
+      text: (r.description || "").trim(),
+      fork: r.fork,
+      stars: r.stargazers_count,
+      language: r.language,
+      topics: r.topics ?? [],
+    }));
+    const langs = {};
+    for (const r of repos) {
+      if (!r.fork && r.language && !NOISE.has(r.language)) {
+        langs[r.language] = (langs[r.language] ?? 0) + Math.max(1, r.size);
+      }
+    }
+    const counts = {};
+    for (const e of events) {
+      const key = (e.created_at || "").slice(0, 10);
+      if (!key) continue;
+      let n = 0;
+      if (e.type === "PushEvent") n = e.payload?.distinct_size ?? e.payload?.size ?? 1;
+      else if (["PullRequestEvent", "IssuesEvent"].includes(e.type) && e.payload?.action === "opened") n = 1;
+      else if (["CreateEvent", "PullRequestReviewEvent"].includes(e.type)) n = 1;
+      counts[key] = (counts[key] ?? 0) + n;
+    }
+    const now = new Date();
+    const iso = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+    const start = new Date(now);
+    start.setDate(now.getDate() - now.getDay() - 14);
+    const days = [];
+    for (let w = 0; w < 3; w++) {
+      const row = [];
+      for (let d = 0; d < 7; d++) {
+        const date = new Date(start);
+        date.setDate(start.getDate() + w * 7 + d);
+        row.push(date > now ? null : { c: counts[iso(date)] ?? 0, day: date.getDate(), today: iso(date) === iso(now) });
+      }
+      days.push(row);
+    }
+    const series = [];
+    for (let back = 89; back >= 0; back--) {
+      const d = new Date(now);
+      d.setDate(now.getDate() - back);
+      series.push(counts[iso(d)] ?? 0);
+    }
+    const own = all.filter((r) => !r.fork);
+    const totalEvents = Object.values(counts).reduce((a, b) => a + b, 0);
+    return {
+      stars: own.reduce((a, r) => a + r.stars, 0),
+      contributions: Math.max(totalEvents, fallback?.contributions ?? 0),
+      repos: user.public_repos,
+      followers: user.followers,
+      languages: Object.entries(langs).sort((a, b) => b[1] - a[1]).slice(0, 7),
+      days,
+      streak: streakOf(series),
+      pins: own.slice(0, 4),
+      all,
+    };
+  } catch {
     return fallback;
+  }
+}
+
+async function fetchLiveGitHubData(login, fallback) {
+  if (!login || login.includes("[") || login.includes(" ")) {
+    return fallback;
+  }
+  if (!token) {
+    return fetchRestFallback(login, fallback);
   }
   try {
     const REPO = `name url description isFork stargazerCount primaryLanguage{name} repositoryTopics(first:10){nodes{topic{name}}}`;

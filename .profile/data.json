@@ -5,32 +5,28 @@
   "followers": 22,
   "languages": [
     [
+      "JavaScript",
+      81166
+    ],
+    [
       "TypeScript",
-      663001
+      19751
     ],
     [
       "Python",
-      288632
-    ],
-    [
-      "JavaScript",
-      179143
+      973
     ],
     [
       "C#",
-      159303
+      171
     ],
     [
       "Go",
-      36024
+      44
     ],
     [
-      "HTML",
-      31655
-    ],
-    [
-      "CSS",
-      30298
+      "Kotlin",
+      3
     ]
   ],
   "days": [
@@ -51,22 +47,22 @@
         "today": false
       },
       {
-        "c": 2,
+        "c": 0,
         "day": 21,
         "today": false
       },
       {
-        "c": 4,
+        "c": 1,
         "day": 22,
         "today": false
       },
       {
-        "c": 13,
+        "c": 8,
         "day": 23,
         "today": false
       },
       {
-        "c": 8,
+        "c": 6,
         "day": 24,
         "today": false
       }
@@ -78,7 +74,7 @@
         "today": false
       },
       {
-        "c": 4,
+        "c": 0,
         "day": 26,
         "today": false
       },
@@ -93,12 +89,12 @@
         "today": false
       },
       {
-        "c": 5,
+        "c": 1,
         "day": 29,
         "today": false
       },
       {
-        "c": 1,
+        "c": 0,
         "day": 30,
         "today": false
       },
@@ -110,12 +106,12 @@
     ],
     [
       {
-        "c": 2,
+        "c": 0,
         "day": 1,
         "today": false
       },
       {
-        "c": 7,
+        "c": 0,
         "day": 2,
         "today": false
       },
@@ -125,12 +121,12 @@
         "today": false
       },
       {
-        "c": 6,
+        "c": 1,
         "day": 4,
         "today": false
       },
       {
-        "c": 2,
+        "c": 0,
         "day": 5,
         "today": false
       },
@@ -140,15 +136,15 @@
         "today": false
       },
       {
-        "c": 4,
+        "c": 0,
         "day": 7,
         "today": true
       }
     ]
   ],
   "streak": {
-    "current": 1,
-    "longest": 8
+    "current": 0,
+    "longest": 3
   },
   "pins": [
     {
@@ -159,9 +155,16 @@
       "stars": 0,
       "language": "JavaScript",
       "topics": []
-    }
-  ],
-  "all": [
+    },
+    {
+      "name": "rizitakanashi-dev",
+      "url": "https://github.com/rizitakanashi-dev/rizitakanashi-dev",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "JavaScript",
+      "topics": []
+    },
     {
       "name": "Rexizo-Assistant",
       "url": "https://github.com/rizitakanashi-dev/Rexizo-Assistant",
@@ -172,12 +175,41 @@
       "topics": []
     },
     {
+      "name": "belajar-aiml",
+      "url": "https://github.com/rizitakanashi-dev/belajar-aiml",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "Python",
+      "topics": []
+    }
+  ],
+  "all": [
+    {
       "name": "steampreneur-agri-sort-ai",
       "url": "https://github.com/rizitakanashi-dev/steampreneur-agri-sort-ai",
       "text": "Website Quality Control & Smart Pricing Hortikultura berbasis alur berbasis data untuk Petani & Pedagang | STEAMpreneur SMK 2026.",
       "fork": false,
       "stars": 0,
       "language": "JavaScript",
+      "topics": []
+    },
+    {
+      "name": "rizitakanashi-dev",
+      "url": "https://github.com/rizitakanashi-dev/rizitakanashi-dev",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "JavaScript",
+      "topics": []
+    },
+    {
+      "name": "Rexizo-Assistant",
+      "url": "https://github.com/rizitakanashi-dev/Rexizo-Assistant",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "Python",
       "topics": []
     },
     {
@@ -190,21 +222,21 @@
       "topics": []
     },
     {
-      "name": "AT-Frontend",
-      "url": "https://github.com/rizitakanashi-dev/AT-Frontend",
-      "text": "",
-      "fork": false,
-      "stars": 0,
-      "language": "TypeScript",
-      "topics": []
-    },
-    {
       "name": "Absensi-Tefa",
       "url": "https://github.com/rizitakanashi-dev/Absensi-Tefa",
       "text": "",
       "fork": false,
       "stars": 0,
       "language": "C#",
+      "topics": []
+    },
+    {
+      "name": "AT-Frontend",
+      "url": "https://github.com/rizitakanashi-dev/AT-Frontend",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "TypeScript",
       "topics": []
     },
     {
@@ -253,30 +285,21 @@
       "topics": []
     },
     {
-      "name": "belajar-javascript",
-      "url": "https://github.com/rizitakanashi-dev/belajar-javascript",
-      "text": "dasar dasar javascript",
-      "fork": false,
-      "stars": 0,
-      "language": "JavaScript",
-      "topics": []
-    },
-    {
-      "name": "rizitakanashi-dev",
-      "url": "https://github.com/rizitakanashi-dev/rizitakanashi-dev",
-      "text": "",
-      "fork": false,
-      "stars": 0,
-      "language": null,
-      "topics": []
-    },
-    {
       "name": "belajar-backend",
       "url": "https://github.com/rizitakanashi-dev/belajar-backend",
       "text": "",
       "fork": false,
       "stars": 0,
       "language": "Go",
+      "topics": []
+    },
+    {
+      "name": "belajar-javascript",
+      "url": "https://github.com/rizitakanashi-dev/belajar-javascript",
+      "text": "dasar dasar javascript",
+      "fork": false,
+      "stars": 0,
+      "language": "JavaScript",
       "topics": []
     },
     {
