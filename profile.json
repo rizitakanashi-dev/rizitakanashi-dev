@@ -1,0 +1,272 @@
+{
+  "version": 1,
+  "login": "rizitakanashi-dev",
+  "seed": "#B5382A",
+  "seedFromAvatar": false,
+  "scheme": "tonalSpot",
+  "motion": true,
+  "iconFill": true,
+  "order": [
+    "hero",
+    "socials",
+    "about",
+    "stack",
+    "projects",
+    "stats",
+    "streak",
+    "wave",
+    "buttons"
+  ],
+  "hidden": [],
+  "hero": {
+    "greeting": "Hallo & Willkommen, I'm",
+    "name": "Faris Al Farizi",
+    "subtitle": "Full-Stack Developer & Machine Learning Engineer",
+    "typing": true,
+    "avatarShape": "gem",
+    "chips": [
+      {
+        "icon": "location_on",
+        "label": "Indonesia"
+      },
+      {
+        "icon": "code",
+        "label": "Full-Stack"
+      },
+      {
+        "icon": "psychology",
+        "label": "ML Engineer"
+      }
+    ]
+  },
+  "socials": {
+    "items": [
+      {
+        "icon": "brand:github",
+        "url": "https://github.com/rizitakanashi-dev"
+      },
+      {
+        "icon": "brand:linkedin",
+        "url": "https://linkedin.com/in/faris-al-farizi"
+      },
+      {
+        "icon": "brand:gmail",
+        "url": "mailto:rizitakanashi@gmail.com"
+      },
+      {
+        "icon": "brand:portfolio",
+        "url": ""
+      },
+      {
+        "icon": "brand:kaggle",
+        "url": "https://kaggle.com/rizitakanashi"
+      }
+    ],
+    "variant": "chip",
+    "fill": "tonal",
+    "card": true,
+    "shape": "pill"
+  },
+  "about": {
+    "title": "Über mich · About Me",
+    "items": [
+      {
+        "icon": "person",
+        "label": ""
+      },
+      {
+        "icon": "layers",
+        "label": "Full-Stack Development: "
+      },
+      {
+        "icon": "neurology",
+        "label": "Machine Learning & Vision: "
+      },
+      {
+        "icon": "architecture",
+        "label": "Software Engineering: "
+      }
+    ]
+  },
+  "stack": {
+    "title": "Technologie-Stack · Tech Stack",
+    "groups": [
+      {
+        "title": "Frontend",
+        "items": [
+          {
+            "icon": "brand:react",
+            "label": "React"
+          },
+          {
+            "icon": "brand:typescript",
+            "label": "TypeScript"
+          },
+          {
+            "icon": "brand:javascript",
+            "label": "JavaScript"
+          },
+          {
+            "icon": "brand:html5",
+            "label": "HTML"
+          },
+          {
+            "icon": "brand:css",
+            "label": "CSS"
+          },
+          {
+            "icon": "brand:mui",
+            "label": "Material UI"
+          }
+        ]
+      },
+      {
+        "title": "Backend",
+        "items": [
+          {
+            "icon": "brand:nodedotjs",
+            "label": "Node.js"
+          },
+          {
+            "icon": "brand:laravel",
+            "label": "Laravel"
+          },
+          {
+            "icon": "brand:dotnet",
+            "label": "ASP.NET Core"
+          }
+        ]
+      },
+      {
+        "title": "Machine Learning",
+        "items": [
+          {
+            "icon": "brand:python",
+            "label": "Python"
+          },
+          {
+            "icon": "brand:pytorch",
+            "label": "PyTorch"
+          },
+          {
+            "icon": "brand:tensorflow",
+            "label": "TensorFlow"
+          },
+          {
+            "icon": "brand:yolo",
+            "label": "YOLO"
+          },
+          {
+            "icon": "brand:opencv",
+            "label": "OpenCV"
+          }
+        ]
+      },
+      {
+        "title": "Database",
+        "items": [
+          {
+            "icon": "brand:postgresql",
+            "label": "PostgreSQL"
+          },
+          {
+            "icon": "brand:mysql",
+            "label": "MySQL"
+          }
+        ]
+      },
+      {
+        "title": "Tools & Environment",
+        "items": [
+          {
+            "icon": "brand:git",
+            "label": "Git"
+          },
+          {
+            "icon": "brand:github",
+            "label": "GitHub"
+          },
+          {
+            "icon": "brand:linux",
+            "label": "Linux"
+          },
+          {
+            "icon": "brand:docker",
+            "label": "Docker"
+          },
+          {
+            "icon": "brand:vscode",
+            "label": "VS Code"
+          }
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "source": "manual",
+    "repos": [
+      "Project-01",
+      "Project-02",
+      "Project-03"
+    ],
+    "overrides": {
+      "Project-01": {
+        "text": "Absensi-Tefa — Stack: ASP.NET React · Demo: ",
+        "icon": "deployed_code",
+        "shape": "gem"
+      },
+      "Project-02": {
+        "text": "Rexizo Assistant — Stack: Fast API · Demo: ",
+        "icon": "neurology",
+        "shape": "cookie12"
+      },
+      "Project-03": {
+        "text": "Rexizo Sphere — Stack: NextJs · Demo: ",
+        "icon": "terminal",
+        "shape": "clover"
+      }
+    },
+    "empty": "Projektbeschreibung folgt · No description yet.",
+    "fork": "Fork"
+  },
+  "stats": {
+    "title": "GitHub-Statistiken · Activity",
+    "stars": "Stars earned",
+    "contributions": "Contributions this year",
+    "repos": "Public repos",
+    "followers": "Followers",
+    "calendar": "Letzte 21 Tage · Last 21 days",
+    "weekdays": "MDMDFSS",
+    "languages": "Meistgenutzte Sprachen · Top Languages",
+    "showLanguages": true
+  },
+  "streak": {
+    "title": "Beitragsserie · Contribution Streak",
+    "current": "Aktuelle Serie · Current streak",
+    "longest": "Jahresrekord · Longest this year",
+    "days": "Tage · days"
+  },
+  "buttons": {
+    "card": true,
+    "items": [
+      {
+        "icon": "handshake",
+        "label": "Danke für Ihren Besuch! · Portfolio",
+        "url": "",
+        "style": "filled"
+      },
+      {
+        "icon": "mail",
+        "label": "Kontakt · rizitakanashi@gmail.com",
+        "url": "mailto:rizitakanashi@gmail.com",
+        "style": "tonal"
+      },
+      {
+        "icon": "book_2",
+        "label": "Alle Projekte · Repositories",
+        "url": "https://github.com/rizitakanashi-dev?tab=repositories",
+        "style": "tonal"
+      }
+    ]
+  }
+}
