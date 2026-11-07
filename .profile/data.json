@@ -1,130 +1,40 @@
 {
-  "key": "placeholder-init",
   "stars": 0,
-  "contributions": 0,
-  "repos": 0,
-  "followers": 0,
+  "contributions": 288,
+  "repos": 15,
+  "followers": 22,
   "languages": [
     [
       "TypeScript",
-      1
+      663001
     ],
     [
       "Python",
-      1
+      288632
     ],
     [
       "JavaScript",
-      1
+      179143
     ],
     [
       "C#",
-      1
+      159303
     ],
     [
-      "PHP",
-      1
+      "Go",
+      36024
     ],
     [
       "HTML",
-      1
+      31655
     ],
     [
       "CSS",
-      1
+      30298
     ]
   ],
   "days": [
     [
-      {
-        "c": 0,
-        "day": 1,
-        "today": false
-      },
-      {
-        "c": 0,
-        "day": 2,
-        "today": false
-      },
-      {
-        "c": 0,
-        "day": 3,
-        "today": false
-      },
-      {
-        "c": 0,
-        "day": 4,
-        "today": false
-      },
-      {
-        "c": 0,
-        "day": 5,
-        "today": false
-      },
-      {
-        "c": 0,
-        "day": 6,
-        "today": false
-      },
-      {
-        "c": 0,
-        "day": 7,
-        "today": false
-      }
-    ],
-    [
-      {
-        "c": 0,
-        "day": 8,
-        "today": false
-      },
-      {
-        "c": 0,
-        "day": 9,
-        "today": false
-      },
-      {
-        "c": 0,
-        "day": 10,
-        "today": false
-      },
-      {
-        "c": 0,
-        "day": 11,
-        "today": false
-      },
-      {
-        "c": 0,
-        "day": 12,
-        "today": false
-      },
-      {
-        "c": 0,
-        "day": 13,
-        "today": false
-      },
-      {
-        "c": 0,
-        "day": 14,
-        "today": false
-      }
-    ],
-    [
-      {
-        "c": 0,
-        "day": 15,
-        "today": false
-      },
-      {
-        "c": 0,
-        "day": 16,
-        "today": false
-      },
-      {
-        "c": 0,
-        "day": 17,
-        "today": false
-      },
       {
         "c": 0,
         "day": 18,
@@ -141,90 +51,251 @@
         "today": false
       },
       {
-        "c": 0,
+        "c": 2,
         "day": 21,
+        "today": false
+      },
+      {
+        "c": 4,
+        "day": 22,
+        "today": false
+      },
+      {
+        "c": 13,
+        "day": 23,
+        "today": false
+      },
+      {
+        "c": 8,
+        "day": 24,
+        "today": false
+      }
+    ],
+    [
+      {
+        "c": 0,
+        "day": 25,
+        "today": false
+      },
+      {
+        "c": 4,
+        "day": 26,
+        "today": false
+      },
+      {
+        "c": 0,
+        "day": 27,
+        "today": false
+      },
+      {
+        "c": 0,
+        "day": 28,
+        "today": false
+      },
+      {
+        "c": 5,
+        "day": 29,
+        "today": false
+      },
+      {
+        "c": 1,
+        "day": 30,
+        "today": false
+      },
+      {
+        "c": 0,
+        "day": 31,
+        "today": false
+      }
+    ],
+    [
+      {
+        "c": 2,
+        "day": 1,
+        "today": false
+      },
+      {
+        "c": 7,
+        "day": 2,
+        "today": false
+      },
+      {
+        "c": 0,
+        "day": 3,
+        "today": false
+      },
+      {
+        "c": 6,
+        "day": 4,
+        "today": false
+      },
+      {
+        "c": 2,
+        "day": 5,
+        "today": false
+      },
+      {
+        "c": 0,
+        "day": 6,
+        "today": false
+      },
+      {
+        "c": 4,
+        "day": 7,
         "today": true
       }
     ]
   ],
   "streak": {
-    "current": 0,
-    "longest": 0
+    "current": 1,
+    "longest": 8
   },
   "pins": [
     {
-      "name": "Project-01",
-      "url": "https://github.com/[YOUR GITHUB USERNAME]/[PROJECT 01 REPO]",
-      "text": "[PROJECT 01 DESCRIPTION] — Stack: [TECH STACK] · Demo: [LIVE DEMO URL]",
+      "name": "steampreneur-agri-sort-ai",
+      "url": "https://github.com/rizitakanashi-dev/steampreneur-agri-sort-ai",
+      "text": "Website Quality Control & Smart Pricing Hortikultura berbasis alur berbasis data untuk Petani & Pedagang | STEAMpreneur SMK 2026.",
       "fork": false,
       "stars": 0,
-      "language": "TypeScript",
-      "topics": [
-        "fullstack",
-        "react"
-      ]
-    },
-    {
-      "name": "Project-02",
-      "url": "https://github.com/[YOUR GITHUB USERNAME]/[PROJECT 02 REPO]",
-      "text": "[PROJECT 02 DESCRIPTION] — Stack: [TECH STACK] · Demo: [LIVE DEMO URL]",
-      "fork": false,
-      "stars": 0,
-      "language": "Python",
-      "topics": [
-        "machine-learning",
-        "pytorch"
-      ]
-    },
-    {
-      "name": "Project-03",
-      "url": "https://github.com/[YOUR GITHUB USERNAME]/[PROJECT 03 REPO]",
-      "text": "[PROJECT 03 DESCRIPTION] — Stack: [TECH STACK] · Demo: [LIVE DEMO URL]",
-      "fork": false,
-      "stars": 0,
-      "language": "C#",
-      "topics": [
-        "backend",
-        "dotnet"
-      ]
+      "language": "JavaScript",
+      "topics": []
     }
   ],
   "all": [
     {
-      "name": "Project-01",
-      "url": "https://github.com/[YOUR GITHUB USERNAME]/[PROJECT 01 REPO]",
-      "text": "[PROJECT 01 DESCRIPTION] — Stack: [TECH STACK] · Demo: [LIVE DEMO URL]",
-      "fork": false,
-      "stars": 0,
-      "language": "TypeScript",
-      "topics": [
-        "fullstack",
-        "react"
-      ]
-    },
-    {
-      "name": "Project-02",
-      "url": "https://github.com/[YOUR GITHUB USERNAME]/[PROJECT 02 REPO]",
-      "text": "[PROJECT 02 DESCRIPTION] — Stack: [TECH STACK] · Demo: [LIVE DEMO URL]",
+      "name": "Rexizo-Assistant",
+      "url": "https://github.com/rizitakanashi-dev/Rexizo-Assistant",
+      "text": "",
       "fork": false,
       "stars": 0,
       "language": "Python",
-      "topics": [
-        "machine-learning",
-        "pytorch"
-      ]
+      "topics": []
     },
     {
-      "name": "Project-03",
-      "url": "https://github.com/[YOUR GITHUB USERNAME]/[PROJECT 03 REPO]",
-      "text": "[PROJECT 03 DESCRIPTION] — Stack: [TECH STACK] · Demo: [LIVE DEMO URL]",
+      "name": "steampreneur-agri-sort-ai",
+      "url": "https://github.com/rizitakanashi-dev/steampreneur-agri-sort-ai",
+      "text": "Website Quality Control & Smart Pricing Hortikultura berbasis alur berbasis data untuk Petani & Pedagang | STEAMpreneur SMK 2026.",
+      "fork": false,
+      "stars": 0,
+      "language": "JavaScript",
+      "topics": []
+    },
+    {
+      "name": "belajar-aiml",
+      "url": "https://github.com/rizitakanashi-dev/belajar-aiml",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "Python",
+      "topics": []
+    },
+    {
+      "name": "AT-Frontend",
+      "url": "https://github.com/rizitakanashi-dev/AT-Frontend",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "TypeScript",
+      "topics": []
+    },
+    {
+      "name": "Absensi-Tefa",
+      "url": "https://github.com/rizitakanashi-dev/Absensi-Tefa",
+      "text": "",
       "fork": false,
       "stars": 0,
       "language": "C#",
-      "topics": [
-        "backend",
-        "dotnet"
-      ]
+      "topics": []
+    },
+    {
+      "name": "belajar-kotlin",
+      "url": "https://github.com/rizitakanashi-dev/belajar-kotlin",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "Kotlin",
+      "topics": []
+    },
+    {
+      "name": "golang-todolist",
+      "url": "https://github.com/rizitakanashi-dev/golang-todolist",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "Go",
+      "topics": []
+    },
+    {
+      "name": "golang-medsos-api",
+      "url": "https://github.com/rizitakanashi-dev/golang-medsos-api",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "Go",
+      "topics": []
+    },
+    {
+      "name": "golang-contact-form",
+      "url": "https://github.com/rizitakanashi-dev/golang-contact-form",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "Go",
+      "topics": []
+    },
+    {
+      "name": "node-stok-barang",
+      "url": "https://github.com/rizitakanashi-dev/node-stok-barang",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "JavaScript",
+      "topics": []
+    },
+    {
+      "name": "belajar-javascript",
+      "url": "https://github.com/rizitakanashi-dev/belajar-javascript",
+      "text": "dasar dasar javascript",
+      "fork": false,
+      "stars": 0,
+      "language": "JavaScript",
+      "topics": []
+    },
+    {
+      "name": "rizitakanashi-dev",
+      "url": "https://github.com/rizitakanashi-dev/rizitakanashi-dev",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": null,
+      "topics": []
+    },
+    {
+      "name": "belajar-backend",
+      "url": "https://github.com/rizitakanashi-dev/belajar-backend",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "Go",
+      "topics": []
+    },
+    {
+      "name": "kuningan-restaurant",
+      "url": "https://github.com/rizitakanashi-dev/kuningan-restaurant",
+      "text": "this a website kuningan-restaurant",
+      "fork": false,
+      "stars": 0,
+      "language": "TypeScript",
+      "topics": []
+    },
+    {
+      "name": "my-project",
+      "url": "https://github.com/rizitakanashi-dev/my-project",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "TypeScript",
+      "topics": []
     }
   ]
 }

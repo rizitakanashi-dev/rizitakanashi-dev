@@ -8,9 +8,9 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/stack-dark.svg"><img src="assets/stack-light.svg" width="100%" alt="Technologie-Stack · Tech Stack"></picture>
 
-<a href="https://github.com/[YOUR GITHUB USERNAME]/[PROJECT 01 REPO]"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-project-01-dark.svg"><img src="assets/project-project-01-light.svg" width="49%" alt="Project-01"></picture></a>&nbsp;<a href="https://github.com/[YOUR GITHUB USERNAME]/[PROJECT 02 REPO]"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-project-02-dark.svg"><img src="assets/project-project-02-light.svg" width="49%" alt="Project-02"></picture></a>
+<a href="https://github.com/rizitakanashi-dev/Project-01"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-project-01-dark.svg"><img src="assets/project-project-01-light.svg" width="49%" alt="Project-01"></picture></a>&nbsp;<a href="https://github.com/rizitakanashi-dev/Project-02"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-project-02-dark.svg"><img src="assets/project-project-02-light.svg" width="49%" alt="Project-02"></picture></a>
 
-<a href="https://github.com/[YOUR GITHUB USERNAME]/[PROJECT 03 REPO]"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-project-03-dark.svg"><img src="assets/project-project-03-light.svg" width="49%" alt="Project-03"></picture></a>
+<a href="https://github.com/rizitakanashi-dev/Project-03"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/project-project-03-dark.svg"><img src="assets/project-project-03-light.svg" width="49%" alt="Project-03"></picture></a>
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg"><img src="assets/stats-light.svg" width="100%" alt="GitHub-Statistiken · Activity"></picture>
 
