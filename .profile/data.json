@@ -1,6 +1,6 @@
 {
   "stars": 0,
-  "contributions": 292,
+  "contributions": 306,
   "repos": 15,
   "followers": 22,
   "languages": [
@@ -9,12 +9,12 @@
       663001
     ],
     [
-      "Python",
-      399180
+      "JavaScript",
+      494699
     ],
     [
-      "JavaScript",
-      376902
+      "Python",
+      491339
     ],
     [
       "C#",
@@ -34,43 +34,6 @@
     ]
   ],
   "days": [
-    [
-      {
-        "c": 0,
-        "day": 18,
-        "today": false
-      },
-      {
-        "c": 0,
-        "day": 19,
-        "today": false
-      },
-      {
-        "c": 0,
-        "day": 20,
-        "today": false
-      },
-      {
-        "c": 2,
-        "day": 21,
-        "today": false
-      },
-      {
-        "c": 4,
-        "day": 22,
-        "today": false
-      },
-      {
-        "c": 13,
-        "day": 23,
-        "today": false
-      },
-      {
-        "c": 8,
-        "day": 24,
-        "today": false
-      }
-    ],
     [
       {
         "c": 0,
@@ -142,12 +105,25 @@
       {
         "c": 8,
         "day": 7,
-        "today": true
+        "today": false
       }
+    ],
+    [
+      {
+        "c": 14,
+        "day": 8,
+        "today": true
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
     ]
   ],
   "streak": {
-    "current": 1,
+    "current": 2,
     "longest": 8
   },
   "pins": [
