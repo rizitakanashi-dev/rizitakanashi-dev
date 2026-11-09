@@ -78,55 +78,69 @@ function icon(icons, name, x, y, size, fill) {
   return `<path d="${d}" fill="${fill}" transform="translate(${x.toFixed(1)} ${(y + 960 * s).toFixed(1)}) scale(${s.toFixed(4)})"/>`;
 }
 
-// --- Neumorphism Theme System (Soft Extruded & Inset Surfaces with German Accents) ---
+// --- Pure Tactile Neumorphism Theme System + Neo-Brutalist Structural Accents ---
 function getTheme(dark) {
   if (dark) {
     return {
       dark: true,
-      bg: "#181A1F",
-      panelBg: "#181A1F",
-      shLight: "#23262D",      // Top-left highlight shadow
-      shDark: "#0D0E11",       // Bottom-right deep shadow
-      shLightSubtle: "#1F2128",
-      shDarkSubtle: "#101114",
-      insetTop: "#0E0F12",
-      insetBottom: "#22252C",
-      borderOuter: "rgba(255, 255, 255, 0.04)",
-      borderInner: "rgba(0, 0, 0, 0.4)",
-      textMain: "#E6E9EE",
-      textMuted: "#8E94A0",
-      textSoft: "#6B7280",
-      red: "#FF5252",
-      redGlow: "rgba(255, 82, 82, 0.28)",
-      gold: "#FFD152",
-      goldGlow: "rgba(255, 209, 82, 0.25)",
-      accentBlue: "#60A5FA",
-      concaveGradient: ["#17191E", "#1A1C21"],
-      convexGradient: ["#1B1D23", "#16171C"],
+      // Base Neumorphic Slate-Charcoal Surface
+      surface: "#1E222B",
+      surfaceRaised: "#222731",
+      surfaceSunken: "#181B23",
+      // Dual Soft Neumorphic Shadows (Top-Left Light, Bottom-Right Dark)
+      shLight: "#2B313E",
+      shDark: "#101218",
+      // Inner Sunken Gradients
+      wellGradTop: "#13161D",
+      wellGradBot: "#262B36",
+      // Raised Convex Gradients
+      convexTop: "#252A35",
+      convexBot: "#1B1F27",
+      // Subtle Tactile Rim Highlights
+      rimLight: "rgba(255, 255, 255, 0.065)",
+      rimDark: "rgba(0, 0, 0, 0.55)",
+      // Typography
+      textMain: "#F0F4F8",
+      textMuted: "#9BA4B5",
+      textSoft: "#6C7586",
+      // Vibrant Accents (German Editorial Crimson & Gold + Neo-Vibrant Purple/Blue)
+      red: "#FF4D5E",
+      gold: "#FFB800",
+      purple: "#A855F7",
+      blue: "#38BDF8",
+      green: "#22C55E",
+      brutalBorder: "#323846",
     };
   }
   return {
     dark: false,
-    bg: "#E3E7ED",
-    panelBg: "#E3E7ED",
-    shLight: "#FFFFFF",        // Top-left soft highlight
-    shDark: "#BAC1CC",         // Bottom-right diffuse shadow
-    shLightSubtle: "#FFFFFF",
-    shDarkSubtle: "#C6CDD8",
-    insetTop: "#B4BCC8",
-    insetBottom: "#FFFFFF",
-    borderOuter: "rgba(255, 255, 255, 0.7)",
-    borderInner: "rgba(160, 170, 185, 0.3)",
-    textMain: "#22262E",
-    textMuted: "#5C6474",
-    textSoft: "#7E889B",
-    red: "#E53935",
-    redGlow: "rgba(229, 57, 53, 0.25)",
-    gold: "#D99B00",
-    goldGlow: "rgba(217, 155, 0, 0.25)",
-    accentBlue: "#2563EB",
-    concaveGradient: ["#DADFE7", "#E7EBF1"],
-    convexGradient: ["#E7EBF1", "#DADFE7"],
+    // Classic Soft Alabaster-Gray Neumorphic Surface (matches reference image)
+    surface: "#ECEFF4",
+    surfaceRaised: "#F1F4F9",
+    surfaceSunken: "#E2E6EE",
+    // Dual Soft Neumorphic Shadows (Pure White Top-Left, Cool Gray-Blue Bottom-Right)
+    shLight: "#FFFFFF",
+    shDark: "#C5CEDB",
+    // Inner Sunken Gradients
+    wellGradTop: "#CFD7E3",
+    wellGradBot: "#FAFCFF",
+    // Raised Convex Gradients
+    convexTop: "#F7F9FC",
+    convexBot: "#E4E8F0",
+    // Subtle Tactile Rim Highlights
+    rimLight: "rgba(255, 255, 255, 0.92)",
+    rimDark: "rgba(175, 186, 204, 0.45)",
+    // Typography
+    textMain: "#1E2430",
+    textMuted: "#5A6578",
+    textSoft: "#8490A5",
+    // Vibrant Accents
+    red: "#E11D48",
+    gold: "#D97706",
+    purple: "#9333EA",
+    blue: "#0284C7",
+    green: "#16A34A",
+    brutalBorder: "#D0D7E2",
   };
 }
 
@@ -134,17 +148,13 @@ const CSS = `
 .up{animation:up .75s cubic-bezier(.16,1,.3,1) both}
 .pop{transform-box:fill-box;transform-origin:center;animation:pop .55s cubic-bezier(.34,1.56,.64,1) both}
 .fade{animation:fade .8s ease both}
-.spin{transform-box:fill-box;transform-origin:center;animation:spin 36s linear infinite}
 .bob{transform-box:fill-box;transform-origin:center;animation:bob 6s ease-in-out infinite}
-.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 4s ease-in-out infinite}
 .grow{transform-box:fill-box;transform-origin:left center;animation:grow 1s cubic-bezier(.2,0,0,1) both}
 .wave{animation:wave 3s linear infinite}
 @keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-@keyframes pop{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+@keyframes pop{from{opacity:0;transform:scale(.88)}to{opacity:1;transform:scale(1)}}
 @keyframes fade{from{opacity:0}to{opacity:1}}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-@keyframes pulse{0%,100%{opacity:.85}50%{opacity:1}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes wave{from{transform:translateX(0)}to{transform:translateX(-48px)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}`;
@@ -166,207 +176,248 @@ function svg(w, h, body, title, motion = true, extra = "") {
   );
 }
 
-// --- Neumorphic Filters & Shapes ---
-function neumorphicFilterDefs(p, uid) {
-  const dx = 6;
-  const dy = 6;
-  const dev = 7;
-  return `
-    <defs>
-      <!-- Extruded Card Shadow Filter -->
-      <filter id="neu-ext-${uid}" x="-20%" y="-20%" width="150%" height="150%">
-        <feDropShadow dx="-${dx}" dy="-${dy}" stdDeviation="${dev}" flood-color="${p.shLight}" flood-opacity="${p.dark ? "0.6" : "0.9"}"/>
-        <feDropShadow dx="${dx}" dy="${dy}" stdDeviation="${dev + 1}" flood-color="${p.shDark}" flood-opacity="${p.dark ? "0.8" : "0.6"}"/>
-      </filter>
-      <!-- Small Element Extruded Filter (Chips & Buttons) -->
-      <filter id="neu-sm-${uid}" x="-30%" y="-30%" width="170%" height="170%">
-        <feDropShadow dx="-3" dy="-3" stdDeviation="3.5" flood-color="${p.shLight}" flood-opacity="${p.dark ? "0.65" : "0.95"}"/>
-        <feDropShadow dx="3" dy="3" stdDeviation="4" flood-color="${p.shDark}" flood-opacity="${p.dark ? "0.75" : "0.55"}"/>
-      </filter>
-      <!-- Pressed / Inset Gradient Simulators -->
-      <linearGradient id="neu-pressed-${uid}" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="${p.insetTop}"/>
-        <stop offset="100%" stop-color="${p.insetBottom}"/>
-      </linearGradient>
-      <!-- Subtle Surface Convex Gradient -->
-      <linearGradient id="neu-convex-${uid}" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="${p.convexGradient[0]}"/>
-        <stop offset="100%" stop-color="${p.convexGradient[1]}"/>
-      </linearGradient>
-      <!-- Glow Gradients -->
-      <radialGradient id="glow-red-${uid}" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="${p.red}" stop-opacity="0.35"/>
-        <stop offset="100%" stop-color="${p.red}" stop-opacity="0"/>
-      </radialGradient>
-      <radialGradient id="glow-gold-${uid}" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="${p.gold}" stop-opacity="0.35"/>
-        <stop offset="100%" stop-color="${p.gold}" stop-opacity="0"/>
-      </radialGradient>
-    </defs>
-  `;
-}
-
-// Extruded Neumorphic Panel (Card)
-function neuPanel(w, h, p, uid, opts = {}) {
-  const rx = opts.rx ?? 24;
-  const pad = opts.margin ?? 14;
-  const pw = w - pad * 2;
-  const ph = h - pad * 2;
-  const defs = neumorphicFilterDefs(p, uid);
-
-  const body = [
-    defs,
-    // Soft extruded panel with dual light/dark drop-shadow
-    `<rect x="${pad}" y="${pad}" width="${pw}" height="${ph}" rx="${rx}" fill="url(#neu-convex-${uid})" filter="url(#neu-ext-${uid})"/>`,
-    // Subtle outer perimeter rim
-    `<rect x="${pad + 0.5}" y="${pad + 0.5}" width="${pw - 1}" height="${ph - 1}" rx="${rx}" fill="none" stroke="${p.borderOuter}" stroke-width="1.2"/>`,
-    // German Tri-color soft status dot/pills in top-right (inside sunken well)
-    neuWell(pad + pw - 68, pad + 12, 54, 16, 8, p, uid),
-    `<circle cx="${pad + pw - 55}" cy="${pad + 20}" r="3.5" fill="${p.dark ? "#383C47" : "#111115"}"/>`,
-    `<circle cx="${pad + pw - 41}" cy="${pad + 20}" r="3.5" fill="${p.red}"/>`,
-    `<circle cx="${pad + pw - 27}" cy="${pad + 20}" r="3.5" fill="${p.gold}"/>`,
-  ].join("");
-
-  return { svg: body, pw, ph, pad };
-}
-
-// Neumorphic Inset / Sunken Well (For meters, badges, and counters)
-function neuWell(x, y, w, h, rx, p, uid, fill = "url(#neu-pressed-" + uid + ")") {
+// --- Neumorphic SVG Filter & Gradient Definitions ---
+// Using standard feGaussianBlur + feOffset + feMerge (NO colorSpaceInterpolation bugs!)
+function neuDefs(p, uid) {
   return [
-    `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="${fill}"/>`,
-    `<rect x="${x + 0.5}" y="${y + 0.5}" width="${w - 1}" height="${h - 1}" rx="${rx}" fill="none" stroke="${p.borderInner}" stroke-width="1.2"/>`,
+    `<defs>`,
+    // 1. Medium Extruded Shadow (for Cards, Pills, Buttons)
+    `<filter id="ext-${uid}" x="-25%" y="-25%" width="150%" height="150%">`,
+    `<feDropShadow dx="-5" dy="-5" stdDeviation="5" flood-color="${p.shLight}" flood-opacity="${p.dark ? "0.7" : "0.95"}"/>`,
+    `<feDropShadow dx="5" dy="5" stdDeviation="6" flood-color="${p.shDark}" flood-opacity="${p.dark ? "0.85" : "0.65"}"/>`,
+    `</filter>`,
+    // 2. Small Tactile Extruded Shadow (for Chips, Knobs, Circular Discs)
+    `<filter id="sm-${uid}" x="-30%" y="-30%" width="160%" height="160%">`,
+    `<feDropShadow dx="-3" dy="-3" stdDeviation="3" flood-color="${p.shLight}" flood-opacity="${p.dark ? "0.75" : "0.98"}"/>`,
+    `<feDropShadow dx="3" dy="3" stdDeviation="3.5" flood-color="${p.shDark}" flood-opacity="${p.dark ? "0.85" : "0.6"}"/>`,
+    `</filter>`,
+    // 3. Soft Raised Convex Surface Gradient
+    `<linearGradient id="cvx-${uid}" x1="0%" y1="0%" x2="100%" y2="100%">`,
+    `<stop offset="0%" stop-color="${p.convexTop}"/>`,
+    `<stop offset="100%" stop-color="${p.convexBot}"/>`,
+    `</linearGradient>`,
+    // 4. Sunken / Recessed Well Gradient (Darker Top-Left, Lighter Bottom-Right)
+    `<linearGradient id="well-${uid}" x1="0%" y1="0%" x2="100%" y2="100%">`,
+    `<stop offset="0%" stop-color="${p.wellGradTop}"/>`,
+    `<stop offset="55%" stop-color="${p.surfaceSunken}"/>`,
+    `<stop offset="100%" stop-color="${p.wellGradBot}"/>`,
+    `</linearGradient>`,
+    // 5. Diagonal Rim Bevel for Sunken Wells (Dark Top-Left, White Bottom-Right)
+    `<linearGradient id="well-rim-${uid}" x1="0%" y1="0%" x2="100%" y2="100%">`,
+    `<stop offset="0%" stop-color="${p.shDark}" stop-opacity="0.8"/>`,
+    `<stop offset="50%" stop-color="${p.surface}" stop-opacity="0"/>`,
+    `<stop offset="100%" stop-color="${p.shLight}" stop-opacity="0.9"/>`,
+    `</linearGradient>`,
+    // 6. Diagonal Rim Bevel for Raised Elements (White Top-Left, Dark Bottom-Right)
+    `<linearGradient id="cvx-rim-${uid}" x1="0%" y1="0%" x2="100%" y2="100%">`,
+    `<stop offset="0%" stop-color="${p.shLight}" stop-opacity="${p.dark ? "0.4" : "0.95"}"/>`,
+    `<stop offset="50%" stop-color="${p.surface}" stop-opacity="0"/>`,
+    `<stop offset="100%" stop-color="${p.shDark}" stop-opacity="0.55"/>`,
+    `</linearGradient>`,
+    // 7. Accent Bar Gradient (German Red -> Gold)
+    `<linearGradient id="acc-${uid}" x1="0%" y1="0%" x2="100%" y2="0%">`,
+    `<stop offset="0%" stop-color="${p.red}"/>`,
+    `<stop offset="100%" stop-color="${p.gold}"/>`,
+    `</linearGradient>`,
+    `</defs>`,
   ].join("");
 }
 
-// Section Header with Soft Embossed Icon
+// --- Neumorphic Building Blocks ---
+
+// 1. Outer Neumorphic Card Base (Full-bleed rounded board so all inner shadows have a matching canvas)
+function neuBoard(w, h, p, uid, rx = 28) {
+  return [
+    neuDefs(p, uid),
+    // Main soft tactile board
+    `<rect x="2" y="2" width="${w - 4}" height="${h - 4}" rx="${rx}" fill="${p.surface}" stroke="url(#cvx-rim-${uid})" stroke-width="2"/>`,
+    // Inner subtle ambient recess line
+    `<rect x="10" y="10" width="${w - 20}" height="${h - 20}" rx="${rx - 6}" fill="none" stroke="${p.rimLight}" stroke-width="1"/>`,
+  ].join("");
+}
+
+// 2. Sunken / Recessed Neumorphic Well (Groove / Track / Socket)
+function neuWell(x, y, w, h, rx, uid) {
+  return [
+    `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" rx="${rx}" fill="url(#well-${uid})"/>`,
+    `<rect x="${(x + 0.75).toFixed(1)}" y="${(y + 0.75).toFixed(1)}" width="${(w - 1.5).toFixed(1)}" height="${(h - 1.5).toFixed(1)}" rx="${Math.max(1, rx - 0.75)}" fill="none" stroke="url(#well-rim-${uid})" stroke-width="1.5"/>`,
+  ].join("");
+}
+
+// 3. Raised / Extruded Neumorphic Plateau
+function neuRaised(x, y, w, h, rx, uid, filter = "ext") {
+  return [
+    `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" rx="${rx}" fill="url(#cvx-${uid})" filter="url(#${filter}-${uid})"/>`,
+    `<rect x="${(x + 0.6).toFixed(1)}" y="${(y + 0.6).toFixed(1)}" width="${(w - 1.2).toFixed(1)}" height="${(h - 1.2).toFixed(1)}" rx="${Math.max(1, rx - 0.6)}" fill="none" stroke="url(#cvx-rim-${uid})" stroke-width="1.2"/>`,
+  ].join("");
+}
+
+// 4. Double-Layered Neumorphic Pill (Sunken outer well + Raised inner plateau — just like the "NEUMORPHIC" centerpiece in reference!)
+function neuDoublePill(x, y, w, h, rx, uid, pad = 5) {
+  const irx = Math.max(4, rx - pad);
+  return (
+    neuWell(x, y, w, h, rx, uid) +
+    neuRaised(x + pad, y + pad, w - pad * 2, h - pad * 2, irx, uid, "sm")
+  );
+}
+
+// 5. Raised Circular Neumorphic Button / Icon Disc
+function neuCircleDisc(cx, cy, r, uid, filter = "sm") {
+  return [
+    `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${r}" fill="url(#cvx-${uid})" filter="url(#${filter}-${uid})"/>`,
+    `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${(r - 0.6).toFixed(1)}" fill="none" stroke="url(#cvx-rim-${uid})" stroke-width="1.2"/>`,
+  ].join("");
+}
+
+// 6. Sunken Circular Neumorphic Socket
+function neuCircleWell(cx, cy, r, uid) {
+  return [
+    `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${r}" fill="url(#well-${uid})"/>`,
+    `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${(r - 0.75).toFixed(1)}" fill="none" stroke="url(#well-rim-${uid})" stroke-width="1.5"/>`,
+  ].join("");
+}
+
+// --- Section Header (Sunken Well + Raised Icon Disc + Title + Sunken Tri-Color Status Well) ---
 function sectionHeader(x, y, label, ic, indexCode, { p, i }, uid, delay = 0) {
   const b = [];
-  const iconBoxSize = 40;
-  // Soft raised icon button
+  // Double-ring icon socket (Sunken circle + Raised inner circle)
+  const cx = x + 22;
+  const cy = y + 22;
   b.push(`<g class="pop" style="animation-delay:${delay.toFixed(2)}s">`);
-  b.push(`<rect x="${x}" y="${y}" width="${iconBoxSize}" height="${iconBoxSize}" rx="12" fill="url(#neu-convex-${uid})" filter="url(#neu-sm-${uid})"/>`);
-  b.push(`<rect x="${x + 0.5}" y="${y + 0.5}" width="${iconBoxSize - 1}" height="${iconBoxSize - 1}" rx="12" fill="none" stroke="${p.borderOuter}" stroke-width="1"/>`);
-  b.push(icon(i, ic, x + 10, y + 10, 20, p.red));
+  b.push(neuCircleWell(cx, cy, 22, uid));
+  b.push(neuCircleDisc(cx, cy, 16, uid, "sm"));
+  b.push(icon(i, ic, cx - 9, cy - 9, 18, p.red));
   b.push(`</g>`);
 
   // Section Title
-  b.push(txt(x + 52, y + 27, fit(label, 20, W - x - 200, 600), 20, p.textMain, { weight: 600, cls: "up", delay: delay + 0.05 }));
+  b.push(txt(x + 56, y + 29, fit(label, 20, W - x - 240, 700), 20, p.textMain, { weight: 700, cls: "up", delay: delay + 0.05 }));
 
-  // Sunken Neumorphic Index Badge on right
-  const tagW = textWidth(indexCode, 11.5, 600) + 20;
-  const tx = W - 36 - tagW;
+  // Right side: Sunken Index Pill + German Tri-Color LED Dots (No overlap!)
+  const tagW = Math.round(textWidth(indexCode, 11, 700) + indexCode.length * 0.8 + 70);
+  const tx = W - 34 - tagW;
   b.push(`<g class="fade" style="animation-delay:${(delay + 0.1).toFixed(2)}s">`);
-  b.push(neuWell(tx, y + 8, tagW, 24, 8, p, uid));
-  b.push(txt(tx + tagW / 2, y + 24, indexCode, 11.5, p.textMuted, { weight: 600, anchor: "middle", extra: ' letter-spacing="0.5"' }));
+  b.push(neuWell(tx, y + 8, tagW, 28, 14, uid));
+  // 3 Tactile German LEDs inside left of the sunken pill
+  b.push(`<circle cx="${tx + 15}" cy="${y + 22}" r="3.5" fill="${p.dark ? "#4B5563" : "#1E2430"}"/>`);
+  b.push(`<circle cx="${tx + 26}" cy="${y + 22}" r="3.5" fill="${p.red}"/>`);
+  b.push(`<circle cx="${tx + 37}" cy="${y + 22}" r="3.5" fill="${p.gold}"/>`);
+  b.push(txt(tx + 49, y + 26, indexCode, 11, p.textMuted, { weight: 700, extra: ' letter-spacing="0.6"' }));
   b.push(`</g>`);
 
-  // Neumorphic divider line (soft double groove: dark top, highlight bottom)
-  b.push(`<line x1="${x}" y1="${y + 50}" x2="${W - 36}" y2="${y + 50}" stroke="${p.shDark}" stroke-width="1.2" opacity="0.6"/>`);
-  b.push(`<line x1="${x}" y1="${y + 51.2}" x2="${W - 36}" y2="${y + 51.2}" stroke="${p.shLight}" stroke-width="1.2" opacity="0.8"/>`);
+  // Soft Neumorphic Carved Groove Line under header
+  b.push(neuWell(x, y + 54, W - x * 2, 4, 2, uid));
 
   return b.join("");
 }
 
-// Neumorphic Chip / Pill Button
+// --- Tactile Neumorphic Chip (Raised Pill with Sunken Icon Socket) ---
 function neuChip(icons, p, x, y, label, uid, o = {}) {
-  const h = o.h ?? 36;
+  const h = o.h ?? 38;
   const size = o.size ?? 13.5;
-  const pad = 14;
-  const iw = o.icon ? 18 : 0;
+  const iw = o.icon ? 24 : 0;
   const gap = o.icon ? 8 : 0;
-  const w = pad * 2 + iw + gap + textWidth(label, size, 500);
-  const rx = o.rx ?? 14;
+  const pad = 14;
+  const w = pad * 2 + iw + gap + textWidth(label, size, 600);
+  const rx = o.rx ?? Math.round(h / 2);
 
-  let iconColor = o.iconColor ?? (o.accent === "red" ? p.red : o.accent === "gold" ? p.gold : p.textMuted);
-  let fg = o.accent ? p.textMain : p.textMain;
+  const iconColor = o.iconColor ?? (o.accent === "gold" ? p.gold : o.accent === "red" ? p.red : p.red);
+  let body = neuRaised(x, y, w, h, rx, uid, "sm");
 
-  let body = "";
-  if (o.pressed) {
-    body += neuWell(x, y, w, h, rx, p, uid);
-  } else {
-    body += `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="url(#neu-convex-${uid})" filter="url(#neu-sm-${uid})"/>`;
-    body += `<rect x="${x + 0.5}" y="${y + 0.5}" width="${w - 1}" height="${h - 1}" rx="${rx}" fill="none" stroke="${p.borderOuter}" stroke-width="1"/>`;
+  if (o.icon) {
+    const icx = x + pad + 10;
+    const icy = y + h / 2;
+    body += neuCircleWell(icx, icy, 12, uid);
+    body += icon(icons, o.icon, icx - 7.5, icy - 7.5, 15, iconColor);
   }
-  if (o.accent) {
-    const dotColor = o.accent === "red" ? p.red : p.gold;
-    body += `<circle cx="${x + 12}" cy="${y + h / 2}" r="3" fill="${dotColor}"/>`;
-  }
-  const extraOffset = o.accent ? 6 : 0;
-  if (o.icon) body += icon(icons, o.icon, x + pad + extraOffset, y + (h - 18) / 2, 18, iconColor);
-  body += txt(x + pad + iw + gap + extraOffset, y + h / 2 + size * 0.36, label, size, fg, { weight: 500 });
+  body += txt(x + pad + iw + gap, y + h / 2 + size * 0.36, label, size, p.textMain, { weight: 600 });
   return [pop(body, o.delay ?? 0), w];
 }
 
 // --- 1. HERO BLOCK ---
 function hero(ctx, avatar) {
   const { c, p, i } = ctx;
-  const h = 320;
+  const h = 324;
   const uid = "hero";
-  const shell = neuPanel(W, h, p, uid);
-  const b = [shell.svg];
+  const b = [neuBoard(W, h, p, uid)];
 
-  // Soft Ambient Glow behind Avatar
-  b.push(`<circle cx="132" cy="160" r="105" fill="url(#glow-gold-${uid})" opacity="0.6" class="pulse"/>`);
+  // Top Left & Right Tactile Status Bar
+  b.push(neuWell(34, 22, 232, 24, 12, uid));
+  b.push(`<circle cx="48" cy="34" r="3.5" fill="${p.dark ? "#4B5563" : "#1E2430"}"/>`);
+  b.push(`<circle cx="60" cy="34" r="3.5" fill="${p.red}"/>`);
+  b.push(`<circle cx="72" cy="34" r="3.5" fill="${p.gold}"/>`);
+  b.push(txt(86, 38, "NEUMORPHIC // DEUTSCH", 10.5, p.textMuted, { weight: 700, extra: ' letter-spacing="0.8"' }));
 
-  // Avatar Neumorphic Frame (Double-ring extruded & sunken socket)
+  // Top-Right Decorative Neumorphic Equalizer Sliders (Inspired directly by the user's reference image!)
+  const eqX = 696;
+  const eqY = 24;
+  const sliders = [0.65, 0.35, 0.78, 0.45];
+  sliders.forEach((val, idx) => {
+    const sx = eqX + idx * 28;
+    const sh = 54;
+    const fillH = Math.round(sh * val);
+    const fillY = eqY + sh - fillH;
+    const col = idx % 2 === 0 ? p.red : p.gold;
+    b.push(neuWell(sx, eqY, 8, sh, 4, uid));
+    b.push(`<rect x="${sx + 1}" y="${fillY}" width="6" height="${fillH}" rx="3" fill="${col}"/>`);
+    b.push(neuCircleDisc(sx + 4, fillY, 6.5, uid, "sm"));
+  });
+
+  // Avatar Tactile Double-Ring Frame (Sunken Outer Well -> Raised Cushion -> Circular Clip)
   const ax = 42;
   const ay = 68;
-  const asize = 180;
-  const arx = 36;
-  // Outer soft elevated mound
-  b.push(`<rect x="${ax - 6}" y="${ay - 6}" width="${asize + 12}" height="${asize + 12}" rx="${arx + 4}" fill="url(#neu-convex-${uid})" filter="url(#neu-ext-${uid})"/>`);
-  // Sunken socket
-  b.push(neuWell(ax - 2, ay - 2, asize + 4, asize + 4, arx, p, uid));
-
-  // Avatar Image with Rounded Clip
-  b.push(`<clipPath id="ava-clip"><rect x="${ax}" y="${ay}" width="${asize}" height="${asize}" rx="${arx - 2}"/></clipPath>`);
+  const asize = 192;
+  const acx = ax + asize / 2;
+  const acy = ay + asize / 2;
+  b.push(neuWell(ax - 8, ay - 8, asize + 16, asize + 16, 44, uid));
+  b.push(neuRaised(ax, ay, asize, asize, 36, uid, "ext"));
+  b.push(`<clipPath id="ava-clip"><rect x="${ax + 8}" y="${ay + 8}" width="${asize - 16}" height="${asize - 16}" rx="28"/></clipPath>`);
   if (avatar) {
-    b.push(`<g class="fade"><image href="${avatar}" x="${ax}" y="${ay}" width="${asize}" height="${asize}" clip-path="url(#ava-clip)" preserveAspectRatio="xMidYMid slice"/></g>`);
+    b.push(`<g class="fade"><image href="${avatar}" x="${ax + 8}" y="${ay + 8}" width="${asize - 16}" height="${asize - 16}" clip-path="url(#ava-clip)" preserveAspectRatio="xMidYMid slice"/></g>`);
   } else {
     b.push(`<g clip-path="url(#ava-clip)">`);
-    b.push(`<rect x="${ax}" y="${ay}" width="${asize}" height="${asize}" fill="${p.panelBg}"/>`);
-    b.push(icon(i, "person", ax + 40, ay + 36, 100, p.textMuted));
+    b.push(`<rect x="${ax + 8}" y="${ay + 8}" width="${asize - 16}" height="${asize - 16}" fill="${p.surfaceSunken}"/>`);
+    b.push(icon(i, "person", acx - 44, acy - 44, 88, p.textMuted));
     b.push(`</g>`);
   }
-  // Soft rim highlight inside avatar
-  b.push(`<rect x="${ax}" y="${ay}" width="${asize}" height="${asize}" rx="${arx - 2}" fill="none" stroke="${p.borderOuter}" stroke-width="1.5"/>`);
+  b.push(`<rect x="${ax + 8}" y="${ay + 8}" width="${asize - 16}" height="${asize - 16}" rx="28" fill="none" stroke="url(#well-rim-${uid})" stroke-width="2"/>`);
 
-  // Hero Text Content
-  const tx = 258;
-  // Greeting Pill
-  const greetText = c.hero.greeting;
-  const gw = textWidth(greetText, 13, 500) + 28;
+  // Hero Text Area
+  const tx = 264;
+  // Double-layered Neumorphic Greeting Pill (like the "NEUMORPHIC" centerpiece in reference)
+  const greetText = c.hero.greeting.toUpperCase();
+  const gw = Math.round(textWidth(greetText, 12, 700) + greetText.length * 0.9 + 54);
   b.push(`<g class="up" style="animation-delay:0.08s">`);
-  b.push(neuWell(tx, 66, gw, 26, 13, p, uid));
-  b.push(`<circle cx="${tx + 12}" cy="79" r="3.5" fill="${p.red}"/>`);
-  b.push(txt(tx + 22, 83, greetText, 13, p.textMuted, { weight: 500 }));
+  b.push(neuDoublePill(tx, 62, gw, 36, 18, uid, 4));
+  b.push(`<circle cx="${tx + 18}" cy="80" r="3.5" fill="${p.red}"/>`);
+  b.push(txt(tx + 28, 84, greetText, 12, p.red, { weight: 700, extra: ' letter-spacing="0.8"' }));
   b.push(`</g>`);
 
   // Main Name
   const name = c.hero.name || c.login;
-  const room = W - tx - 80;
+  const room = W - tx - 160;
   const size = Math.min(44, room / Math.max(1, textWidth(name, 1, 700)));
-  b.push(pop(txt(tx, 134, name, size, p.textMain, { weight: 700 }), 0.16, "up"));
+  b.push(pop(txt(tx, 142, name, size, p.textMain, { weight: 700 }), 0.16, "up"));
 
-  // Subtitle (Wrapped inside soft sunken text bar)
-  const lines = wrap(c.hero.subtitle, 15, W - tx - 60, 400, 2);
-  const subH = lines.length * 22 + 16;
-  b.push(`<g class="up" style="animation-delay:0.25s">`);
-  b.push(neuWell(tx, 150, W - tx - 44, subH, 12, p, uid));
+  // Subtitle inside Sunken Neumorphic Well with Left Accent Pill
+  const lines = wrap(c.hero.subtitle, 15, W - tx - 64, 500, 2);
+  const subH = lines.length * 22 + 20;
+  b.push(`<g class="up" style="animation-delay:0.24s">`);
+  b.push(neuWell(tx, 158, W - tx - 36, subH, 16, uid));
+  b.push(`<rect x="${tx + 10}" y="168" width="4" height="${subH - 20}" rx="2" fill="url(#acc-${uid})"/>`);
   lines.forEach((line, n) => {
-    b.push(txt(tx + 16, 172 + n * 22, line, 15, p.textMuted, { weight: 400 }));
+    b.push(txt(tx + 24, 181 + n * 22, line, 15, p.textMuted, { weight: 500 }));
   });
   b.push(`</g>`);
 
   // Hero Chips Row
   let cx2 = tx;
-  const cy2 = 236;
+  const cy2 = 242;
   c.hero.chips.forEach((item, n) => {
-    const accent = n === 0 ? "gold" : n === 1 ? "red" : undefined;
+    const accent = n === 0 ? "gold" : "red";
     const [g, cw] = neuChip(i, p, cx2, cy2, item.label, uid, { icon: item.icon, delay: 0.35 + n * 0.08, accent });
     if (cx2 + cw > W - 32) return;
     b.push(g);
-    cx2 += cw + 10;
+    cx2 += cw + 12;
   });
 
   return svg(W, h, b.join(""), `${c.hero.greeting} ${name}`, c.motion);
@@ -375,28 +426,27 @@ function hero(ctx, avatar) {
 // --- 2. ABOUT BLOCK ---
 function about(ctx) {
   const { c, p, i } = ctx;
-  const row = 58;
-  const h = 104 + row * c.about.items.length;
+  const row = 62;
+  const h = 108 + row * c.about.items.length;
   const uid = "about";
-  const shell = neuPanel(W, h, p, uid);
-  const b = [shell.svg];
-  b.push(sectionHeader(36, 26, c.about.title, "person", "PROFIL // 01", ctx, uid));
+  const b = [neuBoard(W, h, p, uid)];
+  b.push(sectionHeader(34, 24, c.about.title, "person", "PROFIL // 01", ctx, uid));
 
   c.about.items.forEach((item, n) => {
-    const y = 88 + n * row;
-    const cw = W - 72;
+    const y = 94 + n * row;
+    const cw = W - 68;
     const ch = row - 12;
 
     b.push(`<g class="up" style="animation-delay:${(0.12 + n * 0.08).toFixed(2)}s">`);
-    // Soft extruded item row
-    b.push(`<rect x="36" y="${y}" width="${cw}" height="${ch}" rx="16" fill="url(#neu-convex-${uid})" filter="url(#neu-sm-${uid})"/>`);
-    b.push(`<rect x="36.5" y="${y + 0.5}" width="${cw - 1}" height="${ch - 1}" rx="16" fill="none" stroke="${p.borderOuter}" stroke-width="1"/>`);
-
-    // Inset circular icon pocket
-    b.push(neuWell(48, y + 8, 30, 30, 15, p, uid));
+    // Raised Neumorphic Row Card
+    b.push(neuRaised(34, y, cw, ch, 18, uid, "sm"));
+    // Sunken Circular Icon Socket on Left
+    const icx = 62;
+    const icy = y + ch / 2;
+    b.push(neuCircleWell(icx, icy, 16, uid));
     const iconColor = n % 2 === 0 ? p.red : p.gold;
-    b.push(icon(i, item.icon, 54, y + 14, 18, iconColor));
-    b.push(txt(90, y + 29, fit(item.label, 15.5, cw - 110, 500), 15.5, p.textMain, { weight: 500 }));
+    b.push(icon(i, item.icon, icx - 9, icy - 9, 18, iconColor));
+    b.push(txt(92, y + 31, fit(item.label, 15, cw - 112, 500), 15, p.textMain, { weight: 500 }));
     b.push(`</g>`);
   });
 
@@ -406,44 +456,44 @@ function about(ctx) {
 // --- 3. TECH STACK BLOCK ---
 function stack(ctx) {
   const { c, p, i } = ctx;
-  let y = 90;
+  let y = 96;
   let d = 0.1;
   const uid = "stack";
   const groups = [];
 
   for (const [gi, group] of c.stack.groups.entries()) {
     if (group.title) {
-      const gw = textWidth(group.title.toUpperCase(), 11.5, 600) + 20;
-      const dotColor = gi % 2 === 0 ? p.gold : p.red;
+      const titleStr = group.title.toUpperCase();
+      // Generous padding (+ letter-spacing compensation) so text NEVER overflows the sunken pill!
+      const gw = Math.round(textWidth(titleStr, 11.5, 700) + titleStr.length * 0.8 + 44);
+      const dotColor = gi % 2 === 0 ? p.red : p.gold;
       groups.push(
         `<g class="fade" style="animation-delay:${d.toFixed(2)}s">` +
-          neuWell(36, y + 2, gw, 22, 11, p, uid) +
-          `<circle cx="48" cy="${y + 13}" r="3" fill="${dotColor}"/>` +
-          txt(56, y + 17, group.title.toUpperCase(), 11.5, p.textMuted, { weight: 600, extra: ' letter-spacing="0.6"' }) +
-          `<line x1="${(36 + gw + 10).toFixed(1)}" y1="${y + 13}" x2="${W - 40}" y2="${y + 13}" stroke="${p.shDark}" stroke-width="1" opacity="0.4"/>` +
-          `<line x1="${(36 + gw + 10).toFixed(1)}" y1="${y + 14.2}" x2="${W - 40}" y2="${y + 14.2}" stroke="${p.shLight}" stroke-width="1" opacity="0.6"/>` +
+          neuWell(34, y, gw, 26, 13, uid) +
+          `<circle cx="48" cy="${y + 13}" r="3.5" fill="${dotColor}"/>` +
+          txt(59, y + 17, titleStr, 11.5, p.textMain, { weight: 700, extra: ' letter-spacing="0.6"' }) +
+          neuWell(34 + gw + 12, y + 11, W - 68 - gw - 12, 4, 2, uid) +
           `</g>`
       );
     }
-    let x = 36;
-    let cy = group.title ? y + 34 : y;
+    let x = 34;
+    let cy = group.title ? y + 36 : y;
     for (const item of group.items) {
       const [, w] = neuChip(i, p, 0, 0, item.label, uid, { icon: item.icon });
-      if (x + w > W - 36) {
-        x = 36;
-        cy += 46;
+      if (x + w > W - 34) {
+        x = 34;
+        cy += 48;
       }
       groups.push(neuChip(i, p, x, cy, item.label, uid, { icon: item.icon, delay: d })[0]);
-      x += w + 10;
-      d += 0.035;
+      x += w + 12;
+      d += 0.03;
     }
-    y = cy + 38 + 24;
+    y = cy + 40 + 24;
   }
 
-  const h = y + 10;
-  const shell = neuPanel(W, h, p, uid);
-  const b = [shell.svg];
-  b.push(sectionHeader(36, 26, c.stack.title, "code", "STACK // 02", ctx, uid));
+  const h = y + 12;
+  const b = [neuBoard(W, h, p, uid)];
+  b.push(sectionHeader(34, 24, c.stack.title, "code", "STACK // 02", ctx, uid));
   b.push(...groups);
   return svg(W, h, b.join(""), c.stack.title, c.motion);
 }
@@ -498,59 +548,60 @@ function slug(name) {
 function card(ctx, repo, index) {
   const { c, p, i } = ctx;
   const w = 412;
-  const h = 240;
+  const h = 248;
   const d0 = 0.08 * index;
   const v = projectView(c, repo, index);
   const uid = `proj-${index}`;
-  const shell = neuPanel(w, h, p, uid, { rx: 20, margin: 10 });
-  const b = [shell.svg];
+  const b = [neuBoard(w, h, p, uid, 24)];
 
-  // Elevated Icon Pocket in Top-Left
+  // Top-Left Double-Ring Neumorphic Icon Badge (like the vertical cards at bottom of reference!)
+  const icx = 50;
+  const icy = 48;
   b.push(`<g class="pop" style="animation-delay:${d0.toFixed(2)}s">`);
-  b.push(`<rect x="26" y="24" width="44" height="44" rx="14" fill="url(#neu-convex-${uid})" filter="url(#neu-sm-${uid})"/>`);
-  b.push(`<rect x="26.5" y="24.5" width="43" height="43" rx="14" fill="none" stroke="${p.borderOuter}" stroke-width="1"/>`);
-  const iconColor = index % 2 === 0 ? p.gold : p.red;
-  b.push(icon(i, v.icon, 36, 34, 24, iconColor));
+  b.push(neuCircleWell(icx, icy, 24, uid));
+  b.push(neuCircleDisc(icx, icy, 18, uid, "sm"));
+  const iconColor = index % 2 === 0 ? p.red : p.gold;
+  b.push(icon(i, v.icon, icx - 10, icy - 10, 20, iconColor));
   b.push(`</g>`);
 
-  // Sunken External Link Indicator in Top-Right
-  b.push(neuWell(w - 56, 26, 32, 32, 16, p, uid));
-  b.push(icon(i, "arrow_outward", w - 48, 34, 16, p.textMuted));
+  // Project Index Pill
+  const idxText = `PROJEKT // 0${index + 1}`;
+  const idxW = textWidth(idxText, 11, 700) + 24;
+  b.push(neuWell(84, 35, idxW, 26, 13, uid));
+  b.push(txt(84 + idxW / 2, 52, idxText, 11, p.textMuted, { weight: 700, anchor: "middle", extra: ' letter-spacing="0.6"' }));
 
-  // Index Tag
-  b.push(txt(82, 43, `PROJEKT // 0${index + 1}`, 11, p.textSoft, { weight: 600, extra: ' letter-spacing="0.5"' }));
+  // Top-Right Raised External Link Button (No tri-color overlap!)
+  b.push(neuCircleDisc(w - 44, 48, 18, uid, "sm"));
+  b.push(icon(i, "arrow_outward", w - 52, 40, 16, p.textMain));
 
   // Repo Title
-  const title = fit(v.title, 21, w - 52, 600);
-  b.push(txt(26, 102, title, 21, p.textMain, { weight: 600, cls: "up", delay: d0 + 0.08 }));
+  const title = fit(v.title, 20, w - 56, 700);
+  b.push(txt(28, 104, title, 20, p.textMain, { weight: 700, cls: "up", delay: d0 + 0.08 }));
 
-  // Description Lines (Enclosed in a soft Sunken Text Pocket)
-  wrap(v.text, 14, w - 52, 400, 2).forEach((line, n) => {
-    b.push(txt(26, 128 + n * 20, line, 14, p.textMuted, { weight: 400, cls: "up", delay: d0 + 0.14 + n * 0.05 }));
+  // Description inside Sunken Well
+  b.push(neuWell(26, 116, w - 52, 56, 14, uid));
+  wrap(v.text, 13.5, w - 76, 500, 2).forEach((line, n) => {
+    b.push(txt(38, 139 + n * 19, line, 13.5, p.textMuted, { weight: 500, cls: "up", delay: d0 + 0.14 + n * 0.05 }));
   });
 
-  // Divider Line
-  b.push(`<line x1="26" y1="174" x2="${w - 26}" y2="174" stroke="${p.shDark}" stroke-width="1" opacity="0.4"/>`);
-  b.push(`<line x1="26" y1="175.2" x2="${w - 26}" y2="175.2" stroke="${p.shLight}" stroke-width="1" opacity="0.6"/>`);
-
-  // Tags
+  // Bottom Tags
   let x = 26;
   v.tags.forEach((tag, n) => {
-    const [g, cw] = neuChip(i, p, x, 186, tag, uid, { delay: d0 + 0.25 + n * 0.05, h: 28, size: 12, rx: 12 });
-    if (x + cw < w - 85) {
+    const [g, cw] = neuChip(i, p, x, 188, tag, uid, { delay: d0 + 0.25 + n * 0.05, h: 32, size: 12.5, rx: 16 });
+    if (x + cw < w - 95) {
       b.push(g);
       x += cw + 8;
     }
   });
 
-  // Star Badge (Sunken Pill on Bottom Right)
+  // Star Counter in Sunken Pill on Bottom Right
   const starStr = String(repo.stars);
-  const sw = textWidth(starStr, 13, 600) + 36;
-  const sx = w - 24 - sw;
+  const sw = textWidth(starStr, 13, 700) + 42;
+  const sx = w - 26 - sw;
   b.push(`<g class="pop" style="animation-delay:${(d0 + 0.35).toFixed(2)}s">`);
-  b.push(neuWell(sx, 186, sw, 28, 14, p, uid));
-  b.push(icon(i, "star", sx + 8, 192, 16, p.gold));
-  b.push(txt(sx + 28, 205, starStr, 13, p.textMain, { weight: 600 }));
+  b.push(neuWell(sx, 188, sw, 32, 16, uid));
+  b.push(icon(i, "star", sx + 10, 196, 16, p.gold));
+  b.push(txt(sx + 30, 209, starStr, 13, p.textMain, { weight: 700 }));
   b.push(`</g>`);
 
   return svg(w, h, b.join(""), v.title, c.motion);
@@ -564,23 +615,22 @@ function stats(ctx) {
   const langs = s.showLanguages ? d.languages : [];
   const total = langs.reduce((a, [, v]) => a + v, 0) || 1;
   const legend = [];
-  let lx = 36;
+  let lx = 34;
   let row = 0;
   for (const [name, v] of langs) {
     const label = `${name} ${((100 * v) / total).toFixed(1)}%`.replace(".0%", "%");
-    const lw = 18 + textWidth(label, 13, 500) + 16;
-    if (lx + lw > W - 36) {
-      lx = 36;
+    const lw = 24 + textWidth(label, 13, 600) + 18;
+    if (lx + lw > W - 34) {
+      lx = 34;
       row++;
     }
     legend.push([lx, row, label]);
     lx += lw;
   }
 
-  const h = s.showLanguages && langs.length ? 420 + row * 28 : 324;
-  const shell = neuPanel(W, h, p, uid);
-  const b = [shell.svg];
-  b.push(sectionHeader(36, 26, s.title, "monitoring", "METRIKEN // 03", ctx, uid));
+  const h = s.showLanguages && langs.length ? 430 + row * 30 : 330;
+  const b = [neuBoard(W, h, p, uid)];
+  b.push(sectionHeader(34, 24, s.title, "monitoring", "METRIKEN // 03", ctx, uid));
 
   // 4 Neumorphic Metric Tiles on Left
   const tiles = [
@@ -591,79 +641,72 @@ function stats(ctx) {
   ];
 
   tiles.forEach(([ic, value, label, accentColor], n) => {
-    const tx = 36 + (n % 2) * 192;
-    const ty = 88 + Math.floor(n / 2) * 106;
+    const tx = 34 + (n % 2) * 192;
+    const ty = 94 + Math.floor(n / 2) * 106;
     b.push(`<g class="up" style="animation-delay:${(0.1 + n * 0.07).toFixed(2)}s">`);
-    // Extruded small panel
-    b.push(`<rect x="${tx}" y="${ty}" width="180" height="92" rx="18" fill="url(#neu-convex-${uid})" filter="url(#neu-sm-${uid})"/>`);
-    b.push(`<rect x="${tx + 0.5}" y="${ty + 0.5}" width="179" height="91" rx="18" fill="none" stroke="${p.borderOuter}" stroke-width="1"/>`);
-    // Inset icon well
-    b.push(neuWell(tx + 14, ty + 14, 32, 32, 12, p, uid));
-    b.push(icon(i, ic, tx + 21, ty + 21, 18, accentColor));
-    b.push(txt(tx + 56, ty + 40, String(value), 26, p.textMain, { weight: 700 }));
-    b.push(txt(tx + 14, ty + 74, fit(label, 12, 152, 500), 12, p.textMuted, { weight: 500 }));
+    b.push(neuRaised(tx, ty, 180, 94, 20, uid, "sm"));
+    // Sunken circular icon well
+    b.push(neuCircleWell(tx + 32, ty + 34, 18, uid));
+    b.push(icon(i, ic, tx + 23, ty + 25, 18, accentColor));
+    b.push(txt(tx + 58, ty + 42, String(value), 26, p.textMain, { weight: 700 }));
+    b.push(txt(tx + 16, ty + 76, fit(label, 12.5, 150, 600), 12.5, p.textMuted, { weight: 600 }));
     b.push(`</g>`);
   });
 
   // Right Side 21-Day Contribution Calendar Matrix
-  const rx = 436;
-  b.push(txt(rx, 102, s.calendar, 13, p.textMain, { weight: 600, cls: "fade", delay: 0.1 }));
-  const gap = 6;
-  const cw = (W - 40 - rx - gap * 6) / 7;
+  const rx = 434;
+  b.push(txt(rx, 106, s.calendar, 13.5, p.textMain, { weight: 700, cls: "fade", delay: 0.1 }));
+  const gap = 7;
+  const cw = (W - 34 - rx - gap * 6) / 7;
   const ch = 42;
 
   [...(s.weekdays + "       ").slice(0, 7)].forEach((letter, n) => {
-    b.push(txt(rx + n * (cw + gap) + cw / 2, 124, letter, 11.5, p.textSoft, { weight: 600, cls: "fade", delay: 0.15, anchor: "middle" }));
+    b.push(txt(rx + n * (cw + gap) + cw / 2, 128, letter, 11.5, p.textSoft, { weight: 700, cls: "fade", delay: 0.15, anchor: "middle" }));
   });
 
   const peak = Math.max(1, ...d.days.flat().map((x) => x?.c ?? 0));
   d.days.forEach((wk, wi) => {
     wk.forEach((day, di) => {
       const x = rx + di * (cw + gap);
-      const y = 134 + wi * (ch + 6);
+      const y = 138 + wi * (ch + 7);
       const delay = 0.18 + (wi * 7 + di) * 0.02;
       if (!day) {
-        b.push(neuWell(x, y, cw, ch, 10, p, uid));
+        b.push(neuWell(x, y, cw, ch, 11, uid));
         return;
       }
       const lvl = day.c === 0 ? 0 : Math.min(4, 1 + Math.floor((3 * day.c) / peak + 0.5));
-      const colors = [
-        p.panelBg,
-        p.dark ? "#2D3426" : "#D4E5C9",
-        p.dark ? "#4D6335" : "#A6D68E",
-        p.dark ? "#709B45" : "#72BF48",
-        p.dark ? "#92CD54" : "#43A047",
-      ];
-      const fg = lvl === 0 ? p.textMuted : p.dark ? "#FFFFFF" : "#1B2E15";
-
       let cell = "";
       if (lvl === 0) {
-        cell += neuWell(x, y, cw, ch, 10, p, uid);
+        // Inactive day: Sunken Neumorphic Socket
+        cell += neuWell(x, y, cw, ch, 11, uid);
+        cell += txt(x + cw / 2, y + ch / 2 + 5, String(day.day), 13, p.textSoft, { weight: 600, anchor: "middle" });
       } else {
-        cell += `<rect x="${x}" y="${y}" width="${cw}" height="${ch}" rx="10" fill="${colors[lvl]}" filter="url(#neu-sm-${uid})"/>`;
-        cell += `<rect x="${x + 0.5}" y="${y + 0.5}" width="${cw - 1}" height="${ch - 1}" rx="10" fill="none" stroke="${p.borderOuter}" stroke-width="1"/>`;
+        // Active day: Raised Neumorphic Button with vibrant indicator dot
+        cell += neuRaised(x, y, cw, ch, 11, uid, "sm");
+        const dotColor = lvl >= 3 ? p.red : p.gold;
+        cell += `<circle cx="${(x + cw / 2).toFixed(1)}" cy="${(y + ch - 7).toFixed(1)}" r="2.5" fill="${dotColor}"/>`;
+        cell += txt(x + cw / 2, y + ch / 2 + 3, String(day.day), 13, p.textMain, { weight: 700, anchor: "middle" });
       }
       if (day.today) {
-        cell += `<rect x="${x - 1.5}" y="${y - 1.5}" width="${cw + 3}" height="${ch + 3}" rx="12" fill="none" stroke="${p.gold}" stroke-width="2"/>`;
+        cell += `<rect x="${(x - 1).toFixed(1)}" y="${(y - 1).toFixed(1)}" width="${(cw + 2).toFixed(1)}" height="${(ch + 2).toFixed(1)}" rx="12" fill="none" stroke="${p.red}" stroke-width="2"/>`;
       }
-      cell += txt(x + cw / 2, y + ch / 2 + 5, String(day.day), 13, fg, { weight: 600, anchor: "middle" });
       b.push(`<g class="pop" style="animation-delay:${delay.toFixed(3)}s">${cell}</g>`);
     });
   });
 
-  // Languages Bar & Legend
+  // Languages Progress Track (Sunken Neumorphic Groove + Vibrant Fill + Tactile Knobs)
   if (s.showLanguages && langs.length) {
-    const ly = 326;
-    b.push(txt(36, ly, s.languages, 13, p.textMain, { weight: 600, cls: "fade", delay: 0.3 }));
-    const barColors = [p.red, p.gold, "#3178C6", "#2A9D8F", "#8338EC", "#FB8500", "#6C757D"];
-    const bw = W - 72;
-    // Deep Sunken Groove for Language Bar
-    b.push(neuWell(36, ly + 14, bw, 16, 8, p, uid));
-    b.push(`<clipPath id="lang-clip"><rect x="37" y="${ly + 15}" width="${bw - 2}" height="14" rx="7"/></clipPath>`);
+    const ly = 334;
+    b.push(txt(34, ly, s.languages, 13.5, p.textMain, { weight: 700, cls: "fade", delay: 0.3 }));
+    const barColors = [p.red, p.gold, p.purple, p.blue, p.green, "#F97316", "#64748B"];
+    const bw = W - 68;
+    // Sunken Track
+    b.push(neuWell(34, ly + 12, bw, 20, 10, uid));
+    b.push(`<clipPath id="lang-clip"><rect x="37" y="${ly + 15}" width="${bw - 6}" height="14" rx="7"/></clipPath>`);
 
     let sx = 37;
     const segs = langs.map(([, v], n) => {
-      const sw = Math.max(8, ((bw - 2) * v) / total);
+      const sw = Math.max(8, ((bw - 6) * v) / total);
       const r = `<rect x="${sx.toFixed(1)}" y="${ly + 15}" width="${(sw + 1).toFixed(1)}" height="14" fill="${barColors[n % barColors.length]}"/>`;
       sx += sw;
       return r;
@@ -671,13 +714,13 @@ function stats(ctx) {
     b.push(`<g clip-path="url(#lang-clip)"><g class="grow" style="animation-delay:.38s">${segs.join("")}</g></g>`);
 
     legend.forEach(([lx2, lrow, label], n) => {
-      const ly2 = ly + 54 + lrow * 28;
+      const ly2 = ly + 58 + lrow * 30;
       const col = barColors[n % barColors.length];
       b.push(
         pop(
-          neuWell(lx2, ly2 - 12, 14, 14, 7, p, uid) +
-            `<circle cx="${lx2 + 7}" cy="${ly2 - 5}" r="4" fill="${col}"/>` +
-            txt(lx2 + 20, ly2 - 1, label, 13, p.textMain, { weight: 500 }),
+          neuCircleWell(lx2 + 8, ly2 - 5, 8, uid) +
+            `<circle cx="${lx2 + 8}" cy="${ly2 - 5}" r="4.5" fill="${col}"/>` +
+            txt(lx2 + 22, ly2, label, 13, p.textMain, { weight: 600 }),
           0.5 + n * 0.05,
           "fade"
         )
@@ -692,34 +735,35 @@ function stats(ctx) {
 function streak(ctx) {
   const { c, d, p, i } = ctx;
   const s = c.streak;
-  const h = 222;
+  const h = 232;
   const uid = "streak";
-  const shell = neuPanel(W, h, p, uid);
-  const b = [shell.svg];
-  b.push(sectionHeader(36, 26, s.title, "local_fire_department", "SERIE // 04", ctx, uid));
+  const b = [neuBoard(W, h, p, uid)];
+  b.push(sectionHeader(34, 24, s.title, "local_fire_department", "SERIE // 04", ctx, uid));
 
-  const tw = (W - 72 - 18) / 2;
+  const tw = (W - 68 - 20) / 2;
   const tiles = [
     [d.streak.current, s.current, "local_fire_department", p.red],
     [d.streak.longest, s.longest, "trophy", p.gold],
   ];
 
   tiles.forEach(([value, label, ic, accentColor], n) => {
-    const tx = 36 + n * (tw + 18);
-    const ty = 88;
+    const tx = 34 + n * (tw + 20);
+    const ty = 94;
     b.push(`<g class="up" style="animation-delay:${(0.12 + n * 0.1).toFixed(2)}s">`);
-    // Extruded card
-    b.push(`<rect x="${tx}" y="${ty}" width="${tw}" height="102" rx="20" fill="url(#neu-convex-${uid})" filter="url(#neu-sm-${uid})"/>`);
-    b.push(`<rect x="${tx + 0.5}" y="${ty + 0.5}" width="${tw - 1}" height="101" rx="20" fill="none" stroke="${p.borderOuter}" stroke-width="1"/>`);
+    // Double-layered Neumorphic Card (Sunken Outer Well + Raised Inner Plateau)
+    b.push(neuDoublePill(tx, ty, tw, 108, 24, uid, 6));
 
-    // Inset circular icon chamber
-    b.push(neuWell(tx + 18, ty + 24, 54, 54, 27, p, uid));
-    b.push(icon(i, ic, tx + 32, ty + 38, 26, accentColor));
+    // Double-ring Circular Dial on Left
+    const icx = tx + 48;
+    const icy = ty + 54;
+    b.push(neuCircleWell(icx, icy, 26, uid));
+    b.push(neuCircleDisc(icx, icy, 19, uid, "sm"));
+    b.push(icon(i, ic, icx - 11, icy - 11, 22, accentColor));
 
     const num = String(value);
-    b.push(txt(tx + 86, ty + 56, num, 36, p.textMain, { weight: 700 }));
-    b.push(txt(tx + 92 + textWidth(num, 36, 700), ty + 56, s.days, 15, p.textSoft, { weight: 500 }));
-    b.push(txt(tx + 86, ty + 80, fit(label, 13.5, tw - 100, 500), 13.5, p.textMuted, { weight: 500 }));
+    b.push(txt(tx + 88, ty + 58, num, 36, p.textMain, { weight: 700 }));
+    b.push(txt(tx + 94 + textWidth(num, 36, 700), ty + 58, s.days, 14.5, accentColor, { weight: 700 }));
+    b.push(txt(tx + 88, ty + 82, fit(label, 13.5, tw - 104, 600), 13.5, p.textMuted, { weight: 600 }));
     b.push(`</g>`);
   });
 
@@ -741,41 +785,42 @@ function socialLabel(icons, item) {
 
 function socialPiece({ p, i }, item, n) {
   const label = socialLabel(i, item);
-  const h = 48;
-  const w = 18 + 22 + 10 + textWidth(label, 14.5, 600) + 20;
+  const h = 54;
+  const w = 52 + textWidth(label, 14.5, 700) + 22;
   const delay = n * 0.06;
   const uid = `soc-${n}`;
-  const accent = n === 0 ? p.gold : n === 1 ? p.accentBlue : n === 2 ? p.red : undefined;
+  const accent = n % 2 === 0 ? p.red : p.gold;
 
-  let body = `<rect x="5" y="5" width="${(w - 10).toFixed(1)}" height="${h - 10}" rx="14" fill="url(#neu-convex-${uid})" filter="url(#neu-sm-${uid})"/>`;
-  body += `<rect x="5.5" y="5.5" width="${(w - 11).toFixed(1)}" height="${h - 11}" rx="14" fill="none" stroke="${p.borderOuter}" stroke-width="1"/>`;
-  if (accent) {
-    body += `<circle cx="18" cy="${h / 2}" r="3" fill="${accent}"/>`;
-  }
-  const extraOffset = accent ? 8 : 0;
-  body += icon(i, item.icon, 16 + extraOffset, 14, 20, accent || p.red);
-  body += txt(44 + extraOffset, 29, label, 14.5, p.textMain, { weight: 600 });
-  return { body: neumorphicFilterDefs(p, uid) + pop(body, delay), w, h, title: label };
+  // Double-layered Neumorphic Pill (Sunken Well + Raised Button + Sunken Icon Disc)
+  let body = neuDoublePill(4, 4, w - 8, h - 8, 23, uid, 4);
+  body += neuCircleWell(28, h / 2, 13, uid);
+  body += icon(i, item.icon, 20, h / 2 - 8, 16, accent);
+  body += txt(48, h / 2 + 5, label, 14.5, p.textMain, { weight: 700 });
+  return { body: neuDefs(p, uid) + `<rect width="${w}" height="${h}" rx="18" fill="${p.surface}"/>` + pop(body, delay), w, h, title: label };
 }
 
 function buttonPiece({ p, i }, btn, n) {
-  const h = 54;
+  const h = 60;
   const size = 15;
-  const iw = btn.icon ? 28 : 0;
-  const w = 44 + iw + textWidth(btn.label, size, 600);
+  const iw = btn.icon ? 34 : 0;
+  const w = 48 + iw + textWidth(btn.label, size, 700);
   const isFilled = btn.style === "filled";
   const uid = `btn-${n}`;
-  const accentColor = isFilled ? p.gold : p.red;
+  const accentColor = isFilled ? p.red : p.gold;
 
-  let body = `<rect x="6" y="6" width="${(w - 12).toFixed(1)}" height="${h - 12}" rx="18" fill="url(#neu-convex-${uid})" filter="url(#neu-sm-${uid})"/>`;
-  body += `<rect x="6.5" y="6.5" width="${(w - 13).toFixed(1)}" height="${h - 13}" rx="18" fill="none" stroke="${p.borderOuter}" stroke-width="1.2"/>`;
-  if (btn.icon) body += icon(i, btn.icon, 20, (h - 20) / 2, 20, accentColor);
-  body += txt(22 + iw, h / 2 + 5.5, btn.label, size, p.textMain, { weight: 600 });
-  return { body: neumorphicFilterDefs(p, uid) + pop(body, n * 0.08), w, h, title: btn.label };
+  let body = neuDefs(p, uid);
+  body += `<rect width="${w.toFixed(1)}" height="${h}" rx="22" fill="${p.surface}"/>`;
+  body += neuDoublePill(4, 4, w - 8, h - 8, 26, uid, 5);
+  if (btn.icon) {
+    body += neuCircleWell(31, h / 2, 14, uid);
+    body += icon(i, btn.icon, 22, h / 2 - 9, 18, accentColor);
+  }
+  body += txt(24 + iw, h / 2 + 5.5, btn.label, size, p.textMain, { weight: 700 });
+  return { body: pop(body, n * 0.08), w, h, title: btn.label };
 }
 
-const GAP = 10;
-const CAP = 28;
+const GAP = 8;
+const CAP = 24;
 
 function rowFits(pieces) {
   return pieces.length > 0 && pieces.reduce((a, x) => a + x.w + GAP, 0) + CAP * 2 <= W;
@@ -788,41 +833,32 @@ function row(ctx, prefix, pieces, cardMode) {
     pieces.forEach((x, n) => (files[`${prefix}-${n + 1}`] = svg(x.w, x.h, x.body, x.title, c.motion)));
     return files;
   }
-  const h = Math.max(...pieces.map((x) => x.h)) + 26;
+  const h = Math.max(...pieces.map((x) => x.h)) + 20;
   const cap = (W - pieces.reduce((a, x) => a + x.w + GAP, 0)) / 2;
-  const bg = p.bg;
   files[`${prefix}-l`] = svg(
     cap,
     h,
-    neumorphicFilterDefs(p, `${prefix}-l`) +
-      `<rect x="14" y="4" width="${(cap + 26).toFixed(1)}" height="${h - 8}" rx="20" fill="url(#neu-convex-${prefix}-l)" stroke="${p.borderOuter}" stroke-width="1.2"/>` +
-      neuWell(28, h / 2 - 7, 36, 14, 7, p, `${prefix}-l`) +
-      `<circle cx="38" cy="${h / 2}" r="3" fill="${p.red}"/>` +
-      `<circle cx="52" cy="${h / 2}" r="3" fill="${p.gold}"/>`,
+    neuDefs(p, `${prefix}-l`) +
+      `<rect x="2" y="2" width="${(cap + 30).toFixed(1)}" height="${h - 4}" rx="22" fill="${p.surface}"/>` +
+      neuWell(16, h / 2 - 8, Math.max(24, cap - 24), 16, 8, `${prefix}-l`),
     "",
     c.motion
   );
   files[`${prefix}-r`] = svg(
     cap,
     h,
-    neumorphicFilterDefs(p, `${prefix}-r`) +
-      `<rect x="-40" y="4" width="${(cap + 26).toFixed(1)}" height="${h - 8}" rx="20" fill="url(#neu-convex-${prefix}-r)" stroke="${p.borderOuter}" stroke-width="1.2"/>` +
-      neuWell(cap - 64, h / 2 - 7, 36, 14, 7, p, `${prefix}-r`) +
-      `<circle cx="${(cap - 52).toFixed(1)}" cy="${h / 2}" r="3" fill="${p.gold}"/>` +
-      `<circle cx="${(cap - 38).toFixed(1)}" cy="${h / 2}" r="3" fill="${p.red}"/>`,
+    neuDefs(p, `${prefix}-r`) +
+      `<rect x="-32" y="2" width="${(cap + 30).toFixed(1)}" height="${h - 4}" rx="22" fill="${p.surface}"/>` +
+      neuWell(8, h / 2 - 8, Math.max(24, cap - 24), 16, 8, `${prefix}-r`),
     "",
     c.motion
   );
   pieces.forEach((x, n) => {
     const w = x.w + GAP;
-    const uid = `${prefix}-m-${n}`;
     files[`${prefix}-${n + 1}`] = svg(
       w,
       h,
-      neumorphicFilterDefs(p, uid) +
-        `<rect x="0" y="4" width="${w + 1}" height="${h - 8}" fill="url(#neu-convex-${uid})"/>` +
-        `<line x1="0" y1="4.5" x2="${w + 1}" y2="4.5" stroke="${p.borderOuter}" stroke-width="1.2"/>` +
-        `<line x1="0" y1="${h - 4.5}" x2="${w + 1}" y2="${h - 4.5}" stroke="${p.borderOuter}" stroke-width="1.2"/>` +
+      `<rect y="2" width="${w + 1}" height="${h - 4}" fill="${p.surface}"/>` +
         `<g transform="translate(${GAP / 2} ${(h - x.h) / 2})">${x.body}</g>`,
       x.title,
       c.motion
@@ -841,9 +877,8 @@ function buttons(ctx) {
 
 // --- 8. NEUMORPHIC WAVE DIVIDER ---
 function wave({ c, p }) {
-  const h = 44;
+  const h = 48;
   const uid = "wave";
-  const defs = neumorphicFilterDefs(p, uid);
   const pts = [];
   const amp = 5;
   const len = 48;
@@ -852,31 +887,27 @@ function wave({ c, p }) {
   }
 
   const b = [
-    defs,
-    // Extruded pill strip housing a sunken wave groove
-    `<rect x="14" y="6" width="${W - 28}" height="32" rx="16" fill="url(#neu-convex-${uid})" filter="url(#neu-sm-${uid})"/>`,
-    neuWell(24, 12, W - 48, 20, 10, p, uid),
-    `<clipPath id="w-clip"><rect x="26" y="13" width="${W - 52}" height="18" rx="9"/></clipPath>`,
+    neuBoard(W, h, p, uid, 22),
+    neuWell(24, 12, W - 48, 24, 12, uid),
+    `<clipPath id="w-clip"><rect x="26" y="14" width="${W - 52}" height="20" rx="10"/></clipPath>`,
     `<g clip-path="url(#w-clip)">`,
-    `<path class="wave" d="M${pts.join(" L")}" fill="none" stroke="${p.shLight}" stroke-width="4.5" stroke-linecap="round" opacity="0.6"/>`,
-    `<path class="wave" d="M${pts.map(p2 => { const [px, py] = p2.split(' '); return `${px} ${(parseFloat(py) - 1.5).toFixed(1)}`; }).join(" L")}" fill="none" stroke="${p.shDark}" stroke-width="4" stroke-linecap="round" opacity="0.5"/>`,
-    `<path class="wave" d="M${pts.join(" L")}" fill="none" stroke="${p.gold}" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>`,
+    `<path class="wave" d="M${pts.join(" L")}" fill="none" stroke="url(#acc-${uid})" stroke-width="3.5" stroke-linecap="round"/>`,
     `</g>`,
   ];
   return svg(W, h, b.join(""), "divider", c.motion);
 }
 
 function credit({ p }) {
-  const label = "DESIGNED WITH NEUMORPHISM AESTHETICS // EXPRESSIVE PROFILE";
+  const label = "NEUMORPHIC SOFT UI // DEUTSCHE AUSGABE";
   const size = 11;
-  const w = textWidth(label, size, 600) + 28;
+  const w = Math.round(textWidth(label, size, 700) + label.length * 0.8 + 44);
   return svg(
     w,
-    26,
-    neumorphicFilterDefs(p, "cred") +
-      `<rect width="${w}" height="26" rx="13" fill="${p.bg}"/>` +
-      neuWell(2, 2, w - 4, 22, 11, p, "cred") +
-      txt(w / 2, 16.5, label, size, p.textSoft, { weight: 600, anchor: "middle", extra: ' letter-spacing="0.8"' }),
+    32,
+    neuDefs(p, "cred") +
+      `<rect width="${w}" height="32" rx="16" fill="${p.surface}"/>` +
+      neuWell(4, 4, w - 8, 24, 12, "cred") +
+      txt(w / 2, 20, label, size, p.textMuted, { weight: 700, anchor: "middle", extra: ' letter-spacing="0.8"' }),
     label,
     false
   );
@@ -1127,16 +1158,23 @@ async function fetchLiveGitHubData(login, fallback) {
   }
 }
 
-async function fetchAvatar(login) {
-  if (!login || login.includes("[") || login.includes(" ")) return null;
-  try {
-    const r = await fetch(`https://github.com/${login}.png?size=320`);
-    if (!r.ok) return null;
-    const type = r.headers.get("content-type") || "image/png";
-    return `data:${type};base64,${Buffer.from(await r.arrayBuffer()).toString("base64")}`;
-  } catch {
-    return null;
+async function fetchAvatar(login, fallbackAvatar = null) {
+  if (!login || login.includes("[") || login.includes(" ")) return fallbackAvatar;
+  const urls = [
+    `https://avatars.githubusercontent.com/${login}?s=320`,
+    `https://github.com/${login}.png?size=320`,
+  ];
+  for (const url of urls) {
+    try {
+      const r = await fetch(url, { headers: { "User-Agent": "expressive-profile" } });
+      if (!r.ok) continue;
+      const type = r.headers.get("content-type") || "image/png";
+      return `data:${type};base64,${Buffer.from(await r.arrayBuffer()).toString("base64")}`;
+    } catch {
+      // try next
+    }
   }
+  return fallbackAvatar;
 }
 
 async function main() {
@@ -1144,7 +1182,8 @@ async function main() {
   const icons = JSON.parse(readFileSync(".profile/icons.json", "utf8"));
   const cached = existsSync(".profile/data.json") ? JSON.parse(readFileSync(".profile/data.json", "utf8")) : null;
   const data = await fetchLiveGitHubData(config.login, cached);
-  const ava = await fetchAvatar(config.login);
+  const ava = await fetchAvatar(config.login, cached?.avatar ?? null);
+  if (ava) data.avatar = ava;
 
   writeFileSync(".profile/data.json", JSON.stringify(data, null, 2) + "\n", "utf8");
   const files = renderAll(config, data, icons, ava);
@@ -1157,7 +1196,7 @@ async function main() {
     writeFileSync(p, content, "utf8");
   }
   writeFileSync("README.md", buildReadme(config, data, files), "utf8");
-  console.log("Rendered", Object.keys(files).length, "Neumorphism SVGs successfully.");
+  console.log("Rendered", Object.keys(files).length, "Pure Neumorphism SVGs successfully.");
 }
 
 main().catch((e) => {
