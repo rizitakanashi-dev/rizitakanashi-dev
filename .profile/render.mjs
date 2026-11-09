@@ -78,67 +78,55 @@ function icon(icons, name, x, y, size, fill) {
   return `<path d="${d}" fill="${fill}" transform="translate(${x.toFixed(1)} ${(y + 960 * s).toFixed(1)}) scale(${s.toFixed(4)})"/>`;
 }
 
-// --- Glassmorphism + Neo-Brutalism Theme System (German Flag Accents: Black, Red, Gold) ---
+// --- Neumorphism Theme System (Soft Extruded & Inset Surfaces with German Accents) ---
 function getTheme(dark) {
   if (dark) {
     return {
       dark: true,
-      canvasBg: "#0B0B0E",
-      gridStroke: "rgba(255,255,255,0.045)",
-      cardShadow: "#000000",
-      accentShadowRed: "#E63946",
-      accentShadowGold: "#F4B400",
-      borderStrong: "#F4F0EA",
-      borderSubtle: "rgba(244,240,234,0.32)",
-      glassTop: "rgba(32, 32, 40, 0.78)",
-      glassBottom: "rgba(18, 18, 24, 0.62)",
-      glassInnerTop: "rgba(255, 255, 255, 0.08)",
-      glassInnerBottom: "rgba(255, 255, 255, 0.03)",
-      specular: "rgba(255, 255, 255, 0.25)",
-      orbRed: "#E63946",
-      orbGold: "#F4B400",
-      orbCharcoal: "#3A3A48",
-      textMain: "#F6F4F0",
-      textMuted: "#B8B4AC",
-      textInverse: "#0B0B0E",
-      red: "#FF4D5A",
-      redBg: "#E63946",
-      gold: "#FFCC00",
-      goldBg: "#F4B400",
-      chipBg: "rgba(255, 255, 255, 0.07)",
-      chipBorder: "#F4F0EA",
-      chipShadow: "#000000",
-      barBg: "rgba(255,255,255,0.08)",
+      bg: "#181A1F",
+      panelBg: "#181A1F",
+      shLight: "#23262D",      // Top-left highlight shadow
+      shDark: "#0D0E11",       // Bottom-right deep shadow
+      shLightSubtle: "#1F2128",
+      shDarkSubtle: "#101114",
+      insetTop: "#0E0F12",
+      insetBottom: "#22252C",
+      borderOuter: "rgba(255, 255, 255, 0.04)",
+      borderInner: "rgba(0, 0, 0, 0.4)",
+      textMain: "#E6E9EE",
+      textMuted: "#8E94A0",
+      textSoft: "#6B7280",
+      red: "#FF5252",
+      redGlow: "rgba(255, 82, 82, 0.28)",
+      gold: "#FFD152",
+      goldGlow: "rgba(255, 209, 82, 0.25)",
+      accentBlue: "#60A5FA",
+      concaveGradient: ["#17191E", "#1A1C21"],
+      convexGradient: ["#1B1D23", "#16171C"],
     };
   }
   return {
     dark: false,
-    canvasBg: "#F4F0EA",
-    gridStroke: "rgba(17,17,21,0.06)",
-    cardShadow: "#111115",
-    accentShadowRed: "#D62828",
-    accentShadowGold: "#E09F00",
-    borderStrong: "#111115",
-    borderSubtle: "rgba(17,17,21,0.28)",
-    glassTop: "rgba(255, 255, 255, 0.82)",
-    glassBottom: "rgba(255, 250, 242, 0.66)",
-    glassInnerTop: "rgba(255, 255, 255, 0.72)",
-    glassInnerBottom: "rgba(255, 255, 255, 0.45)",
-    specular: "rgba(255, 255, 255, 0.9)",
-    orbRed: "#FF5964",
-    orbGold: "#FFD166",
-    orbCharcoal: "#A8A49C",
-    textMain: "#111115",
-    textMuted: "#4A4843",
-    textInverse: "#F6F4F0",
-    red: "#D62828",
-    redBg: "#E63946",
-    gold: "#B87D00",
-    goldBg: "#F4B400",
-    chipBg: "rgba(255, 255, 255, 0.78)",
-    chipBorder: "#111115",
-    chipShadow: "#111115",
-    barBg: "rgba(17,17,21,0.09)",
+    bg: "#E3E7ED",
+    panelBg: "#E3E7ED",
+    shLight: "#FFFFFF",        // Top-left soft highlight
+    shDark: "#BAC1CC",         // Bottom-right diffuse shadow
+    shLightSubtle: "#FFFFFF",
+    shDarkSubtle: "#C6CDD8",
+    insetTop: "#B4BCC8",
+    insetBottom: "#FFFFFF",
+    borderOuter: "rgba(255, 255, 255, 0.7)",
+    borderInner: "rgba(160, 170, 185, 0.3)",
+    textMain: "#22262E",
+    textMuted: "#5C6474",
+    textSoft: "#7E889B",
+    red: "#E53935",
+    redGlow: "rgba(229, 57, 53, 0.25)",
+    gold: "#D99B00",
+    goldGlow: "rgba(217, 155, 0, 0.25)",
+    accentBlue: "#2563EB",
+    concaveGradient: ["#DADFE7", "#E7EBF1"],
+    convexGradient: ["#E7EBF1", "#DADFE7"],
   };
 }
 
@@ -147,17 +135,16 @@ const CSS = `
 .pop{transform-box:fill-box;transform-origin:center;animation:pop .55s cubic-bezier(.34,1.56,.64,1) both}
 .fade{animation:fade .8s ease both}
 .spin{transform-box:fill-box;transform-origin:center;animation:spin 36s linear infinite}
-.spin-r{transform-box:fill-box;transform-origin:center;animation:spin 26s linear infinite reverse}
 .bob{transform-box:fill-box;transform-origin:center;animation:bob 6s ease-in-out infinite}
-.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 8s ease-in-out infinite}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 4s ease-in-out infinite}
 .grow{transform-box:fill-box;transform-origin:left center;animation:grow 1s cubic-bezier(.2,0,0,1) both}
-.wave{animation:wave 2.6s linear infinite}
-@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-@keyframes pop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
+.wave{animation:wave 3s linear infinite}
+@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 @keyframes spin{to{transform:rotate(360deg)}}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes pulse{0%,100%{transform:scale(1);opacity:.55}50%{transform:scale(1.12);opacity:.78}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes pulse{0%,100%{opacity:.85}50%{opacity:1}}
 @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes wave{from{transform:translateX(0)}to{transform:translateX(-48px)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}`;
@@ -179,230 +166,207 @@ function svg(w, h, body, title, motion = true, extra = "") {
   );
 }
 
-// --- Glass + Brutalist Card Base ---
-function glassBrutalShell(w, h, p, uid, opts = {}) {
-  const ox = opts.shadowOffset ?? 6;
-  const rx = opts.rx ?? 14;
-  const cw = w - ox - 4;
-  const ch = h - ox - 4;
-  const shadowColor = opts.shadowColor ?? p.cardShadow;
-  const orbs = opts.orbs ?? [
-    { cx: cw * 0.82, cy: ch * 0.25, r: 95, color: p.orbRed },
-    { cx: cw * 0.18, cy: ch * 0.78, r: 85, color: p.orbGold },
-  ];
-
-  const defs = [
-    `<defs>`,
-    `<linearGradient id="g-${uid}" x1="0" y1="0" x2="1" y2="1">`,
-    `<stop offset="0%" stop-color="${p.glassTop}"/>`,
-    `<stop offset="100%" stop-color="${p.glassBottom}"/>`,
-    `</linearGradient>`,
-    `<linearGradient id="gi-${uid}" x1="0" y1="0" x2="0" y2="1">`,
-    `<stop offset="0%" stop-color="${p.glassInnerTop}"/>`,
-    `<stop offset="100%" stop-color="${p.glassInnerBottom}"/>`,
-    `</linearGradient>`,
-    `<linearGradient id="sh-${uid}" x1="0" y1="0" x2="1" y2="0.4">`,
-    `<stop offset="0%" stop-color="${p.specular}"/>`,
-    `<stop offset="55%" stop-color="rgba(255,255,255,0)"/>`,
-    `</linearGradient>`,
-    `<pattern id="grid-${uid}" width="24" height="24" patternUnits="userSpaceOnUse">`,
-    `<path d="M 24 0 L 0 0 0 24" fill="none" stroke="${p.gridStroke}" stroke-width="1"/>`,
-    `</pattern>`,
-    `<filter id="blur-${uid}" x="-40%" y="-40%" width="180%" height="180%">`,
-    `<feGaussianBlur stdDeviation="34"/>`,
-    `</filter>`,
-    `<clipPath id="clip-${uid}"><rect x="2" y="2" width="${cw}" height="${ch}" rx="${rx}"/></clipPath>`,
-    `</defs>`,
-  ].join("");
-
-  const layers = [
-    defs,
-    // 1. Neo-Brutalist Hard Offset Shadow
-    `<rect x="${2 + ox}" y="${2 + ox}" width="${cw}" height="${ch}" rx="${rx}" fill="${shadowColor}"/>`,
-    // 2. Base Dark/Alabaster Backdrop inside card
-    `<rect x="2" y="2" width="${cw}" height="${ch}" rx="${rx}" fill="${p.canvasBg}"/>`,
-    // 3. Ambient Glowing Orbs & Architectural Grid (clipped)
-    `<g clip-path="url(#clip-${uid})">`,
-    ...orbs.map(
-      (o, idx) =>
-        `<circle class="pulse" style="animation-delay:${(idx * 1.3).toFixed(1)}s" cx="${o.cx.toFixed(1)}" cy="${o.cy.toFixed(1)}" r="${o.r}" fill="${o.color}" opacity="${p.dark ? "0.42" : "0.48"}" filter="url(#blur-${uid})"/>`
-    ),
-    `<rect x="2" y="2" width="${cw}" height="${ch}" fill="url(#grid-${uid})"/>`,
-    // Frosted Glass Overlay
-    `<rect x="2" y="2" width="${cw}" height="${ch}" fill="url(#g-${uid})"/>`,
-    // Specular Diagonal Glare
-    `<polygon points="2,2 ${Math.round(cw * 0.55)},2 ${Math.round(cw * 0.32)},${ch + 2} 2,${ch + 2}" fill="url(#sh-${uid})" opacity="0.45"/>`,
-    // Top Specular Highlight Bar
-    `<line x1="${2 + rx}" y1="3.5" x2="${cw - rx}" y2="3.5" stroke="${p.specular}" stroke-width="1.5"/>`,
-    // Subtle German Tri-color Corner Tag (Top-Right Brutalist Detail)
-    `<rect x="${cw - 76}" y="2" width="24" height="6" fill="#111115"/>`,
-    `<rect x="${cw - 52}" y="2" width="24" height="6" fill="#E63946"/>`,
-    `<rect x="${cw - 28}" y="2" width="26" height="6" fill="#F4B400"/>`,
-    `<line x1="${cw - 76}" y1="8" x2="${cw + 2}" y2="8" stroke="${p.borderStrong}" stroke-width="1.5"/>`,
-    `<line x1="${cw - 76}" y1="2" x2="${cw - 76}" y2="8" stroke="${p.borderStrong}" stroke-width="1.5"/>`,
-    `</g>`,
-    // 4. Crisp Neo-Brutalist Outer Stroke
-    `<rect x="2" y="2" width="${cw}" height="${ch}" rx="${rx}" fill="none" stroke="${p.borderStrong}" stroke-width="2.5"/>`,
-  ].join("");
-
-  return { svg: layers, cw, ch };
+// --- Neumorphic Filters & Shapes ---
+function neumorphicFilterDefs(p, uid) {
+  const dx = 6;
+  const dy = 6;
+  const dev = 7;
+  return `
+    <defs>
+      <!-- Extruded Card Shadow Filter -->
+      <filter id="neu-ext-${uid}" x="-20%" y="-20%" width="150%" height="150%">
+        <feDropShadow dx="-${dx}" dy="-${dy}" stdDeviation="${dev}" flood-color="${p.shLight}" flood-opacity="${p.dark ? "0.6" : "0.9"}"/>
+        <feDropShadow dx="${dx}" dy="${dy}" stdDeviation="${dev + 1}" flood-color="${p.shDark}" flood-opacity="${p.dark ? "0.8" : "0.6"}"/>
+      </filter>
+      <!-- Small Element Extruded Filter (Chips & Buttons) -->
+      <filter id="neu-sm-${uid}" x="-30%" y="-30%" width="170%" height="170%">
+        <feDropShadow dx="-3" dy="-3" stdDeviation="3.5" flood-color="${p.shLight}" flood-opacity="${p.dark ? "0.65" : "0.95"}"/>
+        <feDropShadow dx="3" dy="3" stdDeviation="4" flood-color="${p.shDark}" flood-opacity="${p.dark ? "0.75" : "0.55"}"/>
+      </filter>
+      <!-- Pressed / Inset Gradient Simulators -->
+      <linearGradient id="neu-pressed-${uid}" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="${p.insetTop}"/>
+        <stop offset="100%" stop-color="${p.insetBottom}"/>
+      </linearGradient>
+      <!-- Subtle Surface Convex Gradient -->
+      <linearGradient id="neu-convex-${uid}" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="${p.convexGradient[0]}"/>
+        <stop offset="100%" stop-color="${p.convexGradient[1]}"/>
+      </linearGradient>
+      <!-- Glow Gradients -->
+      <radialGradient id="glow-red-${uid}" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="${p.red}" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="${p.red}" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="glow-gold-${uid}" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="${p.gold}" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="${p.gold}" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+  `;
 }
 
-// --- Section Header (Brutalist Sticker + Glass Label + Neo-Index) ---
-function sectionHeader(x, y, label, ic, indexCode, { p, i }, delay = 0) {
+// Extruded Neumorphic Panel (Card)
+function neuPanel(w, h, p, uid, opts = {}) {
+  const rx = opts.rx ?? 24;
+  const pad = opts.margin ?? 14;
+  const pw = w - pad * 2;
+  const ph = h - pad * 2;
+  const defs = neumorphicFilterDefs(p, uid);
+
+  const body = [
+    defs,
+    // Soft extruded panel with dual light/dark drop-shadow
+    `<rect x="${pad}" y="${pad}" width="${pw}" height="${ph}" rx="${rx}" fill="url(#neu-convex-${uid})" filter="url(#neu-ext-${uid})"/>`,
+    // Subtle outer perimeter rim
+    `<rect x="${pad + 0.5}" y="${pad + 0.5}" width="${pw - 1}" height="${ph - 1}" rx="${rx}" fill="none" stroke="${p.borderOuter}" stroke-width="1.2"/>`,
+    // German Tri-color soft status dot/pills in top-right (inside sunken well)
+    neuWell(pad + pw - 68, pad + 12, 54, 16, 8, p, uid),
+    `<circle cx="${pad + pw - 55}" cy="${pad + 20}" r="3.5" fill="${p.dark ? "#383C47" : "#111115"}"/>`,
+    `<circle cx="${pad + pw - 41}" cy="${pad + 20}" r="3.5" fill="${p.red}"/>`,
+    `<circle cx="${pad + pw - 27}" cy="${pad + 20}" r="3.5" fill="${p.gold}"/>`,
+  ].join("");
+
+  return { svg: body, pw, ph, pad };
+}
+
+// Neumorphic Inset / Sunken Well (For meters, badges, and counters)
+function neuWell(x, y, w, h, rx, p, uid, fill = "url(#neu-pressed-" + uid + ")") {
+  return [
+    `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="${fill}"/>`,
+    `<rect x="${x + 0.5}" y="${y + 0.5}" width="${w - 1}" height="${h - 1}" rx="${rx}" fill="none" stroke="${p.borderInner}" stroke-width="1.2"/>`,
+  ].join("");
+}
+
+// Section Header with Soft Embossed Icon
+function sectionHeader(x, y, label, ic, indexCode, { p, i }, uid, delay = 0) {
   const b = [];
-  // Brutalist Icon Box with hard shadow
+  const iconBoxSize = 40;
+  // Soft raised icon button
   b.push(`<g class="pop" style="animation-delay:${delay.toFixed(2)}s">`);
-  b.push(`<rect x="${x + 3}" y="${y + 3}" width="38" height="38" rx="8" fill="${p.cardShadow}"/>`);
-  b.push(`<rect x="${x}" y="${y}" width="38" height="38" rx="8" fill="${p.goldBg}" stroke="${p.borderStrong}" stroke-width="2"/>`);
-  b.push(icon(i, ic, x + 8, y + 8, 22, "#111115"));
+  b.push(`<rect x="${x}" y="${y}" width="${iconBoxSize}" height="${iconBoxSize}" rx="12" fill="url(#neu-convex-${uid})" filter="url(#neu-sm-${uid})"/>`);
+  b.push(`<rect x="${x + 0.5}" y="${y + 0.5}" width="${iconBoxSize - 1}" height="${iconBoxSize - 1}" rx="12" fill="none" stroke="${p.borderOuter}" stroke-width="1"/>`);
+  b.push(icon(i, ic, x + 10, y + 10, 20, p.red));
   b.push(`</g>`);
 
-  // Title text
-  b.push(txt(x + 52, y + 27, fit(label.toUpperCase(), 21, W - x - 190, 700), 21, p.textMain, { weight: 700, cls: "up", delay: delay + 0.05, extra: ' letter-spacing="0.6"' }));
+  // Section Title
+  b.push(txt(x + 52, y + 27, fit(label, 20, W - x - 200, 600), 20, p.textMain, { weight: 600, cls: "up", delay: delay + 0.05 }));
 
-  // Right-side Brutalist Index Tag (e.g. // SEC-01)
-  const tagW = textWidth(indexCode, 12, 700) + 22;
+  // Sunken Neumorphic Index Badge on right
+  const tagW = textWidth(indexCode, 11.5, 600) + 20;
   const tx = W - 36 - tagW;
   b.push(`<g class="fade" style="animation-delay:${(delay + 0.1).toFixed(2)}s">`);
-  b.push(`<rect x="${tx + 2}" y="${y + 8}" width="${tagW}" height="24" rx="5" fill="${p.cardShadow}"/>`);
-  b.push(`<rect x="${tx}" y="${y + 6}" width="${tagW}" height="24" rx="5" fill="${p.chipBg}" stroke="${p.borderStrong}" stroke-width="1.75"/>`);
-  b.push(txt(tx + tagW / 2, y + 22, indexCode, 12, p.textMain, { weight: 700, anchor: "middle", extra: ' letter-spacing="0.8"' }));
+  b.push(neuWell(tx, y + 8, tagW, 24, 8, p, uid));
+  b.push(txt(tx + tagW / 2, y + 24, indexCode, 11.5, p.textMuted, { weight: 600, anchor: "middle", extra: ' letter-spacing="0.5"' }));
   b.push(`</g>`);
 
-  // Brutalist Divider Line under header
-  b.push(`<line x1="${x}" y1="${y + 48}" x2="${W - 36}" y2="${y + 48}" stroke="${p.borderSubtle}" stroke-width="1.5" stroke-dasharray="6 4"/>`);
+  // Neumorphic divider line (soft double groove: dark top, highlight bottom)
+  b.push(`<line x1="${x}" y1="${y + 50}" x2="${W - 36}" y2="${y + 50}" stroke="${p.shDark}" stroke-width="1.2" opacity="0.6"/>`);
+  b.push(`<line x1="${x}" y1="${y + 51.2}" x2="${W - 36}" y2="${y + 51.2}" stroke="${p.shLight}" stroke-width="1.2" opacity="0.8"/>`);
 
   return b.join("");
 }
 
-// --- Glass + Brutalist Chip ---
-function brutalChip(icons, p, x, y, label, o = {}) {
+// Neumorphic Chip / Pill Button
+function neuChip(icons, p, x, y, label, uid, o = {}) {
   const h = o.h ?? 36;
-  const size = o.size ?? 14;
-  const pad = 13;
+  const size = o.size ?? 13.5;
+  const pad = 14;
   const iw = o.icon ? 18 : 0;
   const gap = o.icon ? 8 : 0;
-  const w = pad * 2 + iw + gap + textWidth(label, size, 600);
-  const rx = o.rx ?? 8;
-  const so = o.shadowOffset ?? 3;
+  const w = pad * 2 + iw + gap + textWidth(label, size, 500);
+  const rx = o.rx ?? 14;
 
-  let fill = p.chipBg;
-  let fg = p.textMain;
-  let iconColor = p.red;
-  if (o.accent === "gold") {
-    fill = p.goldBg;
-    fg = "#111115";
-    iconColor = "#111115";
-  } else if (o.accent === "red") {
-    fill = p.redBg;
-    fg = "#FFFFFF";
-    iconColor = "#FFFFFF";
+  let iconColor = o.iconColor ?? (o.accent === "red" ? p.red : o.accent === "gold" ? p.gold : p.textMuted);
+  let fg = o.accent ? p.textMain : p.textMain;
+
+  let body = "";
+  if (o.pressed) {
+    body += neuWell(x, y, w, h, rx, p, uid);
+  } else {
+    body += `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="url(#neu-convex-${uid})" filter="url(#neu-sm-${uid})"/>`;
+    body += `<rect x="${x + 0.5}" y="${y + 0.5}" width="${w - 1}" height="${h - 1}" rx="${rx}" fill="none" stroke="${p.borderOuter}" stroke-width="1"/>`;
   }
-
-  let body = `<rect x="${(x + so).toFixed(1)}" y="${(y + so).toFixed(1)}" width="${w.toFixed(1)}" height="${h}" rx="${rx}" fill="${p.chipShadow}"/>`;
-  body += `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h}" rx="${rx}" fill="${fill}" stroke="${p.chipBorder}" stroke-width="1.8"/>`;
-  // Specular top line inside chip
-  body += `<line x1="${(x + 6).toFixed(1)}" y1="${(y + 2).toFixed(1)}" x2="${(x + w - 6).toFixed(1)}" y2="${(y + 2).toFixed(1)}" stroke="${p.specular}" stroke-width="1"/>`;
-  if (o.icon) body += icon(icons, o.icon, x + pad, y + (h - 18) / 2, 18, iconColor);
-  body += txt(x + pad + iw + gap, y + h / 2 + size * 0.36, label, size, fg, { weight: 600 });
-  return [pop(body, o.delay ?? 0), w + so];
+  if (o.accent) {
+    const dotColor = o.accent === "red" ? p.red : p.gold;
+    body += `<circle cx="${x + 12}" cy="${y + h / 2}" r="3" fill="${dotColor}"/>`;
+  }
+  const extraOffset = o.accent ? 6 : 0;
+  if (o.icon) body += icon(icons, o.icon, x + pad + extraOffset, y + (h - 18) / 2, 18, iconColor);
+  body += txt(x + pad + iw + gap + extraOffset, y + h / 2 + size * 0.36, label, size, fg, { weight: 500 });
+  return [pop(body, o.delay ?? 0), w];
 }
 
 // --- 1. HERO BLOCK ---
 function hero(ctx, avatar) {
   const { c, p, i } = ctx;
-  const h = 316;
-  const shell = glassBrutalShell(W, h, p, "hero", {
-    orbs: [
-      { cx: 700, cy: 70, r: 120, color: p.orbRed },
-      { cx: 520, cy: 250, r: 110, color: p.orbGold },
-      { cx: 140, cy: 150, r: 95, color: p.orbRed },
-    ],
-  });
+  const h = 320;
+  const uid = "hero";
+  const shell = neuPanel(W, h, p, uid);
   const b = [shell.svg];
 
-  // Top Brutalist Window Bar inside Hero
-  b.push(`<rect x="24" y="20" width="12" height="12" rx="2" fill="#111115" stroke="${p.borderStrong}" stroke-width="1.5"/>`);
-  b.push(`<rect x="42" y="20" width="12" height="12" rx="2" fill="#E63946" stroke="${p.borderStrong}" stroke-width="1.5"/>`);
-  b.push(`<rect x="60" y="20" width="12" height="12" rx="2" fill="#F4B400" stroke="${p.borderStrong}" stroke-width="1.5"/>`);
-  b.push(txt(84, 30, "PORTFOLIO // DEUTSCH-EDITION.SYS", 11, p.textMuted, { weight: 700, extra: ' letter-spacing="1.4"' }));
-  b.push(`<line x1="24" y1="42" x2="${shell.cw - 20}" y2="42" stroke="${p.borderSubtle}" stroke-width="1.5"/>`);
+  // Soft Ambient Glow behind Avatar
+  b.push(`<circle cx="132" cy="160" r="105" fill="url(#glow-gold-${uid})" opacity="0.6" class="pulse"/>`);
 
-  // Decorative floating Neo-Brutalist Glass Geometry on right
-  b.push(`<g class="bob">`);
-  b.push(`<rect x="752" y="58" width="52" height="52" rx="10" fill="${p.cardShadow}" transform="rotate(12 778 84)"/>`);
-  b.push(`<rect x="748" y="54" width="52" height="52" rx="10" fill="${p.goldBg}" stroke="${p.borderStrong}" stroke-width="2" transform="rotate(12 774 80)"/>`);
-  b.push(icon(i, "code", 761, 67, 26, "#111115"));
-  b.push(`</g>`);
+  // Avatar Neumorphic Frame (Double-ring extruded & sunken socket)
+  const ax = 42;
+  const ay = 68;
+  const asize = 180;
+  const arx = 36;
+  // Outer soft elevated mound
+  b.push(`<rect x="${ax - 6}" y="${ay - 6}" width="${asize + 12}" height="${asize + 12}" rx="${arx + 4}" fill="url(#neu-convex-${uid})" filter="url(#neu-ext-${uid})"/>`);
+  // Sunken socket
+  b.push(neuWell(ax - 2, ay - 2, asize + 4, asize + 4, arx, p, uid));
 
-  // Avatar Neo-Brutalist Frame + Glass Backing
-  const ax = 36;
-  const ay = 66;
-  const asize = 196;
-  // Offset Red + Black Double Brutalist Shadow
-  b.push(`<rect x="${ax + 10}" y="${ay + 10}" width="${asize}" height="${asize}" rx="18" fill="${p.cardShadow}"/>`);
-  b.push(`<rect x="${ax + 5}" y="${ay + 5}" width="${asize}" height="${asize}" rx="18" fill="${p.redBg}" stroke="${p.borderStrong}" stroke-width="2"/>`);
-  b.push(`<clipPath id="ava-clip"><rect x="${ax}" y="${ay}" width="${asize}" height="${asize}" rx="18"/></clipPath>`);
-  b.push(`<rect x="${ax}" y="${ay}" width="${asize}" height="${asize}" rx="18" fill="url(#gi-hero)"/>`);
-
+  // Avatar Image with Rounded Clip
+  b.push(`<clipPath id="ava-clip"><rect x="${ax}" y="${ay}" width="${asize}" height="${asize}" rx="${arx - 2}"/></clipPath>`);
   if (avatar) {
     b.push(`<g class="fade"><image href="${avatar}" x="${ax}" y="${ay}" width="${asize}" height="${asize}" clip-path="url(#ava-clip)" preserveAspectRatio="xMidYMid slice"/></g>`);
   } else {
-    // Stylized Brutalist Avatar Placeholder
     b.push(`<g clip-path="url(#ava-clip)">`);
-    b.push(`<circle cx="${ax + asize / 2}" cy="${ay + asize / 2}" r="76" fill="${p.goldBg}" opacity="0.22"/>`);
-    b.push(icon(i, "person", ax + 48, ay + 40, 100, p.textMain));
-    b.push(`<rect x="${ax}" y="${ay + asize - 34}" width="${asize}" height="34" fill="${p.goldBg}" stroke="${p.borderStrong}" stroke-width="2"/>`);
-    b.push(txt(ax + asize / 2, ay + asize - 12, "ENTWICKLER // ML", 12, "#111115", { weight: 700, anchor: "middle", extra: ' letter-spacing="1.1"' }));
+    b.push(`<rect x="${ax}" y="${ay}" width="${asize}" height="${asize}" fill="${p.panelBg}"/>`);
+    b.push(icon(i, "person", ax + 40, ay + 36, 100, p.textMuted));
     b.push(`</g>`);
   }
-  b.push(`<rect x="${ax}" y="${ay}" width="${asize}" height="${asize}" rx="18" fill="none" stroke="${p.borderStrong}" stroke-width="2.5"/>`);
+  // Soft rim highlight inside avatar
+  b.push(`<rect x="${ax}" y="${ay}" width="${asize}" height="${asize}" rx="${arx - 2}" fill="none" stroke="${p.borderOuter}" stroke-width="1.5"/>`);
 
   // Hero Text Content
-  const tx = 264;
-  // Greeting Sticker Badge
-  const greetText = c.hero.greeting.toUpperCase();
-  const gw = textWidth(greetText, 13, 700) + 24;
+  const tx = 258;
+  // Greeting Pill
+  const greetText = c.hero.greeting;
+  const gw = textWidth(greetText, 13, 500) + 28;
   b.push(`<g class="up" style="animation-delay:0.08s">`);
-  b.push(`<rect x="${tx + 3}" y="67" width="${gw.toFixed(1)}" height="28" rx="6" fill="${p.cardShadow}"/>`);
-  b.push(`<rect x="${tx}" y="64" width="${gw.toFixed(1)}" height="28" rx="6" fill="${p.redBg}" stroke="${p.borderStrong}" stroke-width="2"/>`);
-  b.push(txt(tx + 12, 83, greetText, 13, "#FFFFFF", { weight: 700, extra: ' letter-spacing="0.8"' }));
+  b.push(neuWell(tx, 66, gw, 26, 13, p, uid));
+  b.push(`<circle cx="${tx + 12}" cy="79" r="3.5" fill="${p.red}"/>`);
+  b.push(txt(tx + 22, 83, greetText, 13, p.textMuted, { weight: 500 }));
   b.push(`</g>`);
 
-  // Main Name with Brutalist Drop Shadow
+  // Main Name
   const name = c.hero.name || c.login;
-  const room = W - tx - 95;
-  const size = Math.min(48, room / Math.max(1, textWidth(name, 1, 700)));
-  b.push(
-    pop(
-      txt(tx + 2.5, 142.5, name, size, p.cardShadow, { weight: 700 }) +
-        txt(tx, 140, name, size, p.textMain, { weight: 700 }),
-      0.16,
-      "up"
-    )
-  );
+  const room = W - tx - 80;
+  const size = Math.min(44, room / Math.max(1, textWidth(name, 1, 700)));
+  b.push(pop(txt(tx, 134, name, size, p.textMain, { weight: 700 }), 0.16, "up"));
 
-  // Subtitle inside Frosted Glass Sub-box
-  const lines = wrap(c.hero.subtitle, 16, W - tx - 64, 500, 2);
-  const subH = lines.length * 22 + 18;
-  b.push(`<g class="up" style="animation-delay:0.26s">`);
-  b.push(`<rect x="${tx}" y="156" width="${W - tx - 40}" height="${subH}" rx="10" fill="url(#gi-hero)" stroke="${p.borderSubtle}" stroke-width="1.5"/>`);
-  b.push(`<rect x="${tx}" y="156" width="5" height="${subH}" rx="2.5" fill="${p.goldBg}"/>`);
+  // Subtitle (Wrapped inside soft sunken text bar)
+  const lines = wrap(c.hero.subtitle, 15, W - tx - 60, 400, 2);
+  const subH = lines.length * 22 + 16;
+  b.push(`<g class="up" style="animation-delay:0.25s">`);
+  b.push(neuWell(tx, 150, W - tx - 44, subH, 12, p, uid));
   lines.forEach((line, n) => {
-    b.push(txt(tx + 16, 178 + n * 22, line, 15.5, p.textMuted, { weight: 500 }));
+    b.push(txt(tx + 16, 172 + n * 22, line, 15, p.textMuted, { weight: 400 }));
   });
   b.push(`</g>`);
 
-  // Chips Row
+  // Hero Chips Row
   let cx2 = tx;
   const cy2 = 236;
   c.hero.chips.forEach((item, n) => {
-    const accent = n === 0 ? "gold" : n === 1 ? "default" : "default";
-    const [g, w] = brutalChip(i, p, cx2, cy2, item.label, { icon: item.icon, delay: 0.4 + n * 0.08, accent });
-    if (cx2 + w > W - 28) return;
+    const accent = n === 0 ? "gold" : n === 1 ? "red" : undefined;
+    const [g, cw] = neuChip(i, p, cx2, cy2, item.label, uid, { icon: item.icon, delay: 0.35 + n * 0.08, accent });
+    if (cx2 + cw > W - 32) return;
     b.push(g);
-    cx2 += w + 8;
+    cx2 += cw + 10;
   });
 
   return svg(W, h, b.join(""), `${c.hero.greeting} ${name}`, c.motion);
@@ -413,30 +377,26 @@ function about(ctx) {
   const { c, p, i } = ctx;
   const row = 58;
   const h = 104 + row * c.about.items.length;
-  const shell = glassBrutalShell(W, h, p, "about", {
-    orbs: [
-      { cx: 140, cy: h * 0.35, r: 100, color: p.orbGold },
-      { cx: 700, cy: h * 0.7, r: 110, color: p.orbRed },
-    ],
-  });
+  const uid = "about";
+  const shell = neuPanel(W, h, p, uid);
   const b = [shell.svg];
-  b.push(sectionHeader(28, 22, c.about.title, "person", "// PROFIL-01", ctx));
+  b.push(sectionHeader(36, 26, c.about.title, "person", "PROFIL // 01", ctx, uid));
 
   c.about.items.forEach((item, n) => {
-    const y = 84 + n * row;
-    const cw = W - 64;
-    const ch = row - 10;
-    const badgeFill = n % 2 === 0 ? p.redBg : p.goldBg;
-    const badgeFg = n % 2 === 0 ? "#FFFFFF" : "#111115";
+    const y = 88 + n * row;
+    const cw = W - 72;
+    const ch = row - 12;
 
     b.push(`<g class="up" style="animation-delay:${(0.12 + n * 0.08).toFixed(2)}s">`);
-    // Brutalist offset shadow for each row card
-    b.push(`<rect x="31" y="${y + 3}" width="${cw}" height="${ch}" rx="10" fill="${p.cardShadow}"/>`);
-    b.push(`<rect x="28" y="${y}" width="${cw}" height="${ch}" rx="10" fill="url(#gi-about)" stroke="${p.borderStrong}" stroke-width="1.8"/>`);
-    // Left Brutalist Icon Tag
-    b.push(`<rect x="38" y="${y + 8}" width="32" height="32" rx="7" fill="${badgeFill}" stroke="${p.borderStrong}" stroke-width="1.6"/>`);
-    b.push(icon(i, item.icon, 45, y + 15, 18, badgeFg));
-    b.push(txt(82, y + 30, fit(item.label, 16, cw - 100, 600), 16, p.textMain, { weight: 600 }));
+    // Soft extruded item row
+    b.push(`<rect x="36" y="${y}" width="${cw}" height="${ch}" rx="16" fill="url(#neu-convex-${uid})" filter="url(#neu-sm-${uid})"/>`);
+    b.push(`<rect x="36.5" y="${y + 0.5}" width="${cw - 1}" height="${ch - 1}" rx="16" fill="none" stroke="${p.borderOuter}" stroke-width="1"/>`);
+
+    // Inset circular icon pocket
+    b.push(neuWell(48, y + 8, 30, 30, 15, p, uid));
+    const iconColor = n % 2 === 0 ? p.red : p.gold;
+    b.push(icon(i, item.icon, 54, y + 14, 18, iconColor));
+    b.push(txt(90, y + 29, fit(item.label, 15.5, cw - 110, 500), 15.5, p.textMain, { weight: 500 }));
     b.push(`</g>`);
   });
 
@@ -446,49 +406,44 @@ function about(ctx) {
 // --- 3. TECH STACK BLOCK ---
 function stack(ctx) {
   const { c, p, i } = ctx;
-  let y = 86;
+  let y = 90;
   let d = 0.1;
+  const uid = "stack";
   const groups = [];
 
   for (const [gi, group] of c.stack.groups.entries()) {
     if (group.title) {
-      const gw = textWidth(group.title.toUpperCase(), 11.5, 700) + 20;
-      const pillColor = gi % 2 === 0 ? p.goldBg : p.redBg;
-      const pillFg = gi % 2 === 0 ? "#111115" : "#FFFFFF";
+      const gw = textWidth(group.title.toUpperCase(), 11.5, 600) + 20;
+      const dotColor = gi % 2 === 0 ? p.gold : p.red;
       groups.push(
         `<g class="fade" style="animation-delay:${d.toFixed(2)}s">` +
-          `<rect x="30" y="${y + 2}" width="${gw.toFixed(1)}" height="22" rx="4" fill="${p.cardShadow}"/>` +
-          `<rect x="28" y="${y}" width="${gw.toFixed(1)}" height="22" rx="4" fill="${pillColor}" stroke="${p.borderStrong}" stroke-width="1.5"/>` +
-          txt(38, y + 15, group.title.toUpperCase(), 11.5, pillFg, { weight: 700, extra: ' letter-spacing="1.1"' }) +
-          `<line x1="${(28 + gw + 10).toFixed(1)}" y1="${y + 11}" x2="${W - 36}" y2="${y + 11}" stroke="${p.borderSubtle}" stroke-width="1.2"/>` +
+          neuWell(36, y + 2, gw, 22, 11, p, uid) +
+          `<circle cx="48" cy="${y + 13}" r="3" fill="${dotColor}"/>` +
+          txt(56, y + 17, group.title.toUpperCase(), 11.5, p.textMuted, { weight: 600, extra: ' letter-spacing="0.6"' }) +
+          `<line x1="${(36 + gw + 10).toFixed(1)}" y1="${y + 13}" x2="${W - 40}" y2="${y + 13}" stroke="${p.shDark}" stroke-width="1" opacity="0.4"/>` +
+          `<line x1="${(36 + gw + 10).toFixed(1)}" y1="${y + 14.2}" x2="${W - 40}" y2="${y + 14.2}" stroke="${p.shLight}" stroke-width="1" opacity="0.6"/>` +
           `</g>`
       );
     }
-    let x = 28;
-    let cy = group.title ? y + 32 : y;
+    let x = 36;
+    let cy = group.title ? y + 34 : y;
     for (const item of group.items) {
-      const [, w] = brutalChip(i, p, 0, 0, item.label, { icon: item.icon });
-      if (x + w > W - 32) {
-        x = 28;
+      const [, w] = neuChip(i, p, 0, 0, item.label, uid, { icon: item.icon });
+      if (x + w > W - 36) {
+        x = 36;
         cy += 46;
       }
-      groups.push(brutalChip(i, p, x, cy, item.label, { icon: item.icon, delay: d })[0]);
-      x += w + 8;
-      d += 0.04;
+      groups.push(neuChip(i, p, x, cy, item.label, uid, { icon: item.icon, delay: d })[0]);
+      x += w + 10;
+      d += 0.035;
     }
     y = cy + 38 + 24;
   }
 
-  const h = y + 8;
-  const shell = glassBrutalShell(W, h, p, "stack", {
-    orbs: [
-      { cx: 700, cy: 130, r: 120, color: p.orbRed },
-      { cx: 160, cy: h * 0.55, r: 120, color: p.orbGold },
-      { cx: 650, cy: h * 0.85, r: 110, color: p.orbRed },
-    ],
-  });
+  const h = y + 10;
+  const shell = neuPanel(W, h, p, uid);
   const b = [shell.svg];
-  b.push(sectionHeader(28, 22, c.stack.title, "code", "// STACK-02", ctx));
+  b.push(sectionHeader(36, 26, c.stack.title, "code", "STACK // 02", ctx, uid));
   b.push(...groups);
   return svg(W, h, b.join(""), c.stack.title, c.motion);
 }
@@ -500,6 +455,7 @@ const LANG_ICONS = {
   TypeScript: "brand:typescript",
   JavaScript: "brand:javascript",
   "C#": "brand:dotnet",
+  Go: "brand:go",
   PHP: "brand:php",
   HTML: "brand:html5",
   CSS: "brand:css",
@@ -542,65 +498,59 @@ function slug(name) {
 function card(ctx, repo, index) {
   const { c, p, i } = ctx;
   const w = 412;
-  const h = 238;
+  const h = 240;
   const d0 = 0.08 * index;
   const v = projectView(c, repo, index);
   const uid = `proj-${index}`;
-  const shell = glassBrutalShell(w, h, p, uid, {
-    shadowOffset: 5,
-    orbs: [
-      { cx: index % 2 === 0 ? 330 : 80, cy: 65, r: 80, color: index % 2 === 0 ? p.orbRed : p.orbGold },
-      { cx: index % 2 === 0 ? 90 : 320, cy: 190, r: 75, color: index % 2 === 0 ? p.orbGold : p.orbRed },
-    ],
-  });
+  const shell = neuPanel(w, h, p, uid, { rx: 20, margin: 10 });
   const b = [shell.svg];
 
-  // Top Brutalist Icon Sticker
-  const badgeColor = index % 2 === 0 ? p.goldBg : p.redBg;
-  const badgeFg = index % 2 === 0 ? "#111115" : "#FFFFFF";
+  // Elevated Icon Pocket in Top-Left
   b.push(`<g class="pop" style="animation-delay:${d0.toFixed(2)}s">`);
-  b.push(`<rect x="27" y="27" width="46" height="46" rx="10" fill="${p.cardShadow}"/>`);
-  b.push(`<rect x="24" y="24" width="46" height="46" rx="10" fill="${badgeColor}" stroke="${p.borderStrong}" stroke-width="2"/>`);
-  b.push(icon(i, v.icon, 35, 35, 24, badgeFg));
+  b.push(`<rect x="26" y="24" width="44" height="44" rx="14" fill="url(#neu-convex-${uid})" filter="url(#neu-sm-${uid})"/>`);
+  b.push(`<rect x="26.5" y="24.5" width="43" height="43" rx="14" fill="none" stroke="${p.borderOuter}" stroke-width="1"/>`);
+  const iconColor = index % 2 === 0 ? p.gold : p.red;
+  b.push(icon(i, v.icon, 36, 34, 24, iconColor));
   b.push(`</g>`);
 
-  // Top-right External Link Brutalist Button
-  b.push(`<rect x="${w - 57}" y="27" width="36" height="36" rx="8" fill="${p.cardShadow}"/>`);
-  b.push(`<rect x="${w - 60}" y="24" width="36" height="36" rx="8" fill="${p.chipBg}" stroke="${p.borderStrong}" stroke-width="1.8"/>`);
-  b.push(icon(i, "arrow_outward", w - 51, 33, 18, p.textMain));
+  // Sunken External Link Indicator in Top-Right
+  b.push(neuWell(w - 56, 26, 32, 32, 16, p, uid));
+  b.push(icon(i, "arrow_outward", w - 48, 34, 16, p.textMuted));
 
   // Index Tag
-  b.push(txt(82, 43, `PROJEKT // 0${index + 1}`, 11, p.textMuted, { weight: 700, extra: ' letter-spacing="1.1"' }));
+  b.push(txt(82, 43, `PROJEKT // 0${index + 1}`, 11, p.textSoft, { weight: 600, extra: ' letter-spacing="0.5"' }));
 
   // Repo Title
-  const title = fit(v.title, 22, w - 54, 700);
-  b.push(txt(24, 104, title, 22, p.textMain, { weight: 700, cls: "up", delay: d0 + 0.08 }));
+  const title = fit(v.title, 21, w - 52, 600);
+  b.push(txt(26, 102, title, 21, p.textMain, { weight: 600, cls: "up", delay: d0 + 0.08 }));
 
-  // Description lines
-  wrap(v.text, 14.5, w - 54, 500, 2).forEach((line, n) => {
-    b.push(txt(24, 130 + n * 20, line, 14.5, p.textMuted, { weight: 500, cls: "up", delay: d0 + 0.14 + n * 0.05 }));
+  // Description Lines (Enclosed in a soft Sunken Text Pocket)
+  wrap(v.text, 14, w - 52, 400, 2).forEach((line, n) => {
+    b.push(txt(26, 128 + n * 20, line, 14, p.textMuted, { weight: 400, cls: "up", delay: d0 + 0.14 + n * 0.05 }));
   });
 
-  // Bottom Divider & Tags + Stars
-  b.push(`<line x1="24" y1="176" x2="${w - 28}" y2="176" stroke="${p.borderSubtle}" stroke-width="1.2" stroke-dasharray="4 3"/>`);
-  let x = 24;
+  // Divider Line
+  b.push(`<line x1="26" y1="174" x2="${w - 26}" y2="174" stroke="${p.shDark}" stroke-width="1" opacity="0.4"/>`);
+  b.push(`<line x1="26" y1="175.2" x2="${w - 26}" y2="175.2" stroke="${p.shLight}" stroke-width="1" opacity="0.6"/>`);
+
+  // Tags
+  let x = 26;
   v.tags.forEach((tag, n) => {
-    const [g, cw] = brutalChip(i, p, x, 188, tag, { delay: d0 + 0.25 + n * 0.05, h: 28, size: 12.5, rx: 6, shadowOffset: 2.5 });
-    if (x + cw < w - 95) {
+    const [g, cw] = neuChip(i, p, x, 186, tag, uid, { delay: d0 + 0.25 + n * 0.05, h: 28, size: 12, rx: 12 });
+    if (x + cw < w - 85) {
       b.push(g);
-      x += cw + 6;
+      x += cw + 8;
     }
   });
 
-  // Star Badge on Bottom Right
+  // Star Badge (Sunken Pill on Bottom Right)
   const starStr = String(repo.stars);
-  const sw = textWidth(starStr, 13.5, 700) + 38;
-  const sx = w - 26 - sw;
+  const sw = textWidth(starStr, 13, 600) + 36;
+  const sx = w - 24 - sw;
   b.push(`<g class="pop" style="animation-delay:${(d0 + 0.35).toFixed(2)}s">`);
-  b.push(`<rect x="${sx + 2.5}" y="190.5" width="${sw.toFixed(1)}" height="28" rx="6" fill="${p.cardShadow}"/>`);
-  b.push(`<rect x="${sx.toFixed(1)}" y="188" width="${sw.toFixed(1)}" height="28" rx="6" fill="${p.goldBg}" stroke="${p.borderStrong}" stroke-width="1.6"/>`);
-  b.push(icon(i, "star", sx + 8, 194, 16, "#111115"));
-  b.push(txt(sx + 28, 207, starStr, 13.5, "#111115", { weight: 700 }));
+  b.push(neuWell(sx, 186, sw, 28, 14, p, uid));
+  b.push(icon(i, "star", sx + 8, 192, 16, p.gold));
+  b.push(txt(sx + 28, 205, starStr, 13, p.textMain, { weight: 600 }));
   b.push(`</g>`);
 
   return svg(w, h, b.join(""), v.title, c.motion);
@@ -610,111 +560,124 @@ function card(ctx, repo, index) {
 function stats(ctx) {
   const { c, d, p, i } = ctx;
   const s = c.stats;
+  const uid = "stats";
   const langs = s.showLanguages ? d.languages : [];
   const total = langs.reduce((a, [, v]) => a + v, 0) || 1;
   const legend = [];
-  let lx = 28;
+  let lx = 36;
   let row = 0;
   for (const [name, v] of langs) {
     const label = `${name} ${((100 * v) / total).toFixed(1)}%`.replace(".0%", "%");
-    const lw = 20 + textWidth(label, 13.5, 600) + 18;
+    const lw = 18 + textWidth(label, 13, 500) + 16;
     if (lx + lw > W - 36) {
-      lx = 28;
+      lx = 36;
       row++;
     }
     legend.push([lx, row, label]);
     lx += lw;
   }
 
-  const h = s.showLanguages && langs.length ? 416 + row * 28 : 320;
-  const shell = glassBrutalShell(W, h, p, "stats", {
-    orbs: [
-      { cx: 200, cy: 160, r: 110, color: p.orbRed },
-      { cx: 640, cy: 200, r: 115, color: p.orbGold },
-    ],
-  });
+  const h = s.showLanguages && langs.length ? 420 + row * 28 : 324;
+  const shell = neuPanel(W, h, p, uid);
   const b = [shell.svg];
-  b.push(sectionHeader(28, 22, s.title, "monitoring", "// METRIKEN-03", ctx));
+  b.push(sectionHeader(36, 26, s.title, "monitoring", "METRIKEN // 03", ctx, uid));
 
-  // 4 Brutalist Metric Tiles on Left
+  // 4 Neumorphic Metric Tiles on Left
   const tiles = [
-    ["star", d.stars, s.stars, p.goldBg, "#111115"],
-    ["commit", d.contributions, s.contributions, p.redBg, "#FFFFFF"],
-    ["book_2", d.repos, s.repos, p.goldBg, "#111115"],
-    ["group", d.followers, s.followers, p.redBg, "#FFFFFF"],
+    ["star", d.stars, s.stars, p.gold],
+    ["commit", d.contributions, s.contributions, p.red],
+    ["book_2", d.repos, s.repos, p.gold],
+    ["group", d.followers, s.followers, p.red],
   ];
 
-  tiles.forEach(([ic, value, label, badgeBg, badgeFg], n) => {
-    const tx = 28 + (n % 2) * 194;
-    const ty = 86 + Math.floor(n / 2) * 106;
+  tiles.forEach(([ic, value, label, accentColor], n) => {
+    const tx = 36 + (n % 2) * 192;
+    const ty = 88 + Math.floor(n / 2) * 106;
     b.push(`<g class="up" style="animation-delay:${(0.1 + n * 0.07).toFixed(2)}s">`);
-    b.push(`<rect x="${tx + 4}" y="${ty + 4}" width="182" height="94" rx="12" fill="${p.cardShadow}"/>`);
-    b.push(`<rect x="${tx}" y="${ty}" width="182" height="94" rx="12" fill="url(#gi-stats)" stroke="${p.borderStrong}" stroke-width="2"/>`);
-    b.push(`<rect x="${tx + 14}" y="${ty + 14}" width="34" height="34" rx="8" fill="${badgeBg}" stroke="${p.borderStrong}" stroke-width="1.6"/>`);
-    b.push(icon(i, ic, tx + 22, ty + 22, 18, badgeFg));
-    b.push(txt(tx + 58, ty + 42, String(value), 28, p.textMain, { weight: 700 }));
-    b.push(txt(tx + 14, ty + 76, fit(label.toUpperCase(), 11.5, 154, 700), 11.5, p.textMuted, { weight: 700, extra: ' letter-spacing="0.6"' }));
+    // Extruded small panel
+    b.push(`<rect x="${tx}" y="${ty}" width="180" height="92" rx="18" fill="url(#neu-convex-${uid})" filter="url(#neu-sm-${uid})"/>`);
+    b.push(`<rect x="${tx + 0.5}" y="${ty + 0.5}" width="179" height="91" rx="18" fill="none" stroke="${p.borderOuter}" stroke-width="1"/>`);
+    // Inset icon well
+    b.push(neuWell(tx + 14, ty + 14, 32, 32, 12, p, uid));
+    b.push(icon(i, ic, tx + 21, ty + 21, 18, accentColor));
+    b.push(txt(tx + 56, ty + 40, String(value), 26, p.textMain, { weight: 700 }));
+    b.push(txt(tx + 14, ty + 74, fit(label, 12, 152, 500), 12, p.textMuted, { weight: 500 }));
     b.push(`</g>`);
   });
 
-  // Right Side 21-Day Brutalist Contribution Matrix
-  const rx = 430;
-  b.push(txt(rx, 100, s.calendar.toUpperCase(), 12.5, p.textMain, { weight: 700, cls: "fade", delay: 0.1, extra: ' letter-spacing="0.8"' }));
+  // Right Side 21-Day Contribution Calendar Matrix
+  const rx = 436;
+  b.push(txt(rx, 102, s.calendar, 13, p.textMain, { weight: 600, cls: "fade", delay: 0.1 }));
   const gap = 6;
-  const cw = (W - 36 - rx - gap * 6) / 7;
-  const ch = 44;
+  const cw = (W - 40 - rx - gap * 6) / 7;
+  const ch = 42;
 
   [...(s.weekdays + "       ").slice(0, 7)].forEach((letter, n) => {
-    b.push(txt(rx + n * (cw + gap) + cw / 2, 122, letter, 11.5, p.textMuted, { weight: 700, cls: "fade", delay: 0.15, anchor: "middle" }));
+    b.push(txt(rx + n * (cw + gap) + cw / 2, 124, letter, 11.5, p.textSoft, { weight: 600, cls: "fade", delay: 0.15, anchor: "middle" }));
   });
 
   const peak = Math.max(1, ...d.days.flat().map((x) => x?.c ?? 0));
   d.days.forEach((wk, wi) => {
     wk.forEach((day, di) => {
       const x = rx + di * (cw + gap);
-      const y = 132 + wi * (ch + 6);
+      const y = 134 + wi * (ch + 6);
       const delay = 0.18 + (wi * 7 + di) * 0.02;
       if (!day) {
-        b.push(`<rect class="pop" style="animation-delay:${delay.toFixed(3)}s" x="${x.toFixed(1)}" y="${y}" width="${cw.toFixed(1)}" height="${ch}" rx="8" fill="none" stroke="${p.borderSubtle}" stroke-width="1.5" stroke-dasharray="4 4"/>`);
+        b.push(neuWell(x, y, cw, ch, 10, p, uid));
         return;
       }
       const lvl = day.c === 0 ? 0 : Math.min(4, 1 + Math.floor((3 * day.c) / peak + 0.5));
-      const fills = [p.chipBg, "rgba(244,180,0,0.35)", "#F4B400", "#E63946", "#D62828"];
-      const fg = lvl === 2 ? "#111115" : lvl >= 3 ? "#FFFFFF" : p.textMain;
-      let cell = `<rect x="${(x + 2).toFixed(1)}" y="${y + 2}" width="${cw.toFixed(1)}" height="${ch}" rx="8" fill="${p.cardShadow}"/>`;
-      cell += `<rect x="${x.toFixed(1)}" y="${y}" width="${cw.toFixed(1)}" height="${ch}" rx="8" fill="${fills[lvl]}" stroke="${ day.today ? p.goldBg : p.borderStrong }" stroke-width="${day.today ? "2.5" : "1.6"}"/>`;
-      cell += txt(x + cw / 2, y + ch / 2 + 5, String(day.day), 13.5, fg, { weight: 700, anchor: "middle" });
+      const colors = [
+        p.panelBg,
+        p.dark ? "#2D3426" : "#D4E5C9",
+        p.dark ? "#4D6335" : "#A6D68E",
+        p.dark ? "#709B45" : "#72BF48",
+        p.dark ? "#92CD54" : "#43A047",
+      ];
+      const fg = lvl === 0 ? p.textMuted : p.dark ? "#FFFFFF" : "#1B2E15";
+
+      let cell = "";
+      if (lvl === 0) {
+        cell += neuWell(x, y, cw, ch, 10, p, uid);
+      } else {
+        cell += `<rect x="${x}" y="${y}" width="${cw}" height="${ch}" rx="10" fill="${colors[lvl]}" filter="url(#neu-sm-${uid})"/>`;
+        cell += `<rect x="${x + 0.5}" y="${y + 0.5}" width="${cw - 1}" height="${ch - 1}" rx="10" fill="none" stroke="${p.borderOuter}" stroke-width="1"/>`;
+      }
+      if (day.today) {
+        cell += `<rect x="${x - 1.5}" y="${y - 1.5}" width="${cw + 3}" height="${ch + 3}" rx="12" fill="none" stroke="${p.gold}" stroke-width="2"/>`;
+      }
+      cell += txt(x + cw / 2, y + ch / 2 + 5, String(day.day), 13, fg, { weight: 600, anchor: "middle" });
       b.push(`<g class="pop" style="animation-delay:${delay.toFixed(3)}s">${cell}</g>`);
     });
   });
 
   // Languages Bar & Legend
   if (s.showLanguages && langs.length) {
-    const ly = 322;
-    b.push(txt(28, ly, s.languages.toUpperCase(), 12.5, p.textMain, { weight: 700, cls: "fade", delay: 0.3, extra: ' letter-spacing="0.8"' }));
-    const barColors = ["#E63946", "#F4B400", "#3178C6", "#2A9D8F", "#8338EC", "#FB8500", "#6C757D"];
-    const bw = W - 64;
-    // Brutalist Bar Frame
-    b.push(`<rect x="31" y="${ly + 15}" width="${bw}" height="18" rx="6" fill="${p.cardShadow}"/>`);
-    b.push(`<clipPath id="lang-clip"><rect x="28" y="${ly + 12}" width="${bw}" height="18" rx="6"/></clipPath>`);
-    let sx = 28;
+    const ly = 326;
+    b.push(txt(36, ly, s.languages, 13, p.textMain, { weight: 600, cls: "fade", delay: 0.3 }));
+    const barColors = [p.red, p.gold, "#3178C6", "#2A9D8F", "#8338EC", "#FB8500", "#6C757D"];
+    const bw = W - 72;
+    // Deep Sunken Groove for Language Bar
+    b.push(neuWell(36, ly + 14, bw, 16, 8, p, uid));
+    b.push(`<clipPath id="lang-clip"><rect x="37" y="${ly + 15}" width="${bw - 2}" height="14" rx="7"/></clipPath>`);
+
+    let sx = 37;
     const segs = langs.map(([, v], n) => {
-      const sw = Math.max(10, (bw * v) / total);
-      const r = `<rect x="${sx.toFixed(1)}" y="${ly + 12}" width="${(sw + 1).toFixed(1)}" height="18" fill="${barColors[n % barColors.length]}" stroke="${p.borderStrong}" stroke-width="1.5"/>`;
+      const sw = Math.max(8, ((bw - 2) * v) / total);
+      const r = `<rect x="${sx.toFixed(1)}" y="${ly + 15}" width="${(sw + 1).toFixed(1)}" height="14" fill="${barColors[n % barColors.length]}"/>`;
       sx += sw;
       return r;
     });
     b.push(`<g clip-path="url(#lang-clip)"><g class="grow" style="animation-delay:.38s">${segs.join("")}</g></g>`);
-    b.push(`<rect x="28" y="${ly + 12}" width="${bw}" height="18" rx="6" fill="none" stroke="${p.borderStrong}" stroke-width="2"/>`);
 
     legend.forEach(([lx2, lrow, label], n) => {
       const ly2 = ly + 54 + lrow * 28;
       const col = barColors[n % barColors.length];
       b.push(
         pop(
-          `<rect x="${lx2 + 1.5}" y="${ly2 - 11.5}" width="12" height="12" rx="3" fill="${p.cardShadow}"/>` +
-            `<rect x="${lx2}" y="${ly2 - 13}" width="12" height="12" rx="3" fill="${col}" stroke="${p.borderStrong}" stroke-width="1.5"/>` +
-            txt(lx2 + 18, ly2 - 2, label, 13.5, p.textMain, { weight: 600 }),
+          neuWell(lx2, ly2 - 12, 14, 14, 7, p, uid) +
+            `<circle cx="${lx2 + 7}" cy="${ly2 - 5}" r="4" fill="${col}"/>` +
+            txt(lx2 + 20, ly2 - 1, label, 13, p.textMain, { weight: 500 }),
           0.5 + n * 0.05,
           "fade"
         )
@@ -729,37 +692,34 @@ function stats(ctx) {
 function streak(ctx) {
   const { c, d, p, i } = ctx;
   const s = c.streak;
-  const h = 218;
-  const shell = glassBrutalShell(W, h, p, "streak", {
-    orbs: [
-      { cx: 220, cy: 120, r: 100, color: p.orbRed },
-      { cx: 620, cy: 120, r: 100, color: p.orbGold },
-    ],
-  });
+  const h = 222;
+  const uid = "streak";
+  const shell = neuPanel(W, h, p, uid);
   const b = [shell.svg];
-  b.push(sectionHeader(28, 22, s.title, "local_fire_department", "// SERIE-04", ctx));
+  b.push(sectionHeader(36, 26, s.title, "local_fire_department", "SERIE // 04", ctx, uid));
 
-  const tw = (W - 64 - 16) / 2;
+  const tw = (W - 72 - 18) / 2;
   const tiles = [
-    [d.streak.current, s.current, "local_fire_department", p.redBg, "#FFFFFF"],
-    [d.streak.longest, s.longest, "trophy", p.goldBg, "#111115"],
+    [d.streak.current, s.current, "local_fire_department", p.red],
+    [d.streak.longest, s.longest, "trophy", p.gold],
   ];
 
-  tiles.forEach(([value, label, ic, badgeBg, badgeFg], n) => {
-    const tx = 28 + n * (tw + 16);
-    const ty = 86;
+  tiles.forEach(([value, label, ic, accentColor], n) => {
+    const tx = 36 + n * (tw + 18);
+    const ty = 88;
     b.push(`<g class="up" style="animation-delay:${(0.12 + n * 0.1).toFixed(2)}s">`);
-    b.push(`<rect x="${tx + 4}" y="${ty + 4}" width="${tw}" height="102" rx="14" fill="${p.cardShadow}"/>`);
-    b.push(`<rect x="${tx}" y="${ty}" width="${tw}" height="102" rx="14" fill="url(#gi-streak)" stroke="${p.borderStrong}" stroke-width="2.2"/>`);
-    // Icon Brutalist Box
-    b.push(`<rect x="${tx + 21}" y="${ty + 25}" width="56" height="56" rx="12" fill="${p.cardShadow}"/>`);
-    b.push(`<rect x="${tx + 18}" y="${ty + 22}" width="56" height="56" rx="12" fill="${badgeBg}" stroke="${p.borderStrong}" stroke-width="2"/>`);
-    b.push(icon(i, ic, tx + 32, ty + 36, 28, badgeFg));
+    // Extruded card
+    b.push(`<rect x="${tx}" y="${ty}" width="${tw}" height="102" rx="20" fill="url(#neu-convex-${uid})" filter="url(#neu-sm-${uid})"/>`);
+    b.push(`<rect x="${tx + 0.5}" y="${ty + 0.5}" width="${tw - 1}" height="101" rx="20" fill="none" stroke="${p.borderOuter}" stroke-width="1"/>`);
+
+    // Inset circular icon chamber
+    b.push(neuWell(tx + 18, ty + 24, 54, 54, 27, p, uid));
+    b.push(icon(i, ic, tx + 32, ty + 38, 26, accentColor));
 
     const num = String(value);
-    b.push(txt(tx + 92, ty + 56, num, 38, p.textMain, { weight: 700 }));
-    b.push(txt(tx + 98 + textWidth(num, 38, 700), ty + 56, s.days, 15, p.textMuted, { weight: 700 }));
-    b.push(txt(tx + 92, ty + 80, fit(label.toUpperCase(), 13, tw - 110, 700), 13, p.textMuted, { weight: 700, extra: ' letter-spacing="0.6"' }));
+    b.push(txt(tx + 86, ty + 56, num, 36, p.textMain, { weight: 700 }));
+    b.push(txt(tx + 92 + textWidth(num, 36, 700), ty + 56, s.days, 15, p.textSoft, { weight: 500 }));
+    b.push(txt(tx + 86, ty + 80, fit(label, 13.5, tw - 100, 500), 13.5, p.textMuted, { weight: 500 }));
     b.push(`</g>`);
   });
 
@@ -782,42 +742,39 @@ function socialLabel(icons, item) {
 function socialPiece({ p, i }, item, n) {
   const label = socialLabel(i, item);
   const h = 48;
-  const w = 18 + 22 + 10 + textWidth(label, 15, 700) + 22;
+  const w = 18 + 22 + 10 + textWidth(label, 14.5, 600) + 20;
   const delay = n * 0.06;
-  const accentBg = n === 0 ? p.goldBg : n === 2 ? p.redBg : p.chipBg;
-  const fg = n === 0 ? "#111115" : n === 2 ? "#FFFFFF" : p.textMain;
-  const icFg = n === 0 ? "#111115" : n === 2 ? "#FFFFFF" : p.red;
+  const uid = `soc-${n}`;
+  const accent = n === 0 ? p.gold : n === 1 ? p.accentBlue : n === 2 ? p.red : undefined;
 
-  const body = pop(
-    `<rect x="4" y="4" width="${(w - 6).toFixed(1)}" height="${h - 6}" rx="10" fill="${p.cardShadow}"/>` +
-      `<rect x="1.5" y="1.5" width="${(w - 6).toFixed(1)}" height="${h - 6}" rx="10" fill="${accentBg}" stroke="${p.borderStrong}" stroke-width="2"/>` +
-      `<line x1="8" y1="3.5" x2="${(w - 12).toFixed(1)}" y2="3.5" stroke="${p.specular}" stroke-width="1"/>` +
-      icon(i, item.icon, 16, 12, 20, icFg) +
-      txt(46, 29, label, 15, fg, { weight: 700 }),
-    delay
-  );
-  return { body, w, h, title: label };
+  let body = `<rect x="5" y="5" width="${(w - 10).toFixed(1)}" height="${h - 10}" rx="14" fill="url(#neu-convex-${uid})" filter="url(#neu-sm-${uid})"/>`;
+  body += `<rect x="5.5" y="5.5" width="${(w - 11).toFixed(1)}" height="${h - 11}" rx="14" fill="none" stroke="${p.borderOuter}" stroke-width="1"/>`;
+  if (accent) {
+    body += `<circle cx="18" cy="${h / 2}" r="3" fill="${accent}"/>`;
+  }
+  const extraOffset = accent ? 8 : 0;
+  body += icon(i, item.icon, 16 + extraOffset, 14, 20, accent || p.red);
+  body += txt(44 + extraOffset, 29, label, 14.5, p.textMain, { weight: 600 });
+  return { body: neumorphicFilterDefs(p, uid) + pop(body, delay), w, h, title: label };
 }
 
 function buttonPiece({ p, i }, btn, n) {
   const h = 54;
-  const size = 15.5;
+  const size = 15;
   const iw = btn.icon ? 28 : 0;
-  const w = 48 + iw + textWidth(btn.label, size, 700);
+  const w = 44 + iw + textWidth(btn.label, size, 600);
   const isFilled = btn.style === "filled";
-  const bg = isFilled ? p.goldBg : p.chipBg;
-  const fg = isFilled ? "#111115" : p.textMain;
-  const icFg = isFilled ? "#111115" : p.red;
+  const uid = `btn-${n}`;
+  const accentColor = isFilled ? p.gold : p.red;
 
-  let body = `<rect x="5" y="5" width="${(w - 6).toFixed(1)}" height="${h - 6}" rx="12" fill="${p.cardShadow}"/>`;
-  body += `<rect x="1.5" y="1.5" width="${(w - 6).toFixed(1)}" height="${h - 6}" rx="12" fill="${bg}" stroke="${p.borderStrong}" stroke-width="2.2"/>`;
-  body += `<line x1="10" y1="3.5" x2="${(w - 14).toFixed(1)}" y2="3.5" stroke="${p.specular}" stroke-width="1.2"/>`;
-  if (btn.icon) body += icon(i, btn.icon, 20, (h - 6 - 20) / 2 + 1.5, 20, icFg);
-  body += txt(22 + iw, (h - 6) / 2 + 7, btn.label, size, fg, { weight: 700 });
-  return { body: pop(body, n * 0.08), w, h, title: btn.label };
+  let body = `<rect x="6" y="6" width="${(w - 12).toFixed(1)}" height="${h - 12}" rx="18" fill="url(#neu-convex-${uid})" filter="url(#neu-sm-${uid})"/>`;
+  body += `<rect x="6.5" y="6.5" width="${(w - 13).toFixed(1)}" height="${h - 13}" rx="18" fill="none" stroke="${p.borderOuter}" stroke-width="1.2"/>`;
+  if (btn.icon) body += icon(i, btn.icon, 20, (h - 20) / 2, 20, accentColor);
+  body += txt(22 + iw, h / 2 + 5.5, btn.label, size, p.textMain, { weight: 600 });
+  return { body: neumorphicFilterDefs(p, uid) + pop(body, n * 0.08), w, h, title: btn.label };
 }
 
-const GAP = 8;
+const GAP = 10;
 const CAP = 28;
 
 function rowFits(pieces) {
@@ -831,35 +788,41 @@ function row(ctx, prefix, pieces, cardMode) {
     pieces.forEach((x, n) => (files[`${prefix}-${n + 1}`] = svg(x.w, x.h, x.body, x.title, c.motion)));
     return files;
   }
-  const h = Math.max(...pieces.map((x) => x.h)) + 28;
+  const h = Math.max(...pieces.map((x) => x.h)) + 26;
   const cap = (W - pieces.reduce((a, x) => a + x.w + GAP, 0)) / 2;
-  const bg = p.canvasBg;
+  const bg = p.bg;
   files[`${prefix}-l`] = svg(
     cap,
     h,
-    `<rect x="2" y="2" width="${(cap + 40).toFixed(1)}" height="${h - 4}" rx="12" fill="${bg}" stroke="${p.borderStrong}" stroke-width="2"/>` +
-      `<rect x="14" y="${h / 2 - 4}" width="8" height="8" fill="${p.redBg}"/>` +
-      `<rect x="26" y="${h / 2 - 4}" width="8" height="8" fill="${p.goldBg}"/>`,
+    neumorphicFilterDefs(p, `${prefix}-l`) +
+      `<rect x="14" y="4" width="${(cap + 26).toFixed(1)}" height="${h - 8}" rx="20" fill="url(#neu-convex-${prefix}-l)" stroke="${p.borderOuter}" stroke-width="1.2"/>` +
+      neuWell(28, h / 2 - 7, 36, 14, 7, p, `${prefix}-l`) +
+      `<circle cx="38" cy="${h / 2}" r="3" fill="${p.red}"/>` +
+      `<circle cx="52" cy="${h / 2}" r="3" fill="${p.gold}"/>`,
     "",
     c.motion
   );
   files[`${prefix}-r`] = svg(
     cap,
     h,
-    `<rect x="-42" y="2" width="${(cap + 40).toFixed(1)}" height="${h - 4}" rx="12" fill="${bg}" stroke="${p.borderStrong}" stroke-width="2"/>` +
-      `<rect x="${(cap - 34).toFixed(1)}" y="${h / 2 - 4}" width="8" height="8" fill="${p.goldBg}"/>` +
-      `<rect x="${(cap - 22).toFixed(1)}" y="${h / 2 - 4}" width="8" height="8" fill="${p.redBg}"/>`,
+    neumorphicFilterDefs(p, `${prefix}-r`) +
+      `<rect x="-40" y="4" width="${(cap + 26).toFixed(1)}" height="${h - 8}" rx="20" fill="url(#neu-convex-${prefix}-r)" stroke="${p.borderOuter}" stroke-width="1.2"/>` +
+      neuWell(cap - 64, h / 2 - 7, 36, 14, 7, p, `${prefix}-r`) +
+      `<circle cx="${(cap - 52).toFixed(1)}" cy="${h / 2}" r="3" fill="${p.gold}"/>` +
+      `<circle cx="${(cap - 38).toFixed(1)}" cy="${h / 2}" r="3" fill="${p.red}"/>`,
     "",
     c.motion
   );
   pieces.forEach((x, n) => {
     const w = x.w + GAP;
+    const uid = `${prefix}-m-${n}`;
     files[`${prefix}-${n + 1}`] = svg(
       w,
       h,
-      `<rect y="2" width="${w + 1}" height="${h - 4}" fill="${bg}"/>` +
-        `<line x1="0" y1="2" x2="${w + 1}" y2="2" stroke="${p.borderStrong}" stroke-width="2"/>` +
-        `<line x1="0" y1="${h - 2}" x2="${w + 1}" y2="${h - 2}" stroke="${p.borderStrong}" stroke-width="2"/>` +
+      neumorphicFilterDefs(p, uid) +
+        `<rect x="0" y="4" width="${w + 1}" height="${h - 8}" fill="url(#neu-convex-${uid})"/>` +
+        `<line x1="0" y1="4.5" x2="${w + 1}" y2="4.5" stroke="${p.borderOuter}" stroke-width="1.2"/>` +
+        `<line x1="0" y1="${h - 4.5}" x2="${w + 1}" y2="${h - 4.5}" stroke="${p.borderOuter}" stroke-width="1.2"/>` +
         `<g transform="translate(${GAP / 2} ${(h - x.h) / 2})">${x.body}</g>`,
       x.title,
       c.motion
@@ -876,31 +839,44 @@ function buttons(ctx) {
   return row(ctx, "button", ctx.c.buttons.items.map((b, n) => buttonPiece(ctx, b, n)), false);
 }
 
-// --- 8. WAVE / BRUTALIST DIVIDER ---
+// --- 8. NEUMORPHIC WAVE DIVIDER ---
 function wave({ c, p }) {
-  const h = 36;
-  const b = [
-    `<rect x="4" y="8" width="${W - 8}" height="20" rx="6" fill="${p.cardShadow}"/>`,
-    `<rect x="2" y="6" width="${W - 8}" height="20" rx="6" fill="${p.chipBg}" stroke="${p.borderStrong}" stroke-width="2"/>`,
-    `<clipPath id="w-clip"><rect x="4" y="8" width="${W - 12}" height="16" rx="4"/></clipPath>`,
-    `<g clip-path="url(#w-clip)">`,
-  ];
-  for (let x = -48; x < W + 48; x += 24) {
-    const col = (x / 24) % 3 === 0 ? "#111115" : (x / 24) % 3 === 1 ? "#E63946" : "#F4B400";
-    b.push(`<polygon class="wave" points="${x},24 ${x + 12},8 ${x + 22},8 ${x + 10},24" fill="${col}" opacity="0.85"/>`);
+  const h = 44;
+  const uid = "wave";
+  const defs = neumorphicFilterDefs(p, uid);
+  const pts = [];
+  const amp = 5;
+  const len = 48;
+  for (let x = 0; x <= W + len * 2; x += 4) {
+    pts.push(`${x} ${(h / 2 + amp * Math.sin((2 * Math.PI * x) / len)).toFixed(1)}`);
   }
-  b.push(`</g>`);
+
+  const b = [
+    defs,
+    // Extruded pill strip housing a sunken wave groove
+    `<rect x="14" y="6" width="${W - 28}" height="32" rx="16" fill="url(#neu-convex-${uid})" filter="url(#neu-sm-${uid})"/>`,
+    neuWell(24, 12, W - 48, 20, 10, p, uid),
+    `<clipPath id="w-clip"><rect x="26" y="13" width="${W - 52}" height="18" rx="9"/></clipPath>`,
+    `<g clip-path="url(#w-clip)">`,
+    `<path class="wave" d="M${pts.join(" L")}" fill="none" stroke="${p.shLight}" stroke-width="4.5" stroke-linecap="round" opacity="0.6"/>`,
+    `<path class="wave" d="M${pts.map(p2 => { const [px, py] = p2.split(' '); return `${px} ${(parseFloat(py) - 1.5).toFixed(1)}`; }).join(" L")}" fill="none" stroke="${p.shDark}" stroke-width="4" stroke-linecap="round" opacity="0.5"/>`,
+    `<path class="wave" d="M${pts.join(" L")}" fill="none" stroke="${p.gold}" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>`,
+    `</g>`,
+  ];
   return svg(W, h, b.join(""), "divider", c.motion);
 }
 
 function credit({ p }) {
-  const label = "ARCHITECTED WITH GLASSMORPHISM × NEO-BRUTALISM // EXPRESSIVE PROFILE";
+  const label = "DESIGNED WITH NEUMORPHISM AESTHETICS // EXPRESSIVE PROFILE";
   const size = 11;
-  const w = textWidth(label, size, 700) + 24;
+  const w = textWidth(label, size, 600) + 28;
   return svg(
     w,
-    24,
-    txt(w / 2, 16, label, size, p.textMuted, { weight: 700, anchor: "middle", extra: ' letter-spacing="1.1"' }),
+    26,
+    neumorphicFilterDefs(p, "cred") +
+      `<rect width="${w}" height="26" rx="13" fill="${p.bg}"/>` +
+      neuWell(2, 2, w - 4, 22, 11, p, "cred") +
+      txt(w / 2, 16.5, label, size, p.textSoft, { weight: 600, anchor: "middle", extra: ' letter-spacing="0.8"' }),
     label,
     false
   );
@@ -981,14 +957,14 @@ function buildReadme(c, d, files) {
   return '<div align="center">\n\n' + parts.join("\n\n") + "\n\n</div>\n";
 }
 
-// --- GitHub GraphQL Data Fetcher (with graceful fallback for placeholder usernames) ---
+// --- GitHub GraphQL & REST API Data Fetcher ---
 const NOISE = new Set(["Inno Setup", "Batchfile", "PowerShell", "VBScript", "Shell", "Makefile", "Dockerfile"]);
 const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || "";
 
 async function graphql(query, variables = {}) {
   const r = await fetch("https://api.github.com/graphql", {
     method: "POST",
-    headers: { Authorization: `bearer ${token}`, "User-Agent": "expressive-profile-brutalist" },
+    headers: { Authorization: `bearer ${token}`, "User-Agent": "expressive-profile-neumorphism" },
     body: JSON.stringify({ query, variables }),
   });
   const j = await r.json();
@@ -1012,7 +988,7 @@ function streakOf(counts, todayIncluded = true) {
 
 async function fetchRestFallback(login, fallback) {
   try {
-    const h = { Accept: "application/vnd.github+json", "User-Agent": "expressive-profile-brutalist" };
+    const h = { Accept: "application/vnd.github+json", "User-Agent": "expressive-profile-neumorphism" };
     const [uRes, rRes, eRes] = await Promise.all([
       fetch(`https://api.github.com/users/${encodeURIComponent(login)}`, { headers: h }),
       fetch(`https://api.github.com/users/${encodeURIComponent(login)}/repos?per_page=100&type=owner&sort=pushed`, { headers: h }),
@@ -1146,7 +1122,7 @@ async function fetchLiveGitHubData(login, fallback) {
       all: nodes.map(mapRepo),
     };
   } catch (e) {
-    console.warn("Using cached/placeholder data:", e.message);
+    console.warn("Using cached/fallback data:", e.message);
     return fallback;
   }
 }
@@ -1181,7 +1157,7 @@ async function main() {
     writeFileSync(p, content, "utf8");
   }
   writeFileSync("README.md", buildReadme(config, data, files), "utf8");
-  console.log("Rendered", Object.keys(files).length, "Glassmorphism × Brutalism SVGs.");
+  console.log("Rendered", Object.keys(files).length, "Neumorphism SVGs successfully.");
 }
 
 main().catch((e) => {

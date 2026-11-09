@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Render Glassmorphism × Brutalism Profile
+      - name: Render Neumorphism Profile
         run: node .profile/render.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN || github.token }}

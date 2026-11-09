@@ -1,19 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="67.19" height="76" viewBox="0 0 67.19 76" role="img" aria-label=""><title></title><style>text{font-family:G,'Google Sans','Segoe UI',Roboto,sans-serif;font-variation-settings:'ROND' 100}
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76.48" height="74" viewBox="0 0 76.48 74" role="img" aria-label=""><title></title><style>text{font-family:G,'Google Sans','Segoe UI',Roboto,sans-serif;font-variation-settings:'ROND' 100}
 .up{animation:up .75s cubic-bezier(.16,1,.3,1) both}
 .pop{transform-box:fill-box;transform-origin:center;animation:pop .55s cubic-bezier(.34,1.56,.64,1) both}
 .fade{animation:fade .8s ease both}
 .spin{transform-box:fill-box;transform-origin:center;animation:spin 36s linear infinite}
-.spin-r{transform-box:fill-box;transform-origin:center;animation:spin 26s linear infinite reverse}
 .bob{transform-box:fill-box;transform-origin:center;animation:bob 6s ease-in-out infinite}
-.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 8s ease-in-out infinite}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 4s ease-in-out infinite}
 .grow{transform-box:fill-box;transform-origin:left center;animation:grow 1s cubic-bezier(.2,0,0,1) both}
-.wave{animation:wave 2.6s linear infinite}
-@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-@keyframes pop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
+.wave{animation:wave 3s linear infinite}
+@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 @keyframes spin{to{transform:rotate(360deg)}}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes pulse{0%,100%{transform:scale(1);opacity:.55}50%{transform:scale(1.12);opacity:.78}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes pulse{0%,100%{opacity:.85}50%{opacity:1}}
 @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes wave{from{transform:translateX(0)}to{transform:translateX(-48px)}}
-@media (prefers-reduced-motion:reduce){*{animation:none!important}}</style><rect x="-42" y="2" width="107.2" height="72" rx="12" fill="#F4F0EA" stroke="#111115" stroke-width="2"/><rect x="33.2" y="34" width="8" height="8" fill="#F4B400"/><rect x="45.2" y="34" width="8" height="8" fill="#E63946"/></svg>
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}</style>
+    <defs>
+      <!-- Extruded Card Shadow Filter -->
+      <filter id="neu-ext-social-r" x="-20%" y="-20%" width="150%" height="150%">
+        <feDropShadow dx="-6" dy="-6" stdDeviation="7" flood-color="#FFFFFF" flood-opacity="0.9"/>
+        <feDropShadow dx="6" dy="6" stdDeviation="8" flood-color="#BAC1CC" flood-opacity="0.6"/>
+      </filter>
+      <!-- Small Element Extruded Filter (Chips & Buttons) -->
+      <filter id="neu-sm-social-r" x="-30%" y="-30%" width="170%" height="170%">
+        <feDropShadow dx="-3" dy="-3" stdDeviation="3.5" flood-color="#FFFFFF" flood-opacity="0.95"/>
+        <feDropShadow dx="3" dy="3" stdDeviation="4" flood-color="#BAC1CC" flood-opacity="0.55"/>
+      </filter>
+      <!-- Pressed / Inset Gradient Simulators -->
+      <linearGradient id="neu-pressed-social-r" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#B4BCC8"/>
+        <stop offset="100%" stop-color="#FFFFFF"/>
+      </linearGradient>
+      <!-- Subtle Surface Convex Gradient -->
+      <linearGradient id="neu-convex-social-r" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#E7EBF1"/>
+        <stop offset="100%" stop-color="#DADFE7"/>
+      </linearGradient>
+      <!-- Glow Gradients -->
+      <radialGradient id="glow-red-social-r" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#E53935" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="#E53935" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="glow-gold-social-r" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#D99B00" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="#D99B00" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+  <rect x="-40" y="4" width="102.5" height="66" rx="20" fill="url(#neu-convex-social-r)" stroke="rgba(255, 255, 255, 0.7)" stroke-width="1.2"/><rect x="12.482624999999985" y="30" width="36" height="14" rx="7" fill="url(#neu-pressed-social-r)"/><rect x="12.982624999999985" y="30.5" width="35" height="13" rx="7" fill="none" stroke="rgba(160, 170, 185, 0.3)" stroke-width="1.2"/><circle cx="24.5" cy="37" r="3" fill="#D99B00"/><circle cx="38.5" cy="37" r="3" fill="#E53935"/></svg>
