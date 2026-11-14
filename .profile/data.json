@@ -2,7 +2,7 @@
   "stars": 0,
   "contributions": 333,
   "repos": 15,
-  "followers": 23,
+  "followers": 24,
   "languages": [
     [
       "TypeScript",
@@ -137,9 +137,13 @@
       {
         "c": 5,
         "day": 13,
-        "today": true
+        "today": false
       },
-      null
+      {
+        "c": 0,
+        "day": 14,
+        "today": true
+      }
     ]
   ],
   "streak": {
