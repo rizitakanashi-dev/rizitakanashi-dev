@@ -19,7 +19,7 @@
   ],
   "hidden": [],
   "hero": {
-    "greeting": "Hallo & Willkommen, I'm",
+    "greeting": "ようこそ · Welcome, I'm",
     "name": "Faris Al Farizi",
     "subtitle": "Full-Stack Developer & Machine Learning Engineer — Arch Larper // AI Enthusiast",
     "typing": true,
@@ -68,7 +68,7 @@
     "shape": "pill"
   },
   "about": {
-    "title": "Über mich · About Me",
+    "title": "自己紹介 · About Me",
     "items": [
       {
         "icon": "person",
@@ -89,7 +89,7 @@
     ]
   },
   "stack": {
-    "title": "Technologie-Stack · Tech Stack",
+    "title": "技術スタック · Tech Stack",
     "groups": [
       {
         "title": "Frontend",
@@ -174,44 +174,44 @@
         "shape": "sunny"
       }
     },
-    "empty": "Projektbeschreibung folgt · No description yet.",
+    "empty": "説明はまだありません · No description yet.",
     "fork": "Fork"
   },
   "stats": {
-    "title": "GitHub-Statistiken · Activity",
+    "title": "GitHub統計 · Activity",
     "stars": "Stars earned",
     "contributions": "Contributions this year",
     "repos": "Public repos",
     "followers": "Followers",
-    "calendar": "Letzte 21 Tage · Last 21 days",
-    "weekdays": "MDMDFSS",
-    "languages": "Meistgenutzte Sprachen · Top Languages",
+    "calendar": "直近21日間 · Last 21 days",
+    "weekdays": "日月火水木金土",
+    "languages": "使用言語 · Top Languages",
     "showLanguages": true
   },
   "streak": {
-    "title": "Beitragsserie · Contribution Streak",
-    "current": "Aktuelle Serie · Current streak",
-    "longest": "Jahresrekord · Longest this year",
-    "days": "Tage · days"
+    "title": "連続記録 · Contribution Streak",
+    "current": "現在の連続記録 · Current streak",
+    "longest": "今年の最長記録 · Longest this year",
+    "days": "日 · days"
   },
   "buttons": {
     "card": false,
     "items": [
       {
         "icon": "handshake",
-        "label": "Danke für Ihren Besuch! · GitHub",
+        "label": "ご訪問ありがとう · GitHub",
         "url": "https://github.com/rizitakanashi-dev",
         "style": "filled"
       },
       {
         "icon": "mail",
-        "label": "Kontakt · rizitakanashi@gmail.com",
+        "label": "お問い合わせ · rizitakanashi@gmail.com",
         "url": "mailto:rizitakanashi@gmail.com",
         "style": "tonal"
       },
       {
         "icon": "book_2",
-        "label": "Alle Projekte · Repositories",
+        "label": "全プロジェクト · Repositories",
         "url": "https://github.com/rizitakanashi-dev?tab=repositories",
         "style": "tonal"
       }

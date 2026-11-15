@@ -5,8 +5,8 @@
   "followers": 24,
   "languages": [
     [
-      "TypeScript",
-      663001
+      "JavaScript",
+      154190
     ],
     [
       "JavaScript",
@@ -18,7 +18,7 @@
     ],
     [
       "C#",
-      159303
+      171
     ],
     [
       "HTML",
@@ -26,7 +26,7 @@
     ],
     [
       "Go",
-      36024
+      44
     ],
     [
       "CSS",
@@ -41,7 +41,7 @@
         "today": false
       },
       {
-        "c": 7,
+        "c": 0,
         "day": 2,
         "today": false
       },
@@ -51,12 +51,12 @@
         "today": false
       },
       {
-        "c": 6,
+        "c": 1,
         "day": 4,
         "today": false
       },
       {
-        "c": 2,
+        "c": 0,
         "day": 5,
         "today": false
       },
@@ -66,14 +66,14 @@
         "today": false
       },
       {
-        "c": 8,
+        "c": 12,
         "day": 7,
         "today": false
       }
     ],
     [
       {
-        "c": 14,
+        "c": 3,
         "day": 8,
         "today": false
       },
@@ -128,6 +128,15 @@
   },
   "pins": [
     {
+      "name": "rizitakanashi-dev",
+      "url": "https://github.com/rizitakanashi-dev/rizitakanashi-dev",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "JavaScript",
+      "topics": []
+    },
+    {
       "name": "steampreneur-agri-sort-ai",
       "url": "https://github.com/rizitakanashi-dev/steampreneur-agri-sort-ai",
       "text": "Website Quality Control & Smart Pricing Hortikultura berbasis alur berbasis data untuk Petani & Pedagang | STEAMpreneur SMK 2026.",
@@ -135,9 +144,7 @@
       "stars": 0,
       "language": "JavaScript",
       "topics": []
-    }
-  ],
-  "all": [
+    },
     {
       "name": "Rexizo-Assistant",
       "url": "https://github.com/rizitakanashi-dev/Rexizo-Assistant",
@@ -148,12 +155,41 @@
       "topics": []
     },
     {
+      "name": "belajar-aiml",
+      "url": "https://github.com/rizitakanashi-dev/belajar-aiml",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "Python",
+      "topics": []
+    }
+  ],
+  "all": [
+    {
+      "name": "rizitakanashi-dev",
+      "url": "https://github.com/rizitakanashi-dev/rizitakanashi-dev",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "JavaScript",
+      "topics": []
+    },
+    {
       "name": "steampreneur-agri-sort-ai",
       "url": "https://github.com/rizitakanashi-dev/steampreneur-agri-sort-ai",
       "text": "Website Quality Control & Smart Pricing Hortikultura berbasis alur berbasis data untuk Petani & Pedagang | STEAMpreneur SMK 2026.",
       "fork": false,
       "stars": 0,
       "language": "JavaScript",
+      "topics": []
+    },
+    {
+      "name": "Rexizo-Assistant",
+      "url": "https://github.com/rizitakanashi-dev/Rexizo-Assistant",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "Python",
       "topics": []
     },
     {
@@ -166,21 +202,21 @@
       "topics": []
     },
     {
-      "name": "AT-Frontend",
-      "url": "https://github.com/rizitakanashi-dev/AT-Frontend",
-      "text": "",
-      "fork": false,
-      "stars": 0,
-      "language": "TypeScript",
-      "topics": []
-    },
-    {
       "name": "Absensi-Tefa",
       "url": "https://github.com/rizitakanashi-dev/Absensi-Tefa",
       "text": "",
       "fork": false,
       "stars": 0,
       "language": "C#",
+      "topics": []
+    },
+    {
+      "name": "AT-Frontend",
+      "url": "https://github.com/rizitakanashi-dev/AT-Frontend",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "TypeScript",
       "topics": []
     },
     {
@@ -229,30 +265,21 @@
       "topics": []
     },
     {
-      "name": "belajar-javascript",
-      "url": "https://github.com/rizitakanashi-dev/belajar-javascript",
-      "text": "dasar dasar javascript",
-      "fork": false,
-      "stars": 0,
-      "language": "JavaScript",
-      "topics": []
-    },
-    {
-      "name": "rizitakanashi-dev",
-      "url": "https://github.com/rizitakanashi-dev/rizitakanashi-dev",
-      "text": "",
-      "fork": false,
-      "stars": 0,
-      "language": "JavaScript",
-      "topics": []
-    },
-    {
       "name": "belajar-backend",
       "url": "https://github.com/rizitakanashi-dev/belajar-backend",
       "text": "",
       "fork": false,
       "stars": 0,
       "language": "Go",
+      "topics": []
+    },
+    {
+      "name": "belajar-javascript",
+      "url": "https://github.com/rizitakanashi-dev/belajar-javascript",
+      "text": "dasar dasar javascript",
+      "fork": false,
+      "stars": 0,
+      "language": "JavaScript",
       "topics": []
     },
     {

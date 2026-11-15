@@ -15,11 +15,12 @@ function esc(s) {
     .replace(/'/g, "&#x27;");
 }
 
+const CJK_RE = /[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uffef\u4e00-\u9faf]/;
 function textWidth(s, size, weight = 400) {
   const key = [400, 500, 600, 700].reduce((a, b) => (Math.abs(b - weight) < Math.abs(a - weight) ? b : a));
   const table = METRICS[String(key)];
   let w = 0;
-  for (const c of String(s)) w += table[c] ?? 0.56;
+  for (const c of String(s)) w += table[c] ?? (CJK_RE.test(c) ? 1.05 : 0.56);
   return w * size;
 }
 
@@ -165,7 +166,7 @@ function svg(w, h, body, title, motion = true, extra = "") {
     : "";
   const css =
     fonts +
-    `text{font-family:G,'Google Sans','Segoe UI',Roboto,sans-serif;font-variation-settings:'ROND' 100}` +
+    `text{font-family:G,'Google Sans','Noto Sans JP','Hiragino Sans','Yu Gothic','Segoe UI',Roboto,sans-serif;font-variation-settings:'ROND' 100}` +
     CSS +
     extra +
     (motion ? "" : "*{animation:none!important}");
@@ -341,11 +342,11 @@ function hero(ctx, avatar) {
   const b = [neuBoard(W, h, p, uid)];
 
   // Top Left & Right Tactile Status Bar
-  b.push(neuWell(34, 22, 232, 24, 12, uid));
+  b.push(neuWell(34, 22, 224, 24, 12, uid));
   b.push(`<circle cx="48" cy="34" r="3.5" fill="${p.dark ? "#4B5563" : "#1E2430"}"/>`);
   b.push(`<circle cx="60" cy="34" r="3.5" fill="${p.red}"/>`);
   b.push(`<circle cx="72" cy="34" r="3.5" fill="${p.gold}"/>`);
-  b.push(txt(86, 38, "NEUMORPHIC // DEUTSCH", 10.5, p.textMuted, { weight: 700, extra: ' letter-spacing="0.8"' }));
+  b.push(txt(86, 38, "NEUMORPHIC // 日本語", 10.5, p.textMuted, { weight: 700, extra: ' letter-spacing="0.8"' }));
 
   // Top-Right Decorative Neumorphic Equalizer Sliders (Inspired directly by the user's reference image!)
   const eqX = 696;
@@ -430,7 +431,7 @@ function about(ctx) {
   const h = 108 + row * c.about.items.length;
   const uid = "about";
   const b = [neuBoard(W, h, p, uid)];
-  b.push(sectionHeader(34, 24, c.about.title, "person", "PROFIL // 01", ctx, uid));
+  b.push(sectionHeader(34, 24, c.about.title, "person", "プロフィール // 01", ctx, uid));
 
   c.about.items.forEach((item, n) => {
     const y = 94 + n * row;
@@ -493,7 +494,7 @@ function stack(ctx) {
 
   const h = y + 12;
   const b = [neuBoard(W, h, p, uid)];
-  b.push(sectionHeader(34, 24, c.stack.title, "code", "STACK // 02", ctx, uid));
+  b.push(sectionHeader(34, 24, c.stack.title, "code", "スタック // 02", ctx, uid));
   b.push(...groups);
   return svg(W, h, b.join(""), c.stack.title, c.motion);
 }
@@ -565,7 +566,7 @@ function card(ctx, repo, index) {
   b.push(`</g>`);
 
   // Project Index Pill
-  const idxText = `PROJEKT // 0${index + 1}`;
+  const idxText = `プロジェクト // 0${index + 1}`;
   const idxW = textWidth(idxText, 11, 700) + 24;
   b.push(neuWell(84, 35, idxW, 26, 13, uid));
   b.push(txt(84 + idxW / 2, 52, idxText, 11, p.textMuted, { weight: 700, anchor: "middle", extra: ' letter-spacing="0.6"' }));
@@ -630,7 +631,7 @@ function stats(ctx) {
 
   const h = s.showLanguages && langs.length ? 430 + row * 30 : 330;
   const b = [neuBoard(W, h, p, uid)];
-  b.push(sectionHeader(34, 24, s.title, "monitoring", "METRIKEN // 03", ctx, uid));
+  b.push(sectionHeader(34, 24, s.title, "monitoring", "統計 // 03", ctx, uid));
 
   // 4 Neumorphic Metric Tiles on Left
   const tiles = [
@@ -738,7 +739,7 @@ function streak(ctx) {
   const h = 232;
   const uid = "streak";
   const b = [neuBoard(W, h, p, uid)];
-  b.push(sectionHeader(34, 24, s.title, "local_fire_department", "SERIE // 04", ctx, uid));
+  b.push(sectionHeader(34, 24, s.title, "local_fire_department", "連続 // 04", ctx, uid));
 
   const tw = (W - 68 - 20) / 2;
   const tiles = [
@@ -898,7 +899,7 @@ function wave({ c, p }) {
 }
 
 function credit({ p }) {
-  const label = "NEUMORPHIC SOFT UI // DEUTSCHE AUSGABE";
+  const label = "NEUMORPHIC SOFT UI // 日本語版";
   const size = 11;
   const w = Math.round(textWidth(label, size, 700) + label.length * 0.8 + 44);
   return svg(
