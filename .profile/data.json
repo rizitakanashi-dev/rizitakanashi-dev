@@ -1,12 +1,12 @@
 {
   "stars": 0,
-  "contributions": 333,
+  "contributions": 334,
   "repos": 15,
   "followers": 24,
   "languages": [
     [
-      "JavaScript",
-      154190
+      "TypeScript",
+      663001
     ],
     [
       "JavaScript",
@@ -18,7 +18,7 @@
     ],
     [
       "C#",
-      171
+      159303
     ],
     [
       "HTML",
@@ -26,7 +26,7 @@
     ],
     [
       "Go",
-      44
+      36024
     ],
     [
       "CSS",
@@ -41,7 +41,7 @@
         "today": false
       },
       {
-        "c": 0,
+        "c": 7,
         "day": 2,
         "today": false
       },
@@ -51,12 +51,12 @@
         "today": false
       },
       {
-        "c": 1,
+        "c": 6,
         "day": 4,
         "today": false
       },
       {
-        "c": 0,
+        "c": 2,
         "day": 5,
         "today": false
       },
@@ -66,14 +66,14 @@
         "today": false
       },
       {
-        "c": 12,
+        "c": 8,
         "day": 7,
         "today": false
       }
     ],
     [
       {
-        "c": 3,
+        "c": 14,
         "day": 8,
         "today": false
       },
@@ -110,7 +110,7 @@
     ],
     [
       {
-        "c": 0,
+        "c": 1,
         "day": 15,
         "today": true
       },
@@ -123,19 +123,10 @@
     ]
   ],
   "streak": {
-    "current": 0,
+    "current": 1,
     "longest": 8
   },
   "pins": [
-    {
-      "name": "rizitakanashi-dev",
-      "url": "https://github.com/rizitakanashi-dev/rizitakanashi-dev",
-      "text": "",
-      "fork": false,
-      "stars": 0,
-      "language": "JavaScript",
-      "topics": []
-    },
     {
       "name": "steampreneur-agri-sort-ai",
       "url": "https://github.com/rizitakanashi-dev/steampreneur-agri-sort-ai",
@@ -143,35 +134,17 @@
       "fork": false,
       "stars": 0,
       "language": "JavaScript",
-      "topics": []
-    },
-    {
-      "name": "Rexizo-Assistant",
-      "url": "https://github.com/rizitakanashi-dev/Rexizo-Assistant",
-      "text": "",
-      "fork": false,
-      "stars": 0,
-      "language": "Python",
-      "topics": []
-    },
-    {
-      "name": "belajar-aiml",
-      "url": "https://github.com/rizitakanashi-dev/belajar-aiml",
-      "text": "",
-      "fork": false,
-      "stars": 0,
-      "language": "Python",
       "topics": []
     }
   ],
   "all": [
     {
-      "name": "rizitakanashi-dev",
-      "url": "https://github.com/rizitakanashi-dev/rizitakanashi-dev",
+      "name": "Rexizo-Assistant",
+      "url": "https://github.com/rizitakanashi-dev/Rexizo-Assistant",
       "text": "",
       "fork": false,
       "stars": 0,
-      "language": "JavaScript",
+      "language": "Python",
       "topics": []
     },
     {
@@ -184,30 +157,12 @@
       "topics": []
     },
     {
-      "name": "Rexizo-Assistant",
-      "url": "https://github.com/rizitakanashi-dev/Rexizo-Assistant",
-      "text": "",
-      "fork": false,
-      "stars": 0,
-      "language": "Python",
-      "topics": []
-    },
-    {
       "name": "belajar-aiml",
       "url": "https://github.com/rizitakanashi-dev/belajar-aiml",
       "text": "",
       "fork": false,
       "stars": 0,
       "language": "Python",
-      "topics": []
-    },
-    {
-      "name": "Absensi-Tefa",
-      "url": "https://github.com/rizitakanashi-dev/Absensi-Tefa",
-      "text": "",
-      "fork": false,
-      "stars": 0,
-      "language": "C#",
       "topics": []
     },
     {
@@ -217,6 +172,15 @@
       "fork": false,
       "stars": 0,
       "language": "TypeScript",
+      "topics": []
+    },
+    {
+      "name": "Absensi-Tefa",
+      "url": "https://github.com/rizitakanashi-dev/Absensi-Tefa",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "C#",
       "topics": []
     },
     {
@@ -265,21 +229,30 @@
       "topics": []
     },
     {
-      "name": "belajar-backend",
-      "url": "https://github.com/rizitakanashi-dev/belajar-backend",
-      "text": "",
-      "fork": false,
-      "stars": 0,
-      "language": "Go",
-      "topics": []
-    },
-    {
       "name": "belajar-javascript",
       "url": "https://github.com/rizitakanashi-dev/belajar-javascript",
       "text": "dasar dasar javascript",
       "fork": false,
       "stars": 0,
       "language": "JavaScript",
+      "topics": []
+    },
+    {
+      "name": "rizitakanashi-dev",
+      "url": "https://github.com/rizitakanashi-dev/rizitakanashi-dev",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "JavaScript",
+      "topics": []
+    },
+    {
+      "name": "belajar-backend",
+      "url": "https://github.com/rizitakanashi-dev/belajar-backend",
+      "text": "",
+      "fork": false,
+      "stars": 0,
+      "language": "Go",
       "topics": []
     },
     {
