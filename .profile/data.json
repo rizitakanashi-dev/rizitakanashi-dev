@@ -1,20 +1,20 @@
 {
   "stars": 0,
-  "contributions": 337,
+  "contributions": 350,
   "repos": 15,
   "followers": 23,
   "languages": [
+    [
+      "JavaScript",
+      829018
+    ],
     [
       "TypeScript",
       663001
     ],
     [
-      "JavaScript",
-      632732
-    ],
-    [
       "Python",
-      596179
+      613039
     ],
     [
       "C#",
@@ -30,7 +30,7 @@
     ],
     [
       "CSS",
-      32161
+      34003
     ]
   ],
   "days": [
@@ -115,7 +115,7 @@
         "today": false
       },
       {
-        "c": 3,
+        "c": 16,
         "day": 16,
         "today": true
       },
