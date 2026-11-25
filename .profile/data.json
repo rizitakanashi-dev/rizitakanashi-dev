@@ -1,16 +1,16 @@
 {
   "stars": 0,
-  "contributions": 383,
+  "contributions": 392,
   "repos": 15,
   "followers": 22,
   "languages": [
     [
-      "JavaScript",
-      945361
+      "Python",
+      1054116
     ],
     [
-      "Python",
-      768908
+      "JavaScript",
+      1053157
     ],
     [
       "TypeScript",
@@ -21,16 +21,16 @@
       159303
     ],
     [
+      "PLpgSQL",
+      71819
+    ],
+    [
       "HTML",
       36626
     ],
     [
       "Go",
       36024
-    ],
-    [
-      "CSS",
-      33472
     ]
   ],
   "days": [
@@ -125,7 +125,7 @@
         "today": false
       },
       {
-        "c": 0,
+        "c": 9,
         "day": 25,
         "today": true
       },
@@ -135,7 +135,7 @@
     ]
   ],
   "streak": {
-    "current": 2,
+    "current": 3,
     "longest": 8
   },
   "pins": [
