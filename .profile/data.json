@@ -122,9 +122,13 @@
       {
         "c": 1,
         "day": 24,
+        "today": false
+      },
+      {
+        "c": 0,
+        "day": 25,
         "today": true
       },
-      null,
       null,
       null,
       null
